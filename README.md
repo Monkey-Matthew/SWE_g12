@@ -2,7 +2,7 @@
  Project for Software Engineering I
 
  Put A :) By Your Name To See If Its Working For Everyone
- Matthew
+ Matthew :)
  Bria
  Ami
  Bela
