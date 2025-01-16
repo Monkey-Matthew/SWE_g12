@@ -4,6 +4,6 @@
  Put A :) By Your Name To See If Its Working For Everyone
  Matthew :)
  Bria :) 
- Ami
+ Ami :)
  Bela
  Nathan
