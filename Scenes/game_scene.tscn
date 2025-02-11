@@ -17,10 +17,10 @@ sources/0 = SubResource("TileSetAtlasSource_uqg0y")
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
+zoom = Vector2(12, 12)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0177325, 0.0177323, 0.0177324, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="TestTileMap" type="TileMap" parent="."]
 format = 2
@@ -44,4 +44,5 @@ position = Vector2(-145, -32)
 position = Vector2(-103, 67)
 
 [node name="TestCollision5" parent="TestCollisions" instance=ExtResource("3_gld6b")]
-position = Vector2(-1, 51)
+position = Vector2(0, 14)
+scale = Vector2(0.063, 0.063)
