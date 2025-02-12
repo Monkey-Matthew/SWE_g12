@@ -11,9 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cmk2ma565qa4n" path="res://TestSprites/PlayerRunUp.png" id="9_u3txq"]
 [ext_resource type="Texture2D" uid="uid://fq4qmkhx62qo" path="res://Images/light.png" id="10_puerf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hi38y"]
-radius = 9.05539
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_2eutv"]
 atlas = ExtResource("2_hnt0m")
 region = Rect2(0, 0, 32, 32)
@@ -316,14 +313,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hi38y"]
+radius = 9.05539
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_36ycc")
 movement_speed = 25.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -4)
-shape = SubResource("CircleShape2D_hi38y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_f8p70")
@@ -334,7 +330,20 @@ frame_progress = 0.0618524
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
 
+[node name="IFrameTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.6
 texture = ExtResource("10_puerf")
 texture_scale = 0.4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_hi38y")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="HBShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_hi38y")
