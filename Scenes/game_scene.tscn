@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=7 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="PackedScene" uid="uid://4rrsf32mp6nr" path="res://Scenes/test_collision.tscn" id="3_gld6b"]
 [ext_resource type="Texture2D" uid="uid://q8s7idl5mx0n" path="res://Images/gray_tile.png" id="3_ofebl"]
+[ext_resource type="PackedScene" uid="uid://d0q43xqbbdxes" path="res://Scenes/firefly.tscn" id="4_i4osp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqg0y"]
 texture = ExtResource("3_ofebl")
@@ -45,3 +46,20 @@ position = Vector2(-23, 12)
 
 [node name="Spikes5" parent="TestSpikes" instance=ExtResource("3_gld6b")]
 position = Vector2(0, 14)
+
+[node name="Fireflies" type="Node" parent="."]
+
+[node name="Firefly" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(19, -17)
+
+[node name="Firefly2" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-19, -33)
+
+[node name="Firefly3" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-48, 5)
+
+[node name="Firefly4" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-12, 36)
+
+[node name="Firefly5" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(40, 35)
