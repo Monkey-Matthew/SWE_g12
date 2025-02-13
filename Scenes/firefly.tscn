@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0q43xqbbdxes"]
+
+[ext_resource type="Script" path="res://Scripts/firefly_movement.gd" id="1_7whsk"]
+[ext_resource type="Texture2D" uid="uid://fq4qmkhx62qo" path="res://Images/light.png" id="1_li2th"]
+
+[node name="Firefly" type="CharacterBody2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_7whsk")
+sizeOfPath = 4.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.988235, 0.894118, 0, 1)
+energy = 10.0
+texture = ExtResource("1_li2th")
+texture_scale = 0.01
