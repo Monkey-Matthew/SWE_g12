@@ -5,7 +5,7 @@ var paused = false
 @onready var resumeButton = $PauseMenu/VBoxContainer/Resume
 @onready var exitButton = $PauseMenu/VBoxContainer/Exit
 
-
+# ready func
 func _ready():
 	pauseMenuObj.hide()
 	# Connect the resume button to the pauseMenu function
