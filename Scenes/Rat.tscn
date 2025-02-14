@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://cq582o51dd62t"]
+
+[ext_resource type="Texture2D" uid="uid://f78nwjqvyetd" path="res://TestSprites/Rat Enemy/RightStand-1.png.png" id="1_2g4lq"]
+[ext_resource type="Texture2D" uid="uid://crya2b3wxrfdm" path="res://TestSprites/Rat Enemy/LeftStand-1.png(1).png" id="1_4l4my"]
+[ext_resource type="Texture2D" uid="uid://cavp1jcufkina" path="res://TestSprites/Rat Enemy/MoveLeft-1.png.png" id="2_05bj5"]
+[ext_resource type="Texture2D" uid="uid://cja6s76a7t64y" path="res://TestSprites/Rat Enemy/MoveRight-1.png.png" id="2_b7mu8"]
+[ext_resource type="Texture2D" uid="uid://mu0r1rci1cp7" path="res://TestSprites/Rat Enemy/BackSide1-1.png.png" id="5_ceehs"]
+[ext_resource type="Texture2D" uid="uid://df5yjmb8i0d2g" path="res://TestSprites/Rat Enemy/BackSide2-1.png.png" id="6_ktwyr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8v5g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4l4my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_05bj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_4l4my")
+}],
+"loop": true,
+"name": &"LeftMovement",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2g4lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b7mu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2g4lq")
+}],
+"loop": true,
+"name": &"RightMovement",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ceehs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ktwyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ceehs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ktwyr")
+}],
+"loop": true,
+"name": &"UpwardMovement",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kgwi"]
+size = Vector2(18.5, 30)
+
+[node name="Rat" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_s8v5g")
+animation = &"LeftMovement"
+autoplay = "RightMovement"
+frame_progress = 0.433502
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.98023e-08, -1)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_2kgwi")
