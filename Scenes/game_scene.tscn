@@ -88,5 +88,5 @@ offset_right = 595.0
 offset_bottom = 321.0
 
 [node name="Rat" parent="." instance=ExtResource("7_agj4n")]
-position = Vector2(-18, -1)
+position = Vector2(-8, -2)
 script = ExtResource("8_qx55y")

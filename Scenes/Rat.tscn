@@ -64,9 +64,9 @@ size = Vector2(18.5, 30)
 position = Vector2(0, -1)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_s8v5g")
-animation = &"RightMovement"
+animation = &"LeftMovement"
 autoplay = "RightMovement"
-frame_progress = 0.129881
+frame_progress = 0.433502
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.98023e-08, -1)
