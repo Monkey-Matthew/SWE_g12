@@ -5,6 +5,7 @@ var character_direction: Vector2  # Used for our movement directional input
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D  # Reference to the AnimatedSprite2D node so that we can modify it
 @onready var timer: Timer = $Timer  # Reference to the Timer node so that we can modify it
 @onready var invulnerable_timer: Timer = $IFrameTimer # Timer for jump. Set to 1 second. When the player jumps they're invulnerable to some traps.
+@onready var body = $CollisionShape2D
 var rand_direction = randf() # Chooses a random number between 0 and 1 in decimal
 var direction_facing: String # Store a string depending on the last direction the character was facing (Left, Right, Up, Down)
 var invulnerable: bool = false
