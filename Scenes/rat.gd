@@ -30,25 +30,33 @@ func _process(delta: float) -> void:
 		x = progress
 		y = 0
 		animated_sprite.play("RightMovement")
-		POV.rotation = 0
+		POV.rotation_degrees = 180
+		POV.position.x = -2
+		POV.position.y = -4
+		
 	elif phase == 1:
 		#Move Down
 		x = sizeOfPath
 		y = progress
-		POV.rotation = 90
+		POV.rotation_degrees = -90
+		POV.position.x = 2
+		POV.position.y = -4
+		
 	elif phase == 2:
 		#Move left
 		x = sizeOfPath - progress
 		y = sizeOfPath
 		animated_sprite.play("LeftMovement")
-		POV.rotation = 180
+		POV.rotation_degrees = 0
+		POV.position.x = 2
+		POV.position.y = 0
 	elif phase == 3:
 		#Move up
 		x = 0
 		y = sizeOfPath - progress
 		animated_sprite.play("UpwardMovement")
-		POV.rotation = 270
-	
+		POV.rotation_degrees = -270
+		POV.position.x = -2
 
 	position = startingPosition + Vector2(x, y) 
 	

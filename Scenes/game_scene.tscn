@@ -24,6 +24,7 @@ z_index = 1
 zoom = Vector2(12, 12)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="TestTileMap" type="TileMap" parent="."]
@@ -87,4 +88,4 @@ offset_right = 595.0
 offset_bottom = 321.0
 
 [node name="Rat" parent="." instance=ExtResource("7_agj4n")]
-position = Vector2(-15, 0)
+position = Vector2(-21, 0)
