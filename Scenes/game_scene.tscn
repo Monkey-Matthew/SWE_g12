@@ -100,4 +100,9 @@ position = Vector2(73, 73)
 scale = Vector2(4.84375, 3.71875)
 texture = ExtResource("8_6460g")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Health"]
+position = Vector2(172, 73)
+scale = Vector2(4.84375, 3.71875)
+texture = ExtResource("8_6460g")
+
 [connection signal="timeout" from="Player/Jump" to="Player" method="_on_jump_timeout"]
