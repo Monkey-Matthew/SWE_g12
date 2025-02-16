@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi2gix8uka0mx"
-path="res://.godot/imported/LeftIdle.png-7ae36c820ce38eed974dd747618601f5.ctex"
+uid="uid://cyku4kmm8l52r"
+path="res://.godot/imported/HalfHeart.png-2c4bba5499b264709bff7f73aa8af8ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/Main Character/LeftIdle.png"
-dest_files=["res://.godot/imported/LeftIdle.png-7ae36c820ce38eed974dd747618601f5.ctex"]
+source_file="res://Images/TestSprites/Heart/HalfHeart.png"
+dest_files=["res://.godot/imported/HalfHeart.png-2c4bba5499b264709bff7f73aa8af8ba.ctex"]
 
 [params]
 

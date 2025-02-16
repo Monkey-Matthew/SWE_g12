@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyku4kmm8l52r"
-path="res://.godot/imported/HalfHeart.png-b894aaa01fe93754b7a9694c4cb98253.ctex"
+uid="uid://crya2b3wxrfdm"
+path="res://.godot/imported/LeftStand-1.png(1).png-a2a24d64c7de0ee6f52461bcfb0041d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/HalfHeart.png"
-dest_files=["res://.godot/imported/HalfHeart.png-b894aaa01fe93754b7a9694c4cb98253.ctex"]
+source_file="res://Images/TestSprites/Rat Enemy/LeftStand-1.png(1).png"
+dest_files=["res://.godot/imported/LeftStand-1.png(1).png-a2a24d64c7de0ee6f52461bcfb0041d0.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://f78nwjqvyetd"
-path="res://.godot/imported/RightStand-1.png.png-0afe8026d991cb2139df8196546edb3a.ctex"
+path="res://.godot/imported/RightStand-1.png.png-996e53e648fe5b98fe6ae2c0a1073653.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/Rat Enemy/RightStand-1.png.png"
-dest_files=["res://.godot/imported/RightStand-1.png.png-0afe8026d991cb2139df8196546edb3a.ctex"]
+source_file="res://Images/TestSprites/Rat Enemy/RightStand-1.png.png"
+dest_files=["res://.godot/imported/RightStand-1.png.png-996e53e648fe5b98fe6ae2c0a1073653.ctex"]
 
 [params]
 

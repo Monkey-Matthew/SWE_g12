@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clpplr0d1jxpi"
-path="res://.godot/imported/EmptyHeart.png-be05db23a3d092ac6f5031b8ac0b91cf.ctex"
+uid="uid://cgh3hk0drxva"
+path="res://.godot/imported/PlayerRunRight.png-a07ecbe030fcba1d68e30c53f72328c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/EmptyHeart.png"
-dest_files=["res://.godot/imported/EmptyHeart.png-be05db23a3d092ac6f5031b8ac0b91cf.ctex"]
+source_file="res://Images/TestSprites/Main Character/PlayerRunRight.png"
+dest_files=["res://.godot/imported/PlayerRunRight.png-a07ecbe030fcba1d68e30c53f72328c7.ctex"]
 
 [params]
 

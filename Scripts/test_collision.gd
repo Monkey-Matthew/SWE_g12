@@ -1,6 +1,7 @@
 extends Area2D
 
 var playerDied: bool = false # Not being used right now.
+
 """
 func _physics_process(delta: float) -> void:
 	for body in get_overlapping_bodies():
@@ -20,7 +21,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and not body.invulnerable and body.can_Jump:
-		Health.player_health -= .25
+		Health.player_health -= 1 #Change later
 		# playerDied = true  I suspect we may need this later.
 		pass
 	else:

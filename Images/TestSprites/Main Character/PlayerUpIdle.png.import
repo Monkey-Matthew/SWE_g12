@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cja6s76a7t64y"
-path="res://.godot/imported/MoveRight-1.png.png-03e9192b60a07733cb88f46ce930cf6d.ctex"
+uid="uid://bvwyyqyaok8tl"
+path="res://.godot/imported/PlayerUpIdle.png-bf1d131d6ccdecc58b1b289f584dc990.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/Rat Enemy/MoveRight-1.png.png"
-dest_files=["res://.godot/imported/MoveRight-1.png.png-03e9192b60a07733cb88f46ce930cf6d.ctex"]
+source_file="res://Images/TestSprites/Main Character/PlayerUpIdle.png"
+dest_files=["res://.godot/imported/PlayerUpIdle.png-bf1d131d6ccdecc58b1b289f584dc990.ctex"]
 
 [params]
 

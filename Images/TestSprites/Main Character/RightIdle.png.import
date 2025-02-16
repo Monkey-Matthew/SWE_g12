@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df5yjmb8i0d2g"
-path="res://.godot/imported/BackSide2-1.png.png-f15ce9c5a8402d119b0e526ed1b5c411.ctex"
+uid="uid://dj1ch25toj44n"
+path="res://.godot/imported/RightIdle.png-d550703c7b673927a04a4b3bed41d668.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/Rat Enemy/BackSide2-1.png.png"
-dest_files=["res://.godot/imported/BackSide2-1.png.png-f15ce9c5a8402d119b0e526ed1b5c411.ctex"]
+source_file="res://Images/TestSprites/Main Character/RightIdle.png"
+dest_files=["res://.godot/imported/RightIdle.png-d550703c7b673927a04a4b3bed41d668.ctex"]
 
 [params]
 

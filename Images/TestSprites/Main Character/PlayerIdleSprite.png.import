@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crya2b3wxrfdm"
-path="res://.godot/imported/LeftStand-1.png(1).png-ebf6e6530c474e677992c23f16e0acc1.ctex"
+uid="uid://kgvok8o6x1q8"
+path="res://.godot/imported/PlayerIdleSprite.png-54f482b6b75db5ef4cc8359368e26a2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/Rat Enemy/LeftStand-1.png(1).png"
-dest_files=["res://.godot/imported/LeftStand-1.png(1).png-ebf6e6530c474e677992c23f16e0acc1.ctex"]
+source_file="res://Images/TestSprites/Main Character/PlayerIdleSprite.png"
+dest_files=["res://.godot/imported/PlayerIdleSprite.png-54f482b6b75db5ef4cc8359368e26a2e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu6nuebp1vv63"
-path="res://.godot/imported/QuaterHeart.png-2fae440aee5496aca5434eacb4c35846.ctex"
+uid="uid://df5yjmb8i0d2g"
+path="res://.godot/imported/BackSide2-1.png.png-57818bd1c0f5347ba6a1299c355c9c36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/QuaterHeart.png"
-dest_files=["res://.godot/imported/QuaterHeart.png-2fae440aee5496aca5434eacb4c35846.ctex"]
+source_file="res://Images/TestSprites/Rat Enemy/BackSide2-1.png.png"
+dest_files=["res://.godot/imported/BackSide2-1.png.png-57818bd1c0f5347ba6a1299c355c9c36.ctex"]
 
 [params]
 

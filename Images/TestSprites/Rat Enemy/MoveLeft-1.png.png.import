@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwxal6ygnrj0g"
-path="res://.godot/imported/FullHeart.png-32782cacc0517ee9239041225571498b.ctex"
+uid="uid://cavp1jcufkina"
+path="res://.godot/imported/MoveLeft-1.png.png-404ad4aad0df070078e6eb375bb8cf50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/FullHeart.png"
-dest_files=["res://.godot/imported/FullHeart.png-32782cacc0517ee9239041225571498b.ctex"]
+source_file="res://Images/TestSprites/Rat Enemy/MoveLeft-1.png.png"
+dest_files=["res://.godot/imported/MoveLeft-1.png.png-404ad4aad0df070078e6eb375bb8cf50.ctex"]
 
 [params]
 

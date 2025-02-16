@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0q43xqbbdxes" path="res://Scenes/firefly.tscn" id="4_i4osp"]
 [ext_resource type="PackedScene" uid="uid://dkkojelq84qqo" path="res://Scenes/pause_menu.tscn" id="4_o1cd5"]
 [ext_resource type="PackedScene" uid="uid://cq582o51dd62t" path="res://Scenes/Rat.tscn" id="7_agj4n"]
-[ext_resource type="Script" path="res://Scenes/display_health.gd" id="8_4bjer"]
+[ext_resource type="Script" path="res://Scripts/display_health.gd" id="8_4bjer"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqg0y"]
 texture = ExtResource("3_ofebl")
@@ -28,7 +28,6 @@ z_index = 1
 zoom = Vector2(12, 12)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="TestTileMap" type="TileMap" parent="."]

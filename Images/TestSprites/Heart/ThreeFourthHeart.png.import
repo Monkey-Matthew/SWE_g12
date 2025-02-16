@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4huccw4y4n4v"
-path="res://.godot/imported/PlayerRunDown.png-c05998f2154465a05328657813ff1cdb.ctex"
+uid="uid://qmd3624qsxpd"
+path="res://.godot/imported/ThreeFourthHeart.png-a904f3eef63f7cd0e20d14098440d189.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/Main Character/PlayerRunDown.png"
-dest_files=["res://.godot/imported/PlayerRunDown.png-c05998f2154465a05328657813ff1cdb.ctex"]
+source_file="res://Images/TestSprites/Heart/ThreeFourthHeart.png"
+dest_files=["res://.godot/imported/ThreeFourthHeart.png-a904f3eef63f7cd0e20d14098440d189.ctex"]
 
 [params]
 

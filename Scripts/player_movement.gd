@@ -4,12 +4,12 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D  # Reference to the AnimatedSprite2D node so that we can modify it
 @onready var timer: Timer = $Timer  # Reference to the Timer node so that we can modify it
 @onready var invulnerable_timer: Timer = $IFrameTimer # Timer for jump. Set to 1 second. When the player jumps they're invulnerable to some traps.
-@onready var body = $CollisionShape2D
-@onready var Jump: Timer = $Timer2
+@onready var Jump: Timer = $Timer2 #Timer for Jump
+@onready var Reload = $Reload #Time for Reload
 var character_direction: Vector2  # Used for our movement directional input
 var rand_direction = randf() # Chooses a random number between 0 and 1 in decimal
 var direction_facing: String # Store a string depending on the last direction the character was facing (Left, Right, Up, Down)
-var invulnerable: bool = false
+var invulnerable: bool = false 
 var can_Jump: bool = true #Stop spamming jumping
 
 func _physics_process(delta: float) -> void:
@@ -18,6 +18,7 @@ func _physics_process(delta: float) -> void:
 	character_direction.y = Input.get_axis("up", "down")  # -1 for "up", 1 for "down" Gets input from up and down input
 	character_direction = character_direction.normalized()  # Normalize the direction for consistent speed
 															# (Used to stop diagonal movement from going twice as fast)
+	#Checks to see if jump is true
 	if can_Jump:
 		character_jump() # Jump function.
 	# Only updates velocity if there's input
@@ -99,15 +100,23 @@ func _physics_process(delta: float) -> void:
 	
 	# Move the character based on the velocity variable above
 	move_and_slide()
+	#Checks to see if character died
+	if(Health.player_health <= 0):
+		Health.player_health = 0.01
+		Reload.start()
+		
 
 func _ready(): # Placement of this might be a bit weird.
 	invulnerable_timer.timeout.connect(_on_IFrameTimer_timeout)  
 	Jump.timeout.connect(_on_jump_timeout)
+	Reload.timeout.connect(_on_reload_timeout)
 
+#invicible frames
 func _on_IFrameTimer_timeout() -> void:
 	print("No longer invicible to traps.") # This can be commented out. This is so we know when the jump has ended, since we've no sprite animation for it yet.
 	invulnerable = false # Player can now be harmed/die.
 
+#Lets Character Jump
 func character_jump():
 	if Input.is_action_just_pressed("jump"):
 		print("Space is hit.") # Was just making sure the input was being read.
@@ -116,5 +125,12 @@ func character_jump():
 		can_Jump = false
 		print("Jump cooldown")
 		Jump.start(1)
+
+#Enables jump again
 func _on_jump_timeout() -> void:
 	can_Jump = true
+
+#Reloads the Scene
+func _on_reload_timeout() -> void:
+	get_tree().reload_current_scene()
+	Health.player_health = 3
