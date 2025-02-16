@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 		sprite_third_heart.texture = load("res://TestSprites/EmptyHeart.png")
 	elif Health.player_health == 1.0:
 		sprite_first_heart.texture = load("res://TestSprites/FullHeart.png")
-		sprite_second_heart.texture = load("res://TestSprites/FullHeart.png")
+		sprite_second_heart.texture = load("res://TestSprites/EmptyHeart.png")
 		sprite_third_heart.texture = load("res://TestSprites/EmptyHeart.png")
 	elif Health.player_health == 0.75:
 		sprite_first_heart.texture = load("res://TestSprites/ThreeFourthHeart.png")
