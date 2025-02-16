@@ -9,6 +9,9 @@ var character_direction: Vector2  # Used for our movement directional input
 var rand_direction = randf() # Chooses a random number between 0 and 1 in decimal
 var direction_facing: String # Store a string depending on the last direction the character was facing (Left, Right, Up, Down)
 var invulnerable: bool = false
+var can_Jump: bool = true #Stop spamming jumping
+var Jump_cooldown = 0.5 #Cooldown for jumping
+@onready var Jump = $Jump
 
 func _physics_process(delta: float) -> void:
 	#Update movement direction
@@ -16,8 +19,8 @@ func _physics_process(delta: float) -> void:
 	character_direction.y = Input.get_axis("up", "down")  # -1 for "up", 1 for "down" Gets input from up and down input
 	character_direction = character_direction.normalized()  # Normalize the direction for consistent speed
 															# (Used to stop diagonal movement from going twice as fast)
-	character_jump() # Jump function.
-	
+	if can_Jump:
+		character_jump() # Jump function.
 	# Only updates velocity if there's input
 	if character_direction != Vector2.ZERO:
 		velocity = character_direction * movement_speed # Multiplies the movement speed by the direction to dtermine the velocity
@@ -110,6 +113,11 @@ func character_jump():
 		print("Space is hit.") # Was just making sure the input was being read.
 		invulnerable = true # Player cannot be harmed/die.
 		invulnerable_timer.start() 
+		can_Jump = false
+		print("Jump cooldown")
+		Jump.start(Jump_cooldown)
 
-		
-	
+
+func _on_jump_timeout() -> void:
+	print("Can Jump")
+	can_Jump = true

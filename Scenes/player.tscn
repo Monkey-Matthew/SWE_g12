@@ -1,15 +1,16 @@
 [gd_scene load_steps=50 format=3 uid="uid://dkq3q6ui7o41a"]
 
 [ext_resource type="Script" path="res://Scripts/player_movement.gd" id="1_36ycc"]
-[ext_resource type="Texture2D" uid="uid://kgvok8o6x1q8" path="res://TestSprites/PlayerIdleSprite.png" id="2_hnt0m"]
-[ext_resource type="Texture2D" uid="uid://c4huccw4y4n4v" path="res://TestSprites/PlayerRunDown.png" id="3_y33n3"]
-[ext_resource type="Texture2D" uid="uid://bi2gix8uka0mx" path="res://TestSprites/LeftIdle.png" id="4_ufre2"]
-[ext_resource type="Texture2D" uid="uid://c2xn3yyclbusw" path="res://TestSprites/PlayerRunLeft.png" id="5_05snh"]
-[ext_resource type="Texture2D" uid="uid://dj1ch25toj44n" path="res://TestSprites/RightIdle.png" id="6_na6e0"]
-[ext_resource type="Texture2D" uid="uid://cgh3hk0drxva" path="res://TestSprites/PlayerRunRight.png" id="7_wdd5u"]
-[ext_resource type="Texture2D" uid="uid://bvwyyqyaok8tl" path="res://TestSprites/PlayerUpIdle.png" id="8_ajr2o"]
-[ext_resource type="Texture2D" uid="uid://cmk2ma565qa4n" path="res://TestSprites/PlayerRunUp.png" id="9_u3txq"]
+[ext_resource type="Texture2D" uid="uid://kgvok8o6x1q8" path="res://TestSprites/Main Character/PlayerIdleSprite.png" id="2_hnt0m"]
+[ext_resource type="Texture2D" uid="uid://c4huccw4y4n4v" path="res://TestSprites/Main Character/PlayerRunDown.png" id="3_y33n3"]
+[ext_resource type="Texture2D" uid="uid://bi2gix8uka0mx" path="res://TestSprites/Main Character/LeftIdle.png" id="4_ufre2"]
+[ext_resource type="Texture2D" uid="uid://c2xn3yyclbusw" path="res://TestSprites/Main Character/PlayerRunLeft.png" id="5_05snh"]
+[ext_resource type="Texture2D" uid="uid://dj1ch25toj44n" path="res://TestSprites/Main Character/RightIdle.png" id="6_na6e0"]
+[ext_resource type="Texture2D" uid="uid://cgh3hk0drxva" path="res://TestSprites/Main Character/PlayerRunRight.png" id="7_wdd5u"]
+[ext_resource type="Texture2D" uid="uid://bvwyyqyaok8tl" path="res://TestSprites/Main Character/PlayerUpIdle.png" id="8_ajr2o"]
+[ext_resource type="Texture2D" uid="uid://cmk2ma565qa4n" path="res://TestSprites/Main Character/PlayerRunUp.png" id="9_u3txq"]
 [ext_resource type="Texture2D" uid="uid://fq4qmkhx62qo" path="res://Images/light.png" id="10_puerf"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2eutv"]
 atlas = ExtResource("2_hnt0m")
