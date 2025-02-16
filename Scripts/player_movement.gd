@@ -1,17 +1,16 @@
 extends CharacterBody2D
 
 @export var movement_speed: float = 100  # Movement speed (Can be change in the inspector)
-var character_direction: Vector2  # Used for our movement directional input
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D  # Reference to the AnimatedSprite2D node so that we can modify it
 @onready var timer: Timer = $Timer  # Reference to the Timer node so that we can modify it
 @onready var invulnerable_timer: Timer = $IFrameTimer # Timer for jump. Set to 1 second. When the player jumps they're invulnerable to some traps.
 @onready var body = $CollisionShape2D
+@onready var Jump: Timer = $Timer2
+var character_direction: Vector2  # Used for our movement directional input
 var rand_direction = randf() # Chooses a random number between 0 and 1 in decimal
 var direction_facing: String # Store a string depending on the last direction the character was facing (Left, Right, Up, Down)
 var invulnerable: bool = false
 var can_Jump: bool = true #Stop spamming jumping
-var Jump_cooldown = 0.5 #Cooldown for jumping
-@onready var Jump = $Jump
 
 func _physics_process(delta: float) -> void:
 	#Update movement direction
@@ -103,6 +102,7 @@ func _physics_process(delta: float) -> void:
 
 func _ready(): # Placement of this might be a bit weird.
 	invulnerable_timer.timeout.connect(_on_IFrameTimer_timeout)  
+	Jump.timeout.connect(_on_jump_timeout)
 
 func _on_IFrameTimer_timeout() -> void:
 	print("No longer invicible to traps.") # This can be commented out. This is so we know when the jump has ended, since we've no sprite animation for it yet.
@@ -115,8 +115,7 @@ func character_jump():
 		invulnerable_timer.start() 
 		can_Jump = false
 		print("Jump cooldown")
-		Jump.start(Jump_cooldown)
-
+		Jump.start(1)
 func _on_jump_timeout() -> void:
-	print("Can Jump")
 	can_Jump = true
+	print("Jump ava")
