@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=11 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="PackedScene" uid="uid://4rrsf32mp6nr" path="res://Scenes/test_collision.tscn" id="3_gld6b"]
@@ -7,8 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0q43xqbbdxes" path="res://Scenes/firefly.tscn" id="4_i4osp"]
 [ext_resource type="PackedScene" uid="uid://dkkojelq84qqo" path="res://Scenes/pause_menu.tscn" id="4_o1cd5"]
 [ext_resource type="PackedScene" uid="uid://cq582o51dd62t" path="res://Scenes/Rat.tscn" id="7_agj4n"]
-[ext_resource type="Texture2D" uid="uid://cjkv52pokapvp" path="res://TestSprites/FullHeart.png" id="8_6460g"]
-[ext_resource type="Script" path="res://Scenes/display_health.gd" id="8_eqjq6"]
+[ext_resource type="Texture2D" uid="uid://cjkv52pokapvp" path="res://TestSprites/New Piskel-1.png(6).png" id="8_6460g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqg0y"]
 texture = ExtResource("3_ofebl")
@@ -95,7 +94,6 @@ offset_bottom = 321.0
 position = Vector2(-21, 0)
 
 [node name="Health" type="CanvasLayer" parent="."]
-script = ExtResource("8_eqjq6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Health"]
 position = Vector2(73, 73)
@@ -104,11 +102,6 @@ texture = ExtResource("8_6460g")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Health"]
 position = Vector2(172, 73)
-scale = Vector2(4.84375, 3.71875)
-texture = ExtResource("8_6460g")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Health"]
-position = Vector2(266, 73)
 scale = Vector2(4.84375, 3.71875)
 texture = ExtResource("8_6460g")
 
