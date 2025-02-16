@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=11 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="PackedScene" uid="uid://4rrsf32mp6nr" path="res://Scenes/test_collision.tscn" id="3_gld6b"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0q43xqbbdxes" path="res://Scenes/firefly.tscn" id="4_i4osp"]
 [ext_resource type="PackedScene" uid="uid://dkkojelq84qqo" path="res://Scenes/pause_menu.tscn" id="4_o1cd5"]
 [ext_resource type="PackedScene" uid="uid://cq582o51dd62t" path="res://Scenes/Rat.tscn" id="7_agj4n"]
+[ext_resource type="PackedScene" uid="uid://cwtrar7iuhbek" path="res://Scenes/coin.tscn" id="8_yyxao"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqg0y"]
 texture = ExtResource("3_ofebl")
@@ -24,7 +25,6 @@ z_index = 1
 zoom = Vector2(12, 12)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="TestTileMap" type="TileMap" parent="."]
@@ -89,3 +89,21 @@ offset_bottom = 321.0
 
 [node name="Rat" parent="." instance=ExtResource("7_agj4n")]
 position = Vector2(-21, 0)
+
+[node name="Coin" parent="." instance=ExtResource("8_yyxao")]
+position = Vector2(-34, 25)
+
+[node name="Coin2" parent="." instance=ExtResource("8_yyxao")]
+position = Vector2(13, 17)
+
+[node name="Coin3" parent="." instance=ExtResource("8_yyxao")]
+position = Vector2(-22, -7)
+
+[node name="Coin4" parent="." instance=ExtResource("8_yyxao")]
+position = Vector2(19, -27)
+
+[node name="Coin5" parent="." instance=ExtResource("8_yyxao")]
+position = Vector2(-15, -20)
+
+[node name="Coin6" parent="." instance=ExtResource("8_yyxao")]
+position = Vector2(18, 35)
