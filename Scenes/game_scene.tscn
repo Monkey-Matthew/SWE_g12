@@ -24,8 +24,6 @@ z_index = 1
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(12, 12)
 
-[node name="Jump" type="Timer" parent="Player"]
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
@@ -96,13 +94,11 @@ position = Vector2(-21, 0)
 [node name="Health" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Health"]
-position = Vector2(73, 73)
+position = Vector2(77, 72)
 scale = Vector2(4.84375, 3.71875)
 texture = ExtResource("8_6460g")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Health"]
-position = Vector2(172, 73)
+position = Vector2(167, 70)
 scale = Vector2(4.84375, 3.71875)
 texture = ExtResource("8_6460g")
-
-[connection signal="timeout" from="Player/Jump" to="Player" method="_on_jump_timeout"]
