@@ -117,7 +117,6 @@ func character_jump():
 		print("Jump cooldown")
 		Jump.start(Jump_cooldown)
 
-
 func _on_jump_timeout() -> void:
 	print("Can Jump")
 	can_Jump = true

@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cmk2ma565qa4n" path="res://TestSprites/Main Character/PlayerRunUp.png" id="9_u3txq"]
 [ext_resource type="Texture2D" uid="uid://fq4qmkhx62qo" path="res://Images/light.png" id="10_puerf"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_2eutv"]
 atlas = ExtResource("2_hnt0m")
 region = Rect2(0, 0, 32, 32)
