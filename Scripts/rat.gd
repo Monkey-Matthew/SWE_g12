@@ -74,4 +74,4 @@ func _on_point_of_view_body_exited(body: Node2D) -> void:
 		
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		Health.Player_health -= .25
+		Health.player_health -= .25
