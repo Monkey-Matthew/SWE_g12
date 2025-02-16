@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by0cxbjermfl"
-path="res://.godot/imported/New Piskel-3.png.png-b4d8c98c915fa56cc9e91fc76ad9857b.ctex"
+uid="uid://c2glngfpe0e2i"
+path="res://.godot/imported/QuaterHeart.png-2fae440aee5496aca5434eacb4c35846.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/New Piskel-3.png.png"
-dest_files=["res://.godot/imported/New Piskel-3.png.png-b4d8c98c915fa56cc9e91fc76ad9857b.ctex"]
+source_file="res://TestSprites/QuaterHeart.png"
+dest_files=["res://.godot/imported/QuaterHeart.png-2fae440aee5496aca5434eacb4c35846.ctex"]
 
 [params]
 

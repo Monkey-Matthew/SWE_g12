@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjkv52pokapvp"
-path="res://.godot/imported/New Piskel-1.png(6).png-0c942b2c1cea78410fa7cdb0defa7af6.ctex"
+path="res://.godot/imported/FullHeart.png-32782cacc0517ee9239041225571498b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/New Piskel-1.png(6).png"
-dest_files=["res://.godot/imported/New Piskel-1.png(6).png-0c942b2c1cea78410fa7cdb0defa7af6.ctex"]
+source_file="res://TestSprites/FullHeart.png"
+dest_files=["res://.godot/imported/FullHeart.png-32782cacc0517ee9239041225571498b.ctex"]
 
 [params]
 
