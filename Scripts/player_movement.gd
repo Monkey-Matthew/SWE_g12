@@ -118,4 +118,3 @@ func character_jump():
 		Jump.start(1)
 func _on_jump_timeout() -> void:
 	can_Jump = true
-	print("Jump ava")

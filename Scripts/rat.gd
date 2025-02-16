@@ -60,7 +60,7 @@ func _process(delta: float) -> void:
 
 	position = startingPosition + Vector2(x, y) 
 	
-	#print(Health.Player_health)
+	print(Health.player_health)
 	
 
 
