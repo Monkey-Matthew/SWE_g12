@@ -4,7 +4,7 @@ const SPEED = 5 #Movement Speed (Change to fit character movement)
 @onready var animated_sprite = $AnimatedSprite2D
 @export var sizeOfPath: float = 10.0
 @onready var POV = $"Point of View"
-
+@onready var rat_body = $CollisionShape2D
 var direction = -1
 var time: float = 0.0
 var startingPosition: Vector2
@@ -60,11 +60,8 @@ func _process(delta: float) -> void:
 
 	position = startingPosition + Vector2(x, y) 
 	
-#func _on_Area2D_body_entered(body):
-	#if body.name == "Player":
-		#print("Player entered POV");
-#func _on_POV_Exit(body):
-	#pass
+	#print(Health.player_health)
+	
 
 
 func _on_point_of_view_body_entered(body: Node2D) -> void:
@@ -74,3 +71,8 @@ func _on_point_of_view_body_entered(body: Node2D) -> void:
 func _on_point_of_view_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		print("Player exited POV");
+		
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		Health.player_health -= .25

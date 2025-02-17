@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmk2ma565qa4n"
-path="res://.godot/imported/PlayerRunUp.png-f88a88cddcd3a147b9c843349414a71d.ctex"
+uid="uid://kiayye7jkcpe"
+path="res://.godot/imported/QuaterHeart.png-f4a2331ce669d8719f98c1339e9b83d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestSprites/PlayerRunUp.png"
-dest_files=["res://.godot/imported/PlayerRunUp.png-f88a88cddcd3a147b9c843349414a71d.ctex"]
+source_file="res://Images/TestSprites/Heart/QuaterHeart.png"
+dest_files=["res://.godot/imported/QuaterHeart.png-f4a2331ce669d8719f98c1339e9b83d3.ctex"]
 
 [params]
 
