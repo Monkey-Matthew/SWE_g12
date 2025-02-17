@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://f78nwjqvyetd" path="res://Images/TestSprites/Rat Enemy/RightStand-1.png.png" id="1_2g4lq"]
 [ext_resource type="Texture2D" uid="uid://crya2b3wxrfdm" path="res://Images/TestSprites/Rat Enemy/LeftStand-1.png(1).png" id="1_4l4my"]
-[ext_resource type="Script" path="res://Scenes/rat.gd" id="1_dcd5s"]
+[ext_resource type="Script" path="res://Scripts/rat.gd" id="1_dcd5s"]
 [ext_resource type="Texture2D" uid="uid://cavp1jcufkina" path="res://Images/TestSprites/Rat Enemy/MoveLeft-1.png.png" id="2_05bj5"]
 [ext_resource type="Texture2D" uid="uid://cja6s76a7t64y" path="res://Images/TestSprites/Rat Enemy/MoveRight-1.png.png" id="2_b7mu8"]
 [ext_resource type="Texture2D" uid="uid://mu0r1rci1cp7" path="res://Images/TestSprites/Rat Enemy/BackSide1-1.png.png" id="5_ceehs"]

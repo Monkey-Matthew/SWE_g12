@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cq582o51dd62t" path="res://Scenes/Rat.tscn" id="7_agj4n"]
 [ext_resource type="PackedScene" uid="uid://cwtrar7iuhbek" path="res://Scenes/coin.tscn" id="8_yyxao"]
 [ext_resource type="Texture2D" uid="uid://dj3eyqo4pax3g" path="res://Images/TestSprites/Heart/FullHeart.png" id="9_gdril"]
-[ext_resource type="Script" path="res://Scenes/display_health.gd" id="9_v16vb"]
+[ext_resource type="Script" path="res://Scripts/display_health.gd" id="9_v16vb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqg0y"]
 texture = ExtResource("3_ofebl")
@@ -27,7 +27,6 @@ z_index = 1
 zoom = Vector2(12, 12)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="TestTileMap" type="TileMap" parent="."]
@@ -93,24 +92,6 @@ offset_bottom = 321.0
 [node name="Rat" parent="." instance=ExtResource("7_agj4n")]
 position = Vector2(-21, 0)
 
-[node name="Coin" parent="." instance=ExtResource("8_yyxao")]
-position = Vector2(-34, 25)
-
-[node name="Coin2" parent="." instance=ExtResource("8_yyxao")]
-position = Vector2(13, 17)
-
-[node name="Coin3" parent="." instance=ExtResource("8_yyxao")]
-position = Vector2(-22, -7)
-
-[node name="Coin4" parent="." instance=ExtResource("8_yyxao")]
-position = Vector2(19, -27)
-
-[node name="Coin5" parent="." instance=ExtResource("8_yyxao")]
-position = Vector2(-15, -20)
-
-[node name="Coin6" parent="." instance=ExtResource("8_yyxao")]
-position = Vector2(18, 35)
-
 [node name="Health" type="CanvasLayer" parent="."]
 script = ExtResource("9_v16vb")
 
@@ -128,3 +109,23 @@ texture = ExtResource("9_gdril")
 position = Vector2(226, 60)
 scale = Vector2(4, 4)
 texture = ExtResource("9_gdril")
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("8_yyxao")]
+position = Vector2(-34, 25)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("8_yyxao")]
+position = Vector2(13, 17)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("8_yyxao")]
+position = Vector2(-22, -7)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("8_yyxao")]
+position = Vector2(19, -27)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("8_yyxao")]
+position = Vector2(-15, -20)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("8_yyxao")]
+position = Vector2(18, 35)
