@@ -1,15 +1,15 @@
-[gd_scene load_steps=48 format=3 uid="uid://dkq3q6ui7o41a"]
+[gd_scene load_steps=47 format=3 uid="uid://dkq3q6ui7o41a"]
 
 [ext_resource type="Script" path="res://Scripts/player_movement.gd" id="1_36ycc"]
-[ext_resource type="Texture2D" uid="uid://ceimmv288ql7j" path="res://Images/luna_front_idle_nostar.png" id="2_14vgs"]
-[ext_resource type="Texture2D" uid="uid://6catbf2yscus" path="res://Images/luna_star_pullout.png" id="3_8o7du"]
-[ext_resource type="Texture2D" uid="uid://b05vlx4sljy6q" path="res://Images/luna_forward_walk.png" id="4_p20og"]
-[ext_resource type="Texture2D" uid="uid://b5rs0wk7s5gvo" path="res://Images/luna_left_idle.png" id="5_q4ten"]
-[ext_resource type="Texture2D" uid="uid://bl3qgb6hndl0o" path="res://Images/luna_left_walk.png" id="5_w5t8y"]
-[ext_resource type="Texture2D" uid="uid://c7oh6b7mxvpvq" path="res://Images/luna_right_idle.png" id="7_ws23t"]
-[ext_resource type="Texture2D" uid="uid://cab6bvcygodtx" path="res://Images/luna_right_walk.png" id="8_ihhqs"]
-[ext_resource type="Texture2D" uid="uid://5n5kojckkh7t" path="res://Images/luna_backward_idle.png" id="9_n1fgn"]
-[ext_resource type="Texture2D" uid="uid://bnpsjwp7fa14b" path="res://Images/luna_backward_walk.png" id="10_n42rn"]
+[ext_resource type="Texture2D" uid="uid://ceimmv288ql7j" path="res://Images/TestSprites/NewMainCharacter/luna_front_idle_nostar.png" id="2_14vgs"]
+[ext_resource type="Texture2D" uid="uid://6catbf2yscus" path="res://Images/TestSprites/NewMainCharacter/luna_star_pullout.png" id="3_8o7du"]
+[ext_resource type="Texture2D" uid="uid://b05vlx4sljy6q" path="res://Images/TestSprites/NewMainCharacter/luna_forward_walk.png" id="4_p20og"]
+[ext_resource type="Texture2D" uid="uid://b5rs0wk7s5gvo" path="res://Images/TestSprites/NewMainCharacter/luna_left_idle.png" id="5_q4ten"]
+[ext_resource type="Texture2D" uid="uid://bl3qgb6hndl0o" path="res://Images/TestSprites/NewMainCharacter/luna_left_walk.png" id="5_w5t8y"]
+[ext_resource type="Texture2D" uid="uid://c7oh6b7mxvpvq" path="res://Images/TestSprites/NewMainCharacter/luna_right_idle.png" id="7_ws23t"]
+[ext_resource type="Texture2D" uid="uid://cab6bvcygodtx" path="res://Images/TestSprites/NewMainCharacter/luna_right_walk.png" id="8_ihhqs"]
+[ext_resource type="Texture2D" uid="uid://5n5kojckkh7t" path="res://Images/TestSprites/NewMainCharacter/luna_backward_idle.png" id="9_n1fgn"]
+[ext_resource type="Texture2D" uid="uid://bnpsjwp7fa14b" path="res://Images/TestSprites/NewMainCharacter/luna_backward_walk.png" id="10_n42rn"]
 [ext_resource type="Texture2D" uid="uid://fq4qmkhx62qo" path="res://Images/light.png" id="10_puerf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cqmf8"]
@@ -287,13 +287,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kusnv"]
-size = Vector2(28.5, 43.5)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hi38y"]
-radius = 9.05539
+size = Vector2(22.5, 43)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-scale = Vector2(0.25, 0.25)
 collision_layer = 3
 script = ExtResource("1_36ycc")
 movement_speed = 20.0
@@ -317,14 +313,8 @@ texture = ExtResource("10_puerf")
 texture_scale = 0.4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 4)
+position = Vector2(-5.5, 4.5)
 shape = SubResource("RectangleShape2D_kusnv")
-
-[node name="HitBox" type="Area2D" parent="."]
-
-[node name="HBShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(-4, 0)
-shape = SubResource("CircleShape2D_hi38y")
 
 [node name="Jump" type="Timer" parent="."]
 one_shot = true

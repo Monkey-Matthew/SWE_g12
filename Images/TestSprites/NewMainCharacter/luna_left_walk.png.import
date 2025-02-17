@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6catbf2yscus"
-path="res://.godot/imported/luna_star_pullout.png-fb38afe2ce20b4071cd85bf56cb709f8.ctex"
+uid="uid://bl3qgb6hndl0o"
+path="res://.godot/imported/luna_left_walk.png-bb74cedfd2ed4e88bc0c034a67350d3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/luna_star_pullout.png"
-dest_files=["res://.godot/imported/luna_star_pullout.png-fb38afe2ce20b4071cd85bf56cb709f8.ctex"]
+source_file="res://Images/TestSprites/NewMainCharacter/luna_left_walk.png"
+dest_files=["res://.godot/imported/luna_left_walk.png-bb74cedfd2ed4e88bc0c034a67350d3b.ctex"]
 
 [params]
 
