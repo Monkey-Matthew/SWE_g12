@@ -311,7 +311,7 @@ scale = Vector2(0.453005, 0.411215)
 sprite_frames = SubResource("SpriteFrames_f8p70")
 animation = &"DownIdle"
 autoplay = "DownIdle"
-frame_progress = 0.358496
+frame_progress = 0.025905
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
