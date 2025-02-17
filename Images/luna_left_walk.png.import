@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cob0mllqpqa7w"
-path="res://.godot/imported/LeftIdle.png-b4a63d360980eaae6f562589746e4944.ctex"
+uid="uid://bl3qgb6hndl0o"
+path="res://.godot/imported/luna_left_walk.png-b13307137e8337a749c574216baf4cf4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/TestSprites/MainCharacter/LeftIdle.png"
-dest_files=["res://.godot/imported/LeftIdle.png-b4a63d360980eaae6f562589746e4944.ctex"]
+source_file="res://Images/luna_left_walk.png"
+dest_files=["res://.godot/imported/luna_left_walk.png-b13307137e8337a749c574216baf4cf4.ctex"]
 
 [params]
 
