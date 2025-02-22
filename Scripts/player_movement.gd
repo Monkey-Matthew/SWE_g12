@@ -112,7 +112,7 @@ func _ready(): # Placement of this might be a bit weird.
 	Reload.timeout.connect(_on_reload_timeout)
 
 #invicible frames
-func _on_IFrameTimer_timeout() -> void:
+func _on_IFrameTimer_timeout() -> void: # This timer starts the moment the space bar is pressed.
 	print("No longer invicible to traps.") # This can be commented out. This is so we know when the jump has ended, since we've no sprite animation for it yet.
 	invulnerable = false # Player can now be harmed/die.
 
@@ -121,7 +121,7 @@ func character_jump():
 	if Input.is_action_just_pressed("jump"):
 		print("Space is hit.") # Was just making sure the input was being read.
 		invulnerable = true # Player cannot be harmed/die.
-		invulnerable_timer.start() 
+		invulnerable_timer.start() # Invulnerability timer begins.
 		can_Jump = false
 		print("Jump cooldown")
 		Jump.start(1)
