@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 """
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Player" and not body.invulnerable and body.can_Jump:
+	if body.name == "Player" and not body.invulnerable:
 		Health.player_health -= 1 #Change later
 		# playerDied = true  I suspect we may need this later.
 		pass
