@@ -124,8 +124,8 @@ func character_jump():
 		invulnerable_timer.start() # Invulnerability timer begins.
 		can_Jump = false
 		print("Jump cooldown")
-		Jump.start(1)
-
+		Jump.start(3)
+ 
 #Enables jump again
 func _on_jump_timeout() -> void:
 	can_Jump = true
