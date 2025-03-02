@@ -304,6 +304,7 @@ animations = [{
 size = Vector2(22.75, 40)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+scale = Vector2(0.75, 0.75)
 collision_layer = 3
 script = ExtResource("1_36ycc")
 movement_speed = 20.0

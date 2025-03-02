@@ -19,15 +19,18 @@ texture = ExtResource("3_ofebl")
 sources/0 = SubResource("TileSetAtlasSource_uqg0y")
 
 [node name="GameScene" type="Node2D"]
+position = Vector2(-1, -2)
 
 [node name="Player" parent="." instance=ExtResource("1_ba1o1")]
 z_index = 1
+position = Vector2(-5, -20)
 movement_speed = 100.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="TestTileMap" type="TileMap" parent="."]
@@ -84,10 +87,10 @@ scale = Vector2(1, 1)
 [node name="PauseCanvas" type="CanvasLayer" parent="."]
 
 [node name="CenterContainer" type="CenterContainer" parent="PauseCanvas"]
-offset_left = -43.0
-offset_top = -10.0
-offset_right = -3.0
-offset_bottom = 30.0
+offset_left = -29.0
+offset_top = -13.0
+offset_right = 11.0
+offset_bottom = 27.0
 
 [node name="Control" type="Control" parent="PauseCanvas/CenterContainer"]
 layout_mode = 2
@@ -101,7 +104,7 @@ offset_right = 595.0
 offset_bottom = 321.0
 
 [node name="Rat" parent="." instance=ExtResource("7_agj4n")]
-position = Vector2(-156, 20)
+position = Vector2(-132, -11)
 scale = Vector2(4, 4)
 
 [node name="Health" type="CanvasLayer" parent="."]
