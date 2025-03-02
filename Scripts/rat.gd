@@ -21,12 +21,10 @@ func _process(delta: float) -> void:
 	# Square Movement
 	var x = 0.0
 	var y = 0.0
-
 	#Determines the start location
 	var phase = int(time / sizeOfPath) % 4
-
 	#How position of where on the location it spawn at.
-	var progress = fposmod(time, sizeOfP
+	var progress = fposmod(time, sizeOfPath)
 	
 	if phase == 0:
 		#Move Right
