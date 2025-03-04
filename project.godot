@@ -18,6 +18,7 @@ config/icon="res://Images/icon.svg"
 [autoload]
 
 Health="*res://Scripts/health.gd"
+CoinSystem="*res://Scripts/coin_system.gd"
 
 [display]
 

@@ -81,9 +81,9 @@ func _physics_process(delta: float) -> void:
 				if animated_sprite.animation != "LeftRun":
 					animated_sprite.play("LeftRun")
 					direction_facing = "Left"
-	else:
-		# Stops the movement gradually
-		velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
+		else:
+			# Stops the movement gradually
+			velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
 
 	# When there is no movement, switch to idle animation depending on the direction the player was last facing
 	if velocity == Vector2.ZERO:
