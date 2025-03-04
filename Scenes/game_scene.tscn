@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=32 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="2_00kki"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cwtrar7iuhbek" path="res://Scenes/coin.tscn" id="8_yyxao"]
 [ext_resource type="Texture2D" uid="uid://dj3eyqo4pax3g" path="res://Images/TestSprites/Heart/FullHeart.png" id="9_gdril"]
 [ext_resource type="Script" path="res://Scripts/display_health.gd" id="9_v16vb"]
+[ext_resource type="Texture2D" uid="uid://dwn1wsccnn4fs" path="res://Images/SingleCoin.png" id="13_cciqu"]
+[ext_resource type="Script" path="res://Scripts/display_coins.gd" id="13_te3rs"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8whcr"]
 
@@ -246,6 +248,22 @@ texture = ExtResource("9_gdril")
 position = Vector2(226, 60)
 scale = Vector2(4, 4)
 texture = ExtResource("9_gdril")
+
+[node name="CoinDisplay" type="CanvasLayer" parent="."]
+script = ExtResource("13_te3rs")
+
+[node name="Sprite2D" type="Sprite2D" parent="CoinDisplay"]
+position = Vector2(1020, 45)
+scale = Vector2(4, 4)
+texture = ExtResource("13_cciqu")
+
+[node name="CoinLabel" type="Label" parent="CoinDisplay"]
+offset_left = 1059.0
+offset_top = 4.0
+offset_right = 1145.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 50
+text = "100"
 
 [node name="Coins" type="Node" parent="."]
 

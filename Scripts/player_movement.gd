@@ -105,6 +105,7 @@ func _physics_process(delta: float) -> void:
 	#Checks to see if character died
 	if(Health.player_health <= 0):
 		Health.player_health = 0.01
+		CoinSystem.player_coins = 0
 		Reload.start()
 		
 
