@@ -12,73 +12,75 @@ var direction_facing: String # Store a string depending on the last direction th
 var invulnerable: bool = false 
 var can_Jump: bool = true #Stop spamming jumping
 
-func _physics_process(delta: float) -> void:
-	#Update movement direction
-	character_direction.x = Input.get_axis("left", "right")  # -1 for "left", 1 for "right" Gets input from left and right input
-	character_direction.y = Input.get_axis("up", "down")  # -1 for "up", 1 for "down" Gets input from up and down input
-	character_direction = character_direction.normalized()  # Normalize the direction for consistent speed
-															# (Used to stop diagonal movement from going twice as fast)
-	#Checks to see if jump is true
-	if can_Jump:
-		character_jump() # Jump function.
-	# Only updates velocity if there's input
-	if character_direction != Vector2.ZERO:
-		velocity = character_direction * movement_speed # Multiplies the movement speed by the direction to dtermine the velocity
+@onready var pause_script = get_node("/root/GameScene/PauseCanvas/CenterContainer/Control") #Reference to pause menu script
 
-	# Play appropriate animation based on direction
-		if character_direction.x < 0 and character_direction.y > 0: # Down and left (Movement)
-			if(rand_direction <= 0.5):
-				if animated_sprite.animation != "LeftRun": # If the animation isnt already playing then play animation
-					animated_sprite.play("LeftRun")
-					direction_facing = "Left" #Last direction facing 
-			else:
+func _physics_process(delta: float) -> void:
+	if not pause_script.paused: #Checks to see if the game is paused (if it is no movement can occur or changing direction
+		#Update movement direction
+		character_direction.x = Input.get_axis("left", "right")  # -1 for "left", 1 for "right" Gets input from left and right input
+		character_direction.y = Input.get_axis("up", "down")  # -1 for "up", 1 for "down" Gets input from up and down input
+		character_direction = character_direction.normalized()  # Normalize the direction for consistent speed
+																# (Used to stop diagonal movement from going twice as fast)
+		#Checks to see if jump is true
+		if can_Jump:
+			character_jump() # Jump function.
+		# Only updates velocity if there's input
+		if character_direction != Vector2.ZERO:
+			velocity = character_direction * movement_speed # Multiplies the movement speed by the direction to dtermine the velocity
+
+		# Play appropriate animation based on direction
+			if character_direction.x < 0 and character_direction.y > 0: # Down and left (Movement)
+				if(rand_direction <= 0.5):
+					if animated_sprite.animation != "LeftRun": # If the animation isnt already playing then play animation
+						animated_sprite.play("LeftRun")
+						direction_facing = "Left" #Last direction facing 
+				else:
+					if animated_sprite.animation != "DownRun":
+						animated_sprite.play("DownRun")
+						direction_facing = "Down"
+			elif character_direction.x < 0 and character_direction.y < 0:  # Up and left (Movmement)
+				if(rand_direction <= 0.5):
+					if animated_sprite.animation != "LeftRun":
+						animated_sprite.play("LeftRun")
+						direction_facing = "Left"
+				else:
+					if animated_sprite.animation != "UpRun":
+						animated_sprite.play("UpRun")
+						direction_facing = "Up"
+			elif character_direction.x > 0 and character_direction.y > 0:  # Down and right (Movement)
+				if(rand_direction <= 0.5):
+					if animated_sprite.animation != "RightRun":
+						animated_sprite.play("RightRun")
+						direction_facing = "Right"
+				else:
+					if animated_sprite.animation != "DownRun":
+						animated_sprite.play("DownRun")
+						direction_facing = "Down"
+			elif character_direction.x > 0 and character_direction.y < 0:  # Up and right (Movement)
+				if(rand_direction <= 0.5):
+					if animated_sprite.animation != "RightRun":
+						animated_sprite.play("RightRun")
+						direction_facing = "Right"
+				else:
+					if animated_sprite.animation != "UpRun":
+						animated_sprite.play("UpRun")
+						direction_facing = "Up"
+			elif character_direction.y > 0:  # Down (Movement)
 				if animated_sprite.animation != "DownRun":
 					animated_sprite.play("DownRun")
 					direction_facing = "Down"
-		elif character_direction.x < 0 and character_direction.y < 0:  # Up and left (Movmement)
-			if(rand_direction <= 0.5):
+			elif character_direction.y < 0:  # Up (Movement)
+				if animated_sprite.animation != "UpRun":
+					animated_sprite.play("UpRun")
+					direction_facing = "Up"
+			elif character_direction.x > 0:  # Right (Movement)
+				if animated_sprite.animation != "RightRun":
+					animated_sprite.play("RightRun")
+					direction_facing = "Right"
+			elif character_direction.x < 0:  # Left (Movement)
 				if animated_sprite.animation != "LeftRun":
 					animated_sprite.play("LeftRun")
 					direction_facing = "Left"
-			else:
-				if animated_sprite.animation != "UpRun":
-					animated_sprite.play("UpRun")
-					direction_facing = "Up"
-		elif character_direction.x > 0 and character_direction.y > 0:  # Down and right (Movement)
-			if(rand_direction <= 0.5):
-				if animated_sprite.animation != "RightRun":
-					animated_sprite.play("RightRun")
-					direction_facing = "Right"
-			else:
-				if animated_sprite.animation != "DownRun":
-					animated_sprite.play("DownRun")
-					direction_facing = "Down"
-		elif character_direction.x > 0 and character_direction.y < 0:  # Up and right (Movement)
-			if(rand_direction <= 0.5):
-				if animated_sprite.animation != "RightRun":
-					animated_sprite.play("RightRun")
-					direction_facing = "Right"
-			else:
-				if animated_sprite.animation != "UpRun":
-					animated_sprite.play("UpRun")
-					direction_facing = "Up"
-		elif character_direction.y > 0:  # Down (Movement)
-			if animated_sprite.animation != "DownRun":
-				animated_sprite.play("DownRun")
-				direction_facing = "Down"
-		elif character_direction.y < 0:  # Up (Movement)
-			if animated_sprite.animation != "UpRun":
-				animated_sprite.play("UpRun")
-				direction_facing = "Up"
-		elif character_direction.x > 0:  # Right (Movement)
-			if animated_sprite.animation != "RightRun":
-				animated_sprite.play("RightRun")
-				direction_facing = "Right"
-		elif character_direction.x < 0:  # Left (Movement)
-			if animated_sprite.animation != "LeftRun":
-				animated_sprite.play("LeftRun")
-				direction_facing = "Left"
-
 	else:
 		# Stops the movement gradually
 		velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
