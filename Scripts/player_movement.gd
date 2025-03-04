@@ -12,7 +12,7 @@ var direction_facing: String # Store a string depending on the last direction th
 var invulnerable: bool = false 
 var can_Jump: bool = true #Stop spamming jumping
 
-@onready var pause_script = get_node("/root/GameScene/PauseCanvas/CenterContainer/Control") #Reference to pause menu script
+@onready var pause_script = get_node("/root/GameScene/Canvases/PauseCanvas/CenterContainer/Control") #Reference to pause menu script
 
 func _physics_process(delta: float) -> void:
 	if not pause_script.paused: #Checks to see if the game is paused (if it is no movement can occur or changing direction
