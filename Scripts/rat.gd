@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 5 #Movement Speed (Change to fit character movement)
+@export var speed = 5 #Movement Speed (Change to fit character movement)
 @onready var animated_sprite = $AnimatedSprite2D
 @export var sizeOfPath: float = 10.0
 @onready var POV = $"Point of View"
@@ -11,12 +11,12 @@ var startingPosition: Vector2
 
 func _ready() -> void:
 	startingPosition  = position
-	time += SPEED+ (randf() * 100)
+	time += speed+ (randf() * 100)
 	
 
 func _process(delta: float) -> void:
 	
-	time += delta * SPEED 
+	time += delta * speed
 
 	# Square Movement
 	var x = 0.0

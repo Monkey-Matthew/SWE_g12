@@ -105,7 +105,6 @@ func _physics_process(delta: float) -> void:
 	#Checks to see if character died
 	if(Health.player_health <= 0):
 		Health.player_health = 0.01
-		CoinSystem.player_coins = 0
 		Reload.start()
 		
 
@@ -137,3 +136,4 @@ func _on_jump_timeout() -> void:
 func _on_reload_timeout() -> void:
 	get_tree().reload_current_scene()
 	Health.player_health = 3
+	CoinSystem.player_coins = 0
