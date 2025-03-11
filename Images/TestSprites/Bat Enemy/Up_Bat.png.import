@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5n5kojckkh7t"
-path="res://.godot/imported/luna_backward_idle.png-b9c25f4b7b5646feee4dae501738f712.ctex"
+uid="uid://3yvb4xd8kgag"
+path="res://.godot/imported/Up_Bat.png-90287c23dd4547990e7c80e8cdf210e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/TestSprites/NewMainCharacter/luna_backward_idle.png"
-dest_files=["res://.godot/imported/luna_backward_idle.png-b9c25f4b7b5646feee4dae501738f712.ctex"]
+source_file="res://Images/TestSprites/Bat Enemy/Up_Bat.png"
+dest_files=["res://.godot/imported/Up_Bat.png-90287c23dd4547990e7c80e8cdf210e9.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cab6bvcygodtx"
-path="res://.godot/imported/luna_right_walk.png-e60921cdb0f00eb8eb1a62f96a2133a9.ctex"
+uid="uid://bnpsjwp7fa14b"
+path="res://.godot/imported/luna_backward_walk.png-872cf408f7e44963135b065a5edd1748.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/TestSprites/NewMainCharacter/luna_right_walk.png"
-dest_files=["res://.godot/imported/luna_right_walk.png-e60921cdb0f00eb8eb1a62f96a2133a9.ctex"]
+source_file="res://Images/TestSprites/Luna/luna_backward_walk.png"
+dest_files=["res://.godot/imported/luna_backward_walk.png-872cf408f7e44963135b065a5edd1748.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7oh6b7mxvpvq"
-path="res://.godot/imported/luna_right_idle.png-786f2a51af931ea3d3b2da2e400aceca.ctex"
+uid="uid://cm8knxskqspck"
+path="res://.godot/imported/Right_Bat.png-80868d8cbf054e0647c50ac33e71be9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/TestSprites/NewMainCharacter/luna_right_idle.png"
-dest_files=["res://.godot/imported/luna_right_idle.png-786f2a51af931ea3d3b2da2e400aceca.ctex"]
+source_file="res://Images/TestSprites/Bat Enemy/Right_Bat.png"
+dest_files=["res://.godot/imported/Right_Bat.png-80868d8cbf054e0647c50ac33e71be9c.ctex"]
 
 [params]
 

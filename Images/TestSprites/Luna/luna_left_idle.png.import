@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceimmv288ql7j"
-path="res://.godot/imported/luna_front_idle_nostar.png-eac866faff7f80577c485df17a4e550d.ctex"
+uid="uid://b5rs0wk7s5gvo"
+path="res://.godot/imported/luna_left_idle.png-459b4342c81e1fd9a313c8d7175169ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/TestSprites/NewMainCharacter/luna_front_idle_nostar.png"
-dest_files=["res://.godot/imported/luna_front_idle_nostar.png-eac866faff7f80577c485df17a4e550d.ctex"]
+source_file="res://Images/TestSprites/Luna/luna_left_idle.png"
+dest_files=["res://.godot/imported/luna_left_idle.png-459b4342c81e1fd9a313c8d7175169ef.ctex"]
 
 [params]
 
