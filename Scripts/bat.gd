@@ -5,15 +5,17 @@ var SPEED = 15 #Movement Speed (Change to fit character movement)
 @export var sizeOfPath: float = 40.0
 @onready var POV = $Point
 @onready var target = $"../Player"
-var direction = -1
+var projectile_direction: Vector2
 var time: float = 0.0
 var startingPosition: Vector2
 var is_following_player: bool = false
 
+@onready var main = get_tree().get_root().get_node("GameScene")
+@onready var projectile = load("res://Scripts/bat_projectile.tscn")
 func _ready() -> void:
 	startingPosition  = position
 	time += SPEED+ (randf() * 100)
-	
+	shoot()
 
 func _process(delta: float) -> void:
 	
@@ -21,6 +23,7 @@ func _process(delta: float) -> void:
 	#follows the charcter
 	if is_following_player and target:
 		var direction =(target.position-position).normalized()
+		projectile_direction = direction;
 		velocity = direction * SPEED
 		if abs(direction.x) > abs(direction.y):
 			# Moving left or right
@@ -99,3 +102,18 @@ func _on_point_body_exited(body: Node2D) -> void:
 func _on_body_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		Health.player_health -= .25
+
+func shoot():
+	if projectile_direction == Vector2.ZERO:
+		print("Not shooting, direction is zero!")
+		return  # Don't shoot if the bat isn't moving
+
+	var instance = projectile.instantiate()
+	instance.dir = projectile_direction  # Set the projectile's direction to the bat's direction (Vector2)
+	instance.spawnPos = global_position  # Set the spawn position
+	instance.spawnRot = rotation  # Optionally, if you need to set the rotation of the projectile
+	main.add_child.call_deferred(instance)
+
+
+func _on_projectile_cooldown_timeout():
+	shoot()
