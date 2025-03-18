@@ -15,6 +15,9 @@ var projectile_path = preload("res://Scenes//star_projectile.tscn")
 
 @onready var pause_script = get_node("/root/GameScene/Canvases/PauseCanvas/CenterContainer/Control") #Reference to pause menu script
 
+@onready var attack_cooldown: Timer = $AttackCooldown
+var can_attack: bool = true
+
 func _physics_process(delta: float) -> void:
 	if not pause_script.paused: #Checks to see if the game is paused (if it is no movement can occur or changing direction
 		#Update movement direction
@@ -112,10 +115,12 @@ func _physics_process(delta: float) -> void:
 	if(Input.is_action_just_pressed("attack")):
 		shootProjectile()
 
-func _ready(): # Placement of this might be a bit weird.
+func _ready():
 	invulnerable_timer.timeout.connect(_on_IFrameTimer_timeout)  
 	Jump.timeout.connect(_on_jump_timeout)
 	Reload.timeout.connect(_on_reload_timeout)
+	attack_cooldown.timeout.connect(_on_attack_cooldown_timeout)
+
 
 #invicible frames
 func _on_IFrameTimer_timeout() -> void: # This timer starts the moment the space bar is pressed.
@@ -143,6 +148,12 @@ func _on_reload_timeout() -> void:
 	CoinSystem.player_coins = 0
 
 func shootProjectile():
+	if not can_attack:
+		return
+		
+	can_attack = false  #Prevent spamming
+	attack_cooldown.start()  #Start the cooldown timer
+	
 	#Instance of projectile
 	var projectile = projectile_path.instantiate()
 	
@@ -171,3 +182,6 @@ func shootProjectile():
 	
 	#Add the projectile to the scene
 	get_tree().current_scene.add_child(projectile)
+
+func _on_attack_cooldown_timeout():
+	can_attack = true
