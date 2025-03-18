@@ -143,31 +143,31 @@ func _on_reload_timeout() -> void:
 	CoinSystem.player_coins = 0
 
 func shootProjectile():
-	# Create the projectile instance
+	#Instance of projectile
 	var projectile = projectile_path.instantiate()
 	
-	# Get the mouse position in global coordinates
+	#Get mouse position
 	var mouse_position = get_global_mouse_position()
 	
-	# Calculate the direction from the player to the mouse position
+	#Calculates the direction from the player to the mouse position
 	var direction_to_mouse = (mouse_position - global_position).normalized()
 	
-	# Dynamically determine spawn offset based on player's collision size
-	var player_collision = $CollisionShape2D.shape  # Ensure you have a CollisionShape2D node
-	var base_spawn_distance = player_collision.get_rect().size.length() / 2 + 5  # Adjust base buffer
+	#Spawn offset
+	var player_collision = $CollisionShape2D.shape 
+	var base_spawn_distance = player_collision.get_rect().size.length() / 2 + 5  
 	var spawn_offset = direction_to_mouse * base_spawn_distance  
 	
-	# If shooting downward, apply additional spacing
+	#Addition space for shooting down
 	if direction_to_mouse.y > 0:  
-		spawn_offset += Vector2(0, 8)  # Extra downward offset
+		spawn_offset += Vector2(0, 8)  #Extra offset
 	
 	projectile.position = global_position + spawn_offset
 	
-	# Assign direction to projectile
+	#Assign direction to projectile
 	projectile.direction = direction_to_mouse  
 	
-	# Rotate the projectile to face the direction it's moving
+	#Rotate the projectile
 	projectile.rotation = direction_to_mouse.angle()
 	
-	# Add the projectile to the scene
+	#Add the projectile to the scene
 	get_tree().current_scene.add_child(projectile)

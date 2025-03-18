@@ -19,6 +19,7 @@ config/icon="res://Images/icon.svg"
 
 Health="*res://Scripts/health.gd"
 CoinSystem="*res://Scripts/coin_system.gd"
+EnemyHealth="*res://Scripts/enemy_health.gd"
 
 [display]
 

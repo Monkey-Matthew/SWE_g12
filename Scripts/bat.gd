@@ -11,7 +11,7 @@ var startingPosition: Vector2
 var is_following_player: bool = false
 
 @onready var main = get_tree().get_root().get_node("GameScene")
-@onready var projectile = load("res://Scripts/bat_projectile.tscn")
+@onready var projectile = load("res://Scenes/bat_projectile.tscn")
 func _ready() -> void:
 	startingPosition  = position
 	time += SPEED+ (randf() * 100)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq582o51dd62t"]
+[gd_scene load_steps=11 format=3 uid="uid://cq582o51dd62t"]
 
 [ext_resource type="Texture2D" uid="uid://f78nwjqvyetd" path="res://Images/TestSprites/Rat Enemy/RightStand-1.png.png" id="1_2g4lq"]
 [ext_resource type="Texture2D" uid="uid://crya2b3wxrfdm" path="res://Images/TestSprites/Rat Enemy/LeftStand-1.png(1).png" id="1_4l4my"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cja6s76a7t64y" path="res://Images/TestSprites/Rat Enemy/MoveRight-1.png.png" id="2_b7mu8"]
 [ext_resource type="Texture2D" uid="uid://mu0r1rci1cp7" path="res://Images/TestSprites/Rat Enemy/BackSide1-1.png.png" id="5_ceehs"]
 [ext_resource type="Texture2D" uid="uid://df5yjmb8i0d2g" path="res://Images/TestSprites/Rat Enemy/BackSide2-1.png.png" id="6_ktwyr"]
+[ext_resource type="Script" path="res://Scripts/enemy_health.gd" id="8_evax2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s8v5g"]
 animations = [{
@@ -91,6 +92,10 @@ shape = SubResource("RectangleShape2D_vpcui")
 position = Vector2(-0.1, -2)
 scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_vpcui")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("8_evax2")
+max_health = 100
 
 [connection signal="body_entered" from="Point of View" to="." method="_on_point_of_view_body_entered"]
 [connection signal="body_exited" from="Point of View" to="." method="_on_point_of_view_body_exited"]
