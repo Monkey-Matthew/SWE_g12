@@ -1,11 +1,11 @@
 extends Area2D
 
-@export var damageAmount: float
+@export var damage_amount: float
 var playerInside: bool = false
 
 func _process(delta: float) -> void:
 	if playerInside == true:
-		Health.player_health -= damageAmount
+		Health.take_damage(damage_amount)
 		
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and not body.invulnerable:

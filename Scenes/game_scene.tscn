@@ -307,17 +307,17 @@ text = "100"
 [node name="DamageArea5" parent="ThornsDamageAreas" instance=ExtResource("8_oqbt0")]
 position = Vector2(48, -149)
 scale = Vector2(1.44, 1.48)
-damageAmount = 0.25
+damage_amount = 0.25
 
 [node name="DamageArea6" parent="ThornsDamageAreas" instance=ExtResource("8_oqbt0")]
 position = Vector2(-32, -37)
 scale = Vector2(1.44, 1.48)
-damageAmount = 0.25
+damage_amount = 0.25
 
 [node name="DamageArea7" parent="ThornsDamageAreas" instance=ExtResource("8_oqbt0")]
 position = Vector2(64, 123)
 scale = Vector2(1.44, 1.48)
-damageAmount = 0.25
+damage_amount = 0.25
 
 [node name="Bat" parent="." instance=ExtResource("19_rmght")]
 position = Vector2(-52, 49)
