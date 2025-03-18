@@ -192,6 +192,7 @@ position = Vector2(-5, -20)
 zoom = Vector2(4, 4)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Fireflies" type="Node" parent="."]
