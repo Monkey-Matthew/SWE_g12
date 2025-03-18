@@ -59,7 +59,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpcui"]
 size = Vector2(3.81818, 5.45455)
 
-[node name="Rat" type="CharacterBody2D"]
+[node name="Rat" type="CharacterBody2D" groups=["enemies"]]
 z_index = 1
 y_sort_enabled = true
 collision_mask = 3

@@ -192,7 +192,6 @@ position = Vector2(-5, -20)
 zoom = Vector2(4, 4)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Fireflies" type="Node" parent="."]
@@ -319,12 +318,12 @@ position = Vector2(64, 123)
 scale = Vector2(1.44, 1.48)
 damageAmount = 0.25
 
-[node name="Bat" parent="." groups=["bats"] instance=ExtResource("19_rmght")]
+[node name="Bat" parent="." instance=ExtResource("19_rmght")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-52, 49)
 
-[node name="Bat2" parent="." groups=["bats"] instance=ExtResource("19_rmght")]
+[node name="Bat2" parent="." instance=ExtResource("19_rmght")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(42, -34)

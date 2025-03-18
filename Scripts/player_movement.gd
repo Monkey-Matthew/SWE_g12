@@ -11,6 +11,7 @@ var rand_direction = randf() # Chooses a random number between 0 and 1 in decima
 var direction_facing: String # Store a string depending on the last direction the character was facing (Left, Right, Up, Down)
 var invulnerable: bool = false 
 var can_Jump: bool = true #Stop spamming jumping
+var projectile_path = preload("res://Scenes//star_projectile.tscn")
 
 @onready var pause_script = get_node("/root/GameScene/Canvases/PauseCanvas/CenterContainer/Control") #Reference to pause menu script
 
@@ -27,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		# Only updates velocity if there's input
 		if character_direction != Vector2.ZERO:
 			velocity = character_direction * movement_speed # Multiplies the movement speed by the direction to dtermine the velocity
-
+		
 		# Play appropriate animation based on direction
 			if character_direction.x < 0 and character_direction.y > 0: # Down and left (Movement)
 				if(rand_direction <= 0.5):
@@ -106,7 +107,10 @@ func _physics_process(delta: float) -> void:
 	if(Health.player_health <= 0):
 		Health.player_health = 0.01
 		Reload.start()
-		
+	
+	#look_at(get_global_mouse_position())
+	if(Input.is_action_just_pressed("attack")):
+		shootProjectile()
 
 func _ready(): # Placement of this might be a bit weird.
 	invulnerable_timer.timeout.connect(_on_IFrameTimer_timeout)  
@@ -137,3 +141,33 @@ func _on_reload_timeout() -> void:
 	get_tree().reload_current_scene()
 	Health.player_health = 3
 	CoinSystem.player_coins = 0
+
+func shootProjectile():
+	# Create the projectile instance
+	var projectile = projectile_path.instantiate()
+	
+	# Get the mouse position in global coordinates
+	var mouse_position = get_global_mouse_position()
+	
+	# Calculate the direction from the player to the mouse position
+	var direction_to_mouse = (mouse_position - global_position).normalized()
+	
+	# Dynamically determine spawn offset based on player's collision size
+	var player_collision = $CollisionShape2D.shape  # Ensure you have a CollisionShape2D node
+	var base_spawn_distance = player_collision.get_rect().size.length() / 2 + 5  # Adjust base buffer
+	var spawn_offset = direction_to_mouse * base_spawn_distance  
+	
+	# If shooting downward, apply additional spacing
+	if direction_to_mouse.y > 0:  
+		spawn_offset += Vector2(0, 8)  # Extra downward offset
+	
+	projectile.position = global_position + spawn_offset
+	
+	# Assign direction to projectile
+	projectile.direction = direction_to_mouse  
+	
+	# Rotate the projectile to face the direction it's moving
+	projectile.rotation = direction_to_mouse.angle()
+	
+	# Add the projectile to the scene
+	get_tree().current_scene.add_child(projectile)

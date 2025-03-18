@@ -105,7 +105,6 @@ func _on_body_body_entered(body: Node2D) -> void:
 
 func shoot():
 	if projectile_direction == Vector2.ZERO:
-		print("Not shooting, direction is zero!")
 		return  # Don't shoot if the bat isn't moving
 
 	var instance = projectile.instantiate()

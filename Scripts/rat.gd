@@ -80,7 +80,6 @@ func _process(delta: float) -> void:
 
 		position = startingPosition + Vector2(x, y) 
 	move_and_slide()
-	#print(Health.player_health)
 	
 
 
