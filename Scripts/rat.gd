@@ -11,6 +11,8 @@ var time: float = 0.0
 var startingPosition: Vector2
 var is_following_player: bool = false
 
+@export var damage_amount = .5
+
 func _ready() -> void:
 	startingPosition  = position
 	time += SPEED+ (randf() * 100)
@@ -97,4 +99,4 @@ func _on_point_of_view_body_exited(body: Node2D) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		Health.player_health -= .25
+		Health.take_damage(damage_amount)

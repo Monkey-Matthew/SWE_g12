@@ -9,6 +9,7 @@ var projectile_direction: Vector2
 var time: float = 0.0
 var startingPosition: Vector2
 var is_following_player: bool = false
+@export var damage_amount = .5
 
 @onready var main = get_tree().get_root().get_node("GameScene")
 @onready var projectile = load("res://Scenes/bat_projectile.tscn")
@@ -101,7 +102,7 @@ func _on_point_body_exited(body: Node2D) -> void:
 
 func _on_body_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		Health.player_health -= .25
+		Health.take_damage(damage_amount)
 
 func shoot():
 	if projectile_direction == Vector2.ZERO:
