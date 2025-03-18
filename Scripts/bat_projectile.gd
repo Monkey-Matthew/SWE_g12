@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var SPEED = 300  # Speed of the projectile
+@export var SPEED = 150  # Speed of the projectile
 
 var dir : Vector2  # Make dir a Vector2 to store the direction
 var spawnPos : Vector2

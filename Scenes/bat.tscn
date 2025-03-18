@@ -86,7 +86,7 @@ size = Vector2(99, 70)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgc4h"]
 size = Vector2(88, 64)
 
-[node name="Bat" type="CharacterBody2D"]
+[node name="Bat" type="CharacterBody2D" groups=["bats", "enemies"]]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_n10ms")
 
