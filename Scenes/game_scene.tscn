@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=42 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="2_00kki"]
@@ -17,6 +17,9 @@
 [ext_resource type="Script" path="res://Scripts/display_health.gd" id="9_v16vb"]
 [ext_resource type="Texture2D" uid="uid://dwn1wsccnn4fs" path="res://Images/Random/SingleCoin.png" id="13_cciqu"]
 [ext_resource type="Script" path="res://Scripts/display_coins.gd" id="13_te3rs"]
+[ext_resource type="Script" path="res://Scripts/display_key.gd" id="16_gti4l"]
+[ext_resource type="Texture2D" uid="uid://ccek3rrynbabe" path="res://Images/Random/Key.png" id="16_nyn03"]
+[ext_resource type="PackedScene" uid="uid://do06pfcy3bssv" path="res://Scenes/key.tscn" id="19_3wm5f"]
 [ext_resource type="PackedScene" uid="uid://dydvyavc8xl03" path="res://Scenes/bat.tscn" id="19_rmght"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8whcr"]
@@ -270,6 +273,15 @@ offset_bottom = 73.0
 theme_override_font_sizes/font_size = 50
 text = "100"
 
+[node name="KeyDisplay" type="CanvasLayer" parent="Canvases"]
+script = ExtResource("16_gti4l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Canvases/KeyDisplay"]
+visible = false
+position = Vector2(931, 43)
+scale = Vector2(5, 5)
+texture = ExtResource("16_nyn03")
+
 [node name="ThornsDamageAreas" type="Node" parent="."]
 
 [node name="DamageArea5" parent="ThornsDamageAreas" instance=ExtResource("8_oqbt0")]
@@ -303,3 +315,6 @@ position = Vector2(-18, -78)
 [node name="Rat" parent="Enemies" instance=ExtResource("7_agj4n")]
 position = Vector2(-133, -13)
 scale = Vector2(4, 4)
+
+[node name="key" parent="." instance=ExtResource("19_3wm5f")]
+position = Vector2(25, 12)
