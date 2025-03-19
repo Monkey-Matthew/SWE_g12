@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Scripts/coin.gd" id="1_1lle8"]
 [ext_resource type="Texture2D" uid="uid://dglt5vbuy37no" path="res://Images/Random/coin2_20x20.png" id="2_tigfk"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_an7cj"]
 atlas = ExtResource("2_tigfk")
 region = Rect2(0, 0, 20, 20)
@@ -79,6 +78,7 @@ animations = [{
 size = Vector2(2, 2)
 
 [node name="coin" type="Area2D"]
+scale = Vector2(2.5, 2.5)
 collision_mask = 2
 script = ExtResource("1_1lle8")
 

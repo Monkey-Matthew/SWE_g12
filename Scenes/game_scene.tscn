@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=39 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="2_00kki"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bvsnpxjffsdcl" path="res://Images/OutdoorTiles/Thorns3.png" id="6_vm58o"]
 [ext_resource type="PackedScene" uid="uid://cq582o51dd62t" path="res://Scenes/Rat.tscn" id="7_agj4n"]
 [ext_resource type="PackedScene" uid="uid://dmlug1m8641y0" path="res://Scenes/damage_area.tscn" id="8_oqbt0"]
-[ext_resource type="PackedScene" uid="uid://cwtrar7iuhbek" path="res://Scenes/coin.tscn" id="8_yyxao"]
 [ext_resource type="Texture2D" uid="uid://dj3eyqo4pax3g" path="res://Images/TestSprites/Heart/FullHeart.png" id="9_gdril"]
 [ext_resource type="Script" path="res://Scripts/display_health.gd" id="9_v16vb"]
 [ext_resource type="Texture2D" uid="uid://dwn1wsccnn4fs" path="res://Images/Random/SingleCoin.png" id="13_cciqu"]
@@ -215,32 +214,6 @@ scale = Vector2(1, 1)
 [node name="Firefly5" parent="Fireflies" instance=ExtResource("4_i4osp")]
 position = Vector2(76, 49)
 scale = Vector2(1, 1)
-
-[node name="Coins" type="Node" parent="."]
-
-[node name="Coin" parent="Coins" instance=ExtResource("8_yyxao")]
-position = Vector2(-132, 3)
-scale = Vector2(4, 4)
-
-[node name="Coin2" parent="Coins" instance=ExtResource("8_yyxao")]
-position = Vector2(16, -76)
-scale = Vector2(4, 4)
-
-[node name="Coin3" parent="Coins" instance=ExtResource("8_yyxao")]
-position = Vector2(-34, 80)
-scale = Vector2(4, 4)
-
-[node name="Coin4" parent="Coins" instance=ExtResource("8_yyxao")]
-position = Vector2(66, -53)
-scale = Vector2(4, 4)
-
-[node name="Coin5" parent="Coins" instance=ExtResource("8_yyxao")]
-position = Vector2(-145, 75)
-scale = Vector2(4, 4)
-
-[node name="Coin6" parent="Coins" instance=ExtResource("8_yyxao")]
-position = Vector2(99, 86)
-scale = Vector2(4, 4)
 
 [node name="Canvases" type="Node" parent="."]
 
