@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de6mdrortfmxe"
-path="res://.godot/imported/BatProjectile.png-65fbe70505b1e90d31e3b991a3d905b4.ctex"
+uid="uid://cuvj6y81nwuqk"
+path="res://.godot/imported/TestSpikes.png-9fd7a368c3ae594195f85c3977e1c8d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/BatProjectile.png"
-dest_files=["res://.godot/imported/BatProjectile.png-65fbe70505b1e90d31e3b991a3d905b4.ctex"]
+source_file="res://Images/OutdoorTiles/TestSpikes.png"
+dest_files=["res://.godot/imported/TestSpikes.png-9fd7a368c3ae594195f85c3977e1c8d2.ctex"]
 
 [params]
 

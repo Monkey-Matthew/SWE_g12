@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://chj2l2br0c6pg"]
 
 [ext_resource type="Script" path="res://Scripts/star_projectile.gd" id="1_hl73n"]
-[ext_resource type="Texture2D" uid="uid://d4m3i4skhymtw" path="res://Images/StarProjectile.png" id="2_o78vh"]
-[ext_resource type="Texture2D" uid="uid://fq4qmkhx62qo" path="res://Images/light.png" id="3_d0c1m"]
+[ext_resource type="Texture2D" uid="uid://d4m3i4skhymtw" path="res://Images/Projectiles/StarProjectile.png" id="2_o78vh"]
+[ext_resource type="Texture2D" uid="uid://fq4qmkhx62qo" path="res://Images/Random/light.png" id="3_d0c1m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjh7p"]
 radius = 4.0

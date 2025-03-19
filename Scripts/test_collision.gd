@@ -1,6 +1,6 @@
 extends Area2D
 
-var playerDied: bool = false # Not being used right now.
+var playerDied: bool = false #Not being used right now.
 
 """
 func _physics_process(delta: float) -> void:

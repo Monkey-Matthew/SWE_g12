@@ -8,15 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://ogba75nxrrbl" path="res://Images/OutdoorTiles/Shrub.png" id="4_2pq7j"]
 [ext_resource type="PackedScene" uid="uid://d0q43xqbbdxes" path="res://Scenes/firefly.tscn" id="4_i4osp"]
 [ext_resource type="PackedScene" uid="uid://dkkojelq84qqo" path="res://Scenes/pause_menu.tscn" id="4_o1cd5"]
-[ext_resource type="Texture2D" uid="uid://t3xn0x62dsn8" path="res://Images/Thorns.png" id="5_wyula"]
-[ext_resource type="Texture2D" uid="uid://6owatw5fpf68" path="res://Images/Thorns2.png" id="6_tmhny"]
-[ext_resource type="Texture2D" uid="uid://bvsnpxjffsdcl" path="res://Images/Thorns3.png" id="6_vm58o"]
+[ext_resource type="Texture2D" uid="uid://t3xn0x62dsn8" path="res://Images/OutdoorTiles/Thorns.png" id="5_wyula"]
+[ext_resource type="Texture2D" uid="uid://6owatw5fpf68" path="res://Images/OutdoorTiles/Thorns2.png" id="6_tmhny"]
+[ext_resource type="Texture2D" uid="uid://bvsnpxjffsdcl" path="res://Images/OutdoorTiles/Thorns3.png" id="6_vm58o"]
 [ext_resource type="PackedScene" uid="uid://cq582o51dd62t" path="res://Scenes/Rat.tscn" id="7_agj4n"]
 [ext_resource type="PackedScene" uid="uid://dmlug1m8641y0" path="res://Scenes/damage_area.tscn" id="8_oqbt0"]
 [ext_resource type="PackedScene" uid="uid://cwtrar7iuhbek" path="res://Scenes/coin.tscn" id="8_yyxao"]
 [ext_resource type="Texture2D" uid="uid://dj3eyqo4pax3g" path="res://Images/TestSprites/Heart/FullHeart.png" id="9_gdril"]
 [ext_resource type="Script" path="res://Scripts/display_health.gd" id="9_v16vb"]
-[ext_resource type="Texture2D" uid="uid://dwn1wsccnn4fs" path="res://Images/SingleCoin.png" id="13_cciqu"]
+[ext_resource type="Texture2D" uid="uid://dwn1wsccnn4fs" path="res://Images/Random/SingleCoin.png" id="13_cciqu"]
 [ext_resource type="Script" path="res://Scripts/display_coins.gd" id="13_te3rs"]
 [ext_resource type="PackedScene" uid="uid://dydvyavc8xl03" path="res://Scenes/bat.tscn" id="19_rmght"]
 
@@ -181,7 +181,7 @@ tile_set = SubResource("TileSet_xnf4u")
 z_index = 1
 y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD+//3/AAAAAAAAAAD9//3/AgAAAAAAAAD+//7/AgAAAAAAAAD9//7/AAAAAAAAAAADAPb/AQAAAAAAAAACAPb/AQAAAAAAAAACAPf/AQAAAAAAAAADAPf/AQAAAAAAAAADAAcAAQAAAAAAAAAEAAcAAQAAAAAAAAAEAAgAAQAAAAAAAAADAAgAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9//3/AgAAAAAAAAD9//7/AAAAAAAAAAADAPb/AQAAAAAAAAACAPb/AQAAAAAAAAACAPf/AQAAAAAAAAADAPf/AQAAAAAAAAADAAcAAQAAAAAAAAAEAAcAAQAAAAAAAAAEAAgAAQAAAAAAAAADAAgAAQAAAAAAAAD+//3/AAAAAAAAAAD+//7/AgAAAAAAAAA=")
 tile_set = SubResource("TileSet_lrvc1")
 
 [node name="Player" parent="." instance=ExtResource("1_ba1o1")]
@@ -192,7 +192,6 @@ position = Vector2(-5, -20)
 zoom = Vector2(4, 4)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Fireflies" type="Node" parent="."]
@@ -216,10 +215,6 @@ scale = Vector2(1, 1)
 [node name="Firefly5" parent="Fireflies" instance=ExtResource("4_i4osp")]
 position = Vector2(76, 49)
 scale = Vector2(1, 1)
-
-[node name="Rat" parent="." instance=ExtResource("7_agj4n")]
-position = Vector2(-132, -11)
-scale = Vector2(4, 4)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -319,11 +314,19 @@ position = Vector2(64, 123)
 scale = Vector2(1.44, 1.48)
 damage_amount = 0.25
 
-[node name="Bat" parent="." instance=ExtResource("19_rmght")]
-position = Vector2(-52, 49)
+[node name="Enemies" type="Node" parent="."]
 
-[node name="Bat2" parent="." instance=ExtResource("19_rmght")]
-position = Vector2(42, -34)
+[node name="Bats" type="Node" parent="Enemies"]
 
-[node name="Bat3" parent="." instance=ExtResource("19_rmght")]
-position = Vector2(-17, -76)
+[node name="Bat" parent="Enemies/Bats" instance=ExtResource("19_rmght")]
+position = Vector2(-53, 47)
+
+[node name="Bat2" parent="Enemies/Bats" instance=ExtResource("19_rmght")]
+position = Vector2(41, -36)
+
+[node name="Bat3" parent="Enemies/Bats" instance=ExtResource("19_rmght")]
+position = Vector2(-18, -78)
+
+[node name="Rat" parent="Enemies" instance=ExtResource("7_agj4n")]
+position = Vector2(-133, -13)
+scale = Vector2(4, 4)

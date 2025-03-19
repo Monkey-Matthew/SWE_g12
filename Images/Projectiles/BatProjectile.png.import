@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t3xn0x62dsn8"
-path="res://.godot/imported/Thorns.png-b63454f642cb2198cae8d12f0b1363c1.ctex"
+uid="uid://de6mdrortfmxe"
+path="res://.godot/imported/BatProjectile.png-27fa1b8cc439aad73a82bcb00cc1e23c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Thorns.png"
-dest_files=["res://.godot/imported/Thorns.png-b63454f642cb2198cae8d12f0b1363c1.ctex"]
+source_file="res://Images/Projectiles/BatProjectile.png"
+dest_files=["res://.godot/imported/BatProjectile.png-27fa1b8cc439aad73a82bcb00cc1e23c.ctex"]
 
 [params]
 

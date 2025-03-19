@@ -1,15 +1,14 @@
 extends CanvasLayer
-#Refernces Heart
+
+#Refernces to Heart
 @onready var sprite_first_heart: Sprite2D = $FirstHeart
 @onready var sprite_second_heart: Sprite2D = $SecondHeart
 @onready var sprite_third_heart: Sprite2D = $ThirdHeart
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame. Changes Health sprite for every damage taken
+#Changes Health sprite for whatever the health is currently at
 func _process(delta: float) -> void:
 	if Health.player_health == 3.0:
 		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")

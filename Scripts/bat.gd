@@ -1,29 +1,34 @@
 extends CharacterBody2D
 
+#Variables------------------------------------------------------------------------------------------------------------------------
+#Bat movement
 var SPEED = 15 #Movement Speed (Change to fit character movement)
-@onready var animated_sprite = $AnimatedSprite2D
-@export var sizeOfPath: float = 40.0
-@onready var POV = $Point
-@onready var target = $"../Player"
-var projectile_direction: Vector2
-var time: float = 0.0
-var startingPosition: Vector2
-var is_following_player: bool = false
-@export var damage_amount = .5
+@export var sizeOfPath: float = 40.0 #Size of the path
+var time: float = 0.0 #Used for random starting position on path
+var is_following_player: bool = false #Checks if the bat is following player
 
-@onready var main = get_tree().get_root().get_node("GameScene")
-@onready var projectile = load("res://Scenes/bat_projectile.tscn")
+#Refrences
+@onready var animated_sprite = $AnimatedSprite2D #Reference to animated sprite
+@onready var POV = $Point #The bat's point of view
+@onready var target = $"../Player" #Target of who the rat is targetting
+@onready var main = get_tree().get_root().get_node("GameScene") #Reference to GameScene
+@onready var projectile = load("res://Scenes/bat_projectile.tscn") #Reference to bat projectile scene
+
+#Projectile
+var projectile_direction: Vector2 #Projectile direction
+var startingPosition: Vector2 #Starting direction
+
+#Damage
+@export var damage_amount = .5 #Damage for collision
+#----------------------------------------------------------------------------------------------------------------------------------
 func _ready() -> void:
-	startingPosition  = position
-	time += SPEED+ (randf() * 100)
-	shoot()
+	startingPosition  = position #Setting the starting position
+	time += SPEED+ (randf() * 100) #Random start
 
 func _process(delta: float) -> void:
-	
-	time += delta * SPEED 
-	#follows the charcter
-	if is_following_player and target:
-		var direction =(target.position-position).normalized()
+	time += delta * SPEED #Moves the bat along the path
+	if is_following_player and target: #Checks to see if they are following the player and if the target is assigned.
+		var direction = (target.position-position).normalized()
 		projectile_direction = direction;
 		velocity = direction * SPEED
 		if abs(direction.x) > abs(direction.y):
@@ -85,26 +90,26 @@ func _process(delta: float) -> void:
 			POV.position.x = -2
 
 		position = startingPosition + Vector2(x, y) 
-	move_and_slide()
-	#print(Health.player_health)
+	move_and_slide() #Moves body based on velocity
+
 	
 	
-func _on_point_body_entered(body: Node2D) -> void:
+func _on_point_body_entered(body: Node2D) -> void: #Checks if something entered the point
 	if body.name == "Player":
 		print("Player entered POV");
 		target = body
 		is_following_player = true
 		SPEED = 40
 
-func _on_point_body_exited(body: Node2D) -> void:
+func _on_point_body_exited(body: Node2D) -> void: #Checks if something exited the point
 	if body.name == "Player":
 		print("Player exited POV");
 
-func _on_body_body_entered(body: Node2D) -> void:
+func _on_body_body_entered(body: Node2D) -> void: #If player collides with bat
 	if body.name == "Player":
 		Health.take_damage(damage_amount)
 
-func shoot():
+func shoot(): #Shoots the projectile depending on where the mouse is aiming
 	if projectile_direction == Vector2.ZERO:
 		return  # Don't shoot if the bat isn't moving
 
@@ -115,5 +120,5 @@ func shoot():
 	main.add_child.call_deferred(instance)
 
 
-func _on_projectile_cooldown_timeout():
+func _on_projectile_cooldown_timeout(): #Shoot delay
 	shoot()

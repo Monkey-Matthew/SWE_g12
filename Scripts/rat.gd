@@ -1,29 +1,33 @@
 extends CharacterBody2D
 
+#Variables------------------------------------------------------------------------------------------------------------------------
+#Rat movement variables
 var SPEED = 15 #Movement Speed (Change to fit character movement)
-@onready var animated_sprite = $AnimatedSprite2D
-@export var sizeOfPath: float = 40.0
-@onready var POV = $"Point of View"
-@onready var rat_body = $CollisionShape2D
-@onready var target = $"../Player"
-var direction = -1
-var time: float = 0.0
-var startingPosition: Vector2
-var is_following_player: bool = false
+@export var sizeOfPath: float = 40.0 #Size of the rat's path
+var direction = -1 #Direction variable
+var time: float = 0.0 #Time variable for movement
+var startingPosition: Vector2 #Variable that holds the starting position
+var is_following_player: bool = false #Variable that determines if the rat is following the player
 
-@export var damage_amount = .5
+#References
+@onready var POV = $"Point of View" #Reference to the point of view area
+@onready var rat_body = $CollisionShape2D #Reference to the rat's collision body
+@onready var target = $"../Player" #Reference to the target (player)
+@onready var animated_sprite = $AnimatedSprite2D #Reference to rat animated sprite
+
+#Damage
+@export var damage_amount = .5 #Damage that the rat causes to the player
+#---------------------------------------------------------------------------------------------------------------------------------
 
 func _ready() -> void:
-	startingPosition  = position
+	startingPosition = position  #Gives a random starting position
 	time += SPEED+ (randf() * 100)
-	
 
 func _process(delta: float) -> void:
-	
 	time += delta * SPEED 
 	#follows the charcter
 	if is_following_player and target:
-		var direction =(target.position-position).normalized()
+		var direction = (target.position-position).normalized()
 		velocity = direction * SPEED
 		if abs(direction.x) > abs(direction.y):
 			# Moving left or right
@@ -82,21 +86,18 @@ func _process(delta: float) -> void:
 
 		position = startingPosition + Vector2(x, y) 
 	move_and_slide()
-	
 
-
-func _on_point_of_view_body_entered(body: Node2D) -> void:
+func _on_point_of_view_body_entered(body: Node2D) -> void: #If the player enters the point of view the rat follows the player
 	if body.name == "Player":
 		print("Player entered POV");
-		target = body
+		target = body 
 		is_following_player = true
-		SPEED = 40
+		SPEED = 40 
 
-func _on_point_of_view_body_exited(body: Node2D) -> void:
+func _on_point_of_view_body_exited(body: Node2D) -> void: #If the player exits the point of view (can be used for somethine later)
 	if body.name == "Player":
 		print("Player exited POV");
-		
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: Node2D) -> void: #If the player collides with the rat
 	if body.name == "Player":
-		Health.take_damage(damage_amount)
+		Health.take_damage(damage_amount) #Calls function that makes the player take damage from the rat
