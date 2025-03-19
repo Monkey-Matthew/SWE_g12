@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuvj6y81nwuqk"
-path="res://.godot/imported/TestSpikes.png-4e5f4bbf95fb3cdbf235cb53205ac572.ctex"
+uid="uid://d4m3i4skhymtw"
+path="res://.godot/imported/StarProjectile.png-93cb11c9ebc66f44a49cd2a9e6273f34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/TestSpikes.png"
-dest_files=["res://.godot/imported/TestSpikes.png-4e5f4bbf95fb3cdbf235cb53205ac572.ctex"]
+source_file="res://Images/Projectiles/StarProjectile.png"
+dest_files=["res://.godot/imported/StarProjectile.png-93cb11c9ebc66f44a49cd2a9e6273f34.ctex"]
 
 [params]
 

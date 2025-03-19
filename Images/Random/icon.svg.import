@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvsnpxjffsdcl"
-path="res://.godot/imported/Thorns3.png-b70d3c205ca120eca8c5ccc355c2b008.ctex"
+uid="uid://bkpvhpw2itw7b"
+path="res://.godot/imported/icon.svg-a90ca3e36c7e5931ec0d57d18071d958.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Thorns3.png"
-dest_files=["res://.godot/imported/Thorns3.png-b70d3c205ca120eca8c5ccc355c2b008.ctex"]
+source_file="res://Images/Random/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-a90ca3e36c7e5931ec0d57d18071d958.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

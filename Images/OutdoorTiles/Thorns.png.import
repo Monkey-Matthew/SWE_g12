@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4m3i4skhymtw"
-path="res://.godot/imported/StarProjectile.png-f7db600f1255781c4b9a34d084c59b14.ctex"
+uid="uid://t3xn0x62dsn8"
+path="res://.godot/imported/Thorns.png-e5e381f5e3af1ab736c882ca2b47ba07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/StarProjectile.png"
-dest_files=["res://.godot/imported/StarProjectile.png-f7db600f1255781c4b9a34d084c59b14.ctex"]
+source_file="res://Images/OutdoorTiles/Thorns.png"
+dest_files=["res://.godot/imported/Thorns.png-e5e381f5e3af1ab736c882ca2b47ba07.ctex"]
 
 [params]
 

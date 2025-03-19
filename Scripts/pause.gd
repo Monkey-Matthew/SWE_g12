@@ -1,26 +1,25 @@
 extends Node
 
-var paused = false
+var paused = false #Checks to tsee if the game is paused
+
+#References
 @onready var pauseMenuObj = $PauseMenu
 @onready var resumeButton = $PauseMenu/VBoxContainer/Resume
 @onready var exitButton = $PauseMenu/VBoxContainer/Exit
 
-# ready func
 func _ready():
-	pauseMenuObj.hide()
-	# Connect the resume button to the pauseMenu function
-	resumeButton.pressed.connect(pauseMenu)
-	exitButton.pressed.connect(quit)
+	pauseMenuObj.hide() #Hides menu when the game starts
+	resumeButton.pressed.connect(pauseMenu) #Connects resume button to the pauseMenu function
+	exitButton.pressed.connect(quit) #Connects exit button to quit function
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause"): #If the pause button was pressed it opens the pause menu
 		pauseMenu()
 		
-func quit():
+func quit(): #Closes the game when the exit button is pressed
 	get_tree().quit()
 
-func pauseMenu():
+func pauseMenu(): #Pauses the game and unpauses the game
 	if paused:
 		print("un-pausing")
 		pauseMenuObj.hide()

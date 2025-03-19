@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cab6bvcygodtx" path="res://Images/TestSprites/Luna/luna_right_walk.png" id="8_ihhqs"]
 [ext_resource type="Texture2D" uid="uid://5n5kojckkh7t" path="res://Images/TestSprites/Luna/luna_backward_idle.png" id="9_n1fgn"]
 [ext_resource type="Texture2D" uid="uid://bnpsjwp7fa14b" path="res://Images/TestSprites/Luna/luna_backward_walk.png" id="10_n42rn"]
-[ext_resource type="Texture2D" uid="uid://fq4qmkhx62qo" path="res://Images/light.png" id="10_puerf"]
+[ext_resource type="Texture2D" uid="uid://fq4qmkhx62qo" path="res://Images/Random/light.png" id="10_puerf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_go5po"]
 atlas = ExtResource("4_p20og")

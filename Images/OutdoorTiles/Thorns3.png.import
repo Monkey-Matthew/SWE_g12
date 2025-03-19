@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fq4qmkhx62qo"
-path="res://.godot/imported/light.png-9bf9266ff9311093ae7679958656d74b.ctex"
+uid="uid://bvsnpxjffsdcl"
+path="res://.godot/imported/Thorns3.png-3083ce538af4f5cc04550c788c145070.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/light.png"
-dest_files=["res://.godot/imported/light.png-9bf9266ff9311093ae7679958656d74b.ctex"]
+source_file="res://Images/OutdoorTiles/Thorns3.png"
+dest_files=["res://.godot/imported/Thorns3.png-3083ce538af4f5cc04550c788c145070.ctex"]
 
 [params]
 
