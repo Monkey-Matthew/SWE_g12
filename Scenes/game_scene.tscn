@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=42 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="2_00kki"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://ccek3rrynbabe" path="res://Images/Random/Key.png" id="16_nyn03"]
 [ext_resource type="PackedScene" uid="uid://do06pfcy3bssv" path="res://Scenes/key.tscn" id="19_3wm5f"]
 [ext_resource type="PackedScene" uid="uid://dydvyavc8xl03" path="res://Scenes/bat.tscn" id="19_rmght"]
-[ext_resource type="PackedScene" uid="uid://bcmrj60axew3c" path="res://Scenes/crate.tscn" id="22_q8m7w"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8whcr"]
 
@@ -319,14 +318,3 @@ scale = Vector2(4, 4)
 
 [node name="key" parent="." instance=ExtResource("19_3wm5f")]
 position = Vector2(25, 12)
-
-[node name="Boxes" type="Node" parent="."]
-
-[node name="Crate" parent="Boxes" instance=ExtResource("22_q8m7w")]
-position = Vector2(11, -58)
-
-[node name="Crate2" parent="Boxes" instance=ExtResource("22_q8m7w")]
-position = Vector2(-62, -52)
-
-[node name="Crate3" parent="Boxes" instance=ExtResource("22_q8m7w")]
-position = Vector2(55, -10)
