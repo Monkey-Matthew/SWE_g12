@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=44 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="2_00kki"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://do06pfcy3bssv" path="res://Scenes/key.tscn" id="19_3wm5f"]
 [ext_resource type="PackedScene" uid="uid://dydvyavc8xl03" path="res://Scenes/bat.tscn" id="19_rmght"]
 [ext_resource type="PackedScene" uid="uid://bn8y0c5tntmcn" path="res://Scenes/gate.tscn" id="22_xpsxd"]
+[ext_resource type="PackedScene" uid="uid://bcmrj60axew3c" path="res://Scenes/crate.tscn" id="23_aayrq"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8whcr"]
 
@@ -323,3 +324,12 @@ position = Vector2(25, 12)
 
 [node name="Gate" parent="." instance=ExtResource("22_xpsxd")]
 position = Vector2(-1, -473)
+
+[node name="Crate" parent="." instance=ExtResource("23_aayrq")]
+position = Vector2(-95, 14)
+
+[node name="Crate2" parent="." instance=ExtResource("23_aayrq")]
+position = Vector2(-85, -56)
+
+[node name="Crate3" parent="." instance=ExtResource("23_aayrq")]
+position = Vector2(37, -82)
