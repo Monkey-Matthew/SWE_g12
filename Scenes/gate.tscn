@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://bn8y0c5tntmcn"]
+
+[ext_resource type="Texture2D" uid="uid://b88afl8548ivn" path="res://Images/GateSpreadsheet.png" id="1_qoex1"]
+[ext_resource type="Script" path="res://Scripts/gate.gd" id="1_x2mms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfb73"]
+atlas = ExtResource("1_qoex1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phrjg"]
+atlas = ExtResource("1_qoex1")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6huj2"]
+atlas = ExtResource("1_qoex1")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh15d"]
+atlas = ExtResource("1_qoex1")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veooa"]
+atlas = ExtResource("1_qoex1")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn6hc"]
+atlas = ExtResource("1_qoex1")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eu3f"]
+atlas = ExtResource("1_qoex1")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ns3dy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfb73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phrjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6huj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh15d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veooa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn6hc")
+}],
+"loop": true,
+"name": &"Open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eu3f")
+}],
+"loop": true,
+"name": &"StayOpen",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mynxq"]
+size = Vector2(32, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kxwy"]
+size = Vector2(32, 11)
+
+[node name="Gate" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_x2mms")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ns3dy")
+animation = &"Open"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_mynxq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 15.5)
+shape = SubResource("RectangleShape2D_5kxwy")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
