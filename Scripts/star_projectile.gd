@@ -29,3 +29,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void: #If the star projectile hit
 	#Destroy the projectile if it hits anything other than an enemy
 	if !body.is_in_group("enemies"):
 		queue_free()
+		
+	# Destroy the destructable if it's hit by the enemy.
+	# The projectile will still despawn, as group destructable isn't an enemy.
+	if body.is_in_group("destructables"):
+		print("Hit destructible")
+		if body.has_method("spawn_coins"):
+			body.spawn_coins()
+		body.queue_free()
+		queue_free()  
