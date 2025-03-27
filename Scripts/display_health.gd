@@ -5,11 +5,23 @@ extends CanvasLayer
 @onready var sprite_second_heart: Sprite2D = $SecondHeart
 @onready var sprite_third_heart: Sprite2D = $ThirdHeart
 
+var pause_menu
+var shake_toggle
+
+var prev_health = Health.player_health
+
 func _ready() -> void:
+	pause_menu = get_node("/root/GameScene/Canvases/PauseCanvas/CenterContainer/Control/PauseMenu")
+	shake_toggle = pause_menu.get_node("VBoxContainer/ShakeToggle")
 	pass
 
 #Changes Health sprite for whatever the health is currently at
 func _process(delta: float) -> void:
+	# check if the player loses health
+	if Health.player_health != prev_health and shake_toggle.text == "Screen Shake: On":
+		# player took damage!!
+		get_node("/root/GameScene/Player/Camera2D").apply_shake(5)
+		prev_health = Health.player_health
 	if Health.player_health == 3.0:
 		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
 		sprite_second_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")

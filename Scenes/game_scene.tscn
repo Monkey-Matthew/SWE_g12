@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=46 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="2_00kki"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bvsnpxjffsdcl" path="res://Images/OutdoorTiles/Thorns3.png" id="6_vm58o"]
 [ext_resource type="PackedScene" uid="uid://cq582o51dd62t" path="res://Scenes/Rat.tscn" id="7_agj4n"]
 [ext_resource type="PackedScene" uid="uid://dmlug1m8641y0" path="res://Scenes/damage_area.tscn" id="8_oqbt0"]
+[ext_resource type="Script" path="res://Scripts/camera_shake.gd" id="9_ajst0"]
 [ext_resource type="Texture2D" uid="uid://dj3eyqo4pax3g" path="res://Images/TestSprites/Heart/FullHeart.png" id="9_gdril"]
 [ext_resource type="Script" path="res://Scripts/display_health.gd" id="9_v16vb"]
 [ext_resource type="Texture2D" uid="uid://dwn1wsccnn4fs" path="res://Images/Random/SingleCoin.png" id="13_cciqu"]
@@ -195,6 +196,7 @@ position = Vector2(-5, -20)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
+script = ExtResource("9_ajst0")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false

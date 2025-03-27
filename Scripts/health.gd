@@ -9,6 +9,7 @@ func _ready() -> void:
 	
 func take_damage(amount: float): #Is called when the player takes damage
 	if canTakeDamage: #If the player can currently take damage
+		# handle camera shake
 		player_health -= amount #Lowers health from damage passed through
 		print("Player took damage! Health:", player_health)
 		canTakeDamage = false  #Disables current damage
