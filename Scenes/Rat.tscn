@@ -1,39 +1,68 @@
-[gd_scene load_steps=11 format=3 uid="uid://cq582o51dd62t"]
+[gd_scene load_steps=16 format=3 uid="uid://cq582o51dd62t"]
 
-[ext_resource type="Texture2D" uid="uid://f78nwjqvyetd" path="res://Images/TestSprites/Rat Enemy/RightStand-1.png.png" id="1_2g4lq"]
-[ext_resource type="Texture2D" uid="uid://crya2b3wxrfdm" path="res://Images/TestSprites/Rat Enemy/LeftStand-1.png(1).png" id="1_4l4my"]
 [ext_resource type="Script" path="res://Scripts/rat.gd" id="1_dcd5s"]
-[ext_resource type="Texture2D" uid="uid://cavp1jcufkina" path="res://Images/TestSprites/Rat Enemy/MoveLeft-1.png.png" id="2_05bj5"]
-[ext_resource type="Texture2D" uid="uid://cja6s76a7t64y" path="res://Images/TestSprites/Rat Enemy/MoveRight-1.png.png" id="2_b7mu8"]
-[ext_resource type="Texture2D" uid="uid://mu0r1rci1cp7" path="res://Images/TestSprites/Rat Enemy/BackSide1-1.png.png" id="5_ceehs"]
-[ext_resource type="Texture2D" uid="uid://df5yjmb8i0d2g" path="res://Images/TestSprites/Rat Enemy/BackSide2-1.png.png" id="6_ktwyr"]
+[ext_resource type="Texture2D" uid="uid://bd78rklsdc3wo" path="res://Images/TestSprites/newRat/Rat_side_walk.png" id="2_j1gun"]
+[ext_resource type="Texture2D" uid="uid://cq1310b30p3i3" path="res://Images/TestSprites/newRat/Rat_side_walk_flipped.png" id="3_maa0y"]
+[ext_resource type="Texture2D" uid="uid://cv5gv2whuaxch" path="res://Images/TestSprites/newRat/Rat_back_walk.png" id="4_c25i1"]
 [ext_resource type="Script" path="res://Scripts/enemy_health.gd" id="8_evax2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_124ko"]
+atlas = ExtResource("2_j1gun")
+region = Rect2(0, 0, 98, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukhae"]
+atlas = ExtResource("2_j1gun")
+region = Rect2(98, 0, 98, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp63k"]
+atlas = ExtResource("2_j1gun")
+region = Rect2(0, 0, 98, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai6fu"]
+atlas = ExtResource("2_j1gun")
+region = Rect2(98, 0, 98, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i886x"]
+atlas = ExtResource("3_maa0y")
+region = Rect2(196, 0, 98, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3syk"]
+atlas = ExtResource("3_maa0y")
+region = Rect2(294, 0, 98, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbsrm"]
+atlas = ExtResource("4_c25i1")
+region = Rect2(0, 0, 98, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn7yf"]
+atlas = ExtResource("4_c25i1")
+region = Rect2(98, 0, 98, 107)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s8v5g"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_4l4my")
+"texture": SubResource("AtlasTexture_124ko")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_05bj5")
+"texture": SubResource("AtlasTexture_ukhae")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_4l4my")
+"texture": SubResource("AtlasTexture_kp63k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai6fu")
 }],
 "loop": true,
 "name": &"LeftMovement",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_2g4lq")
+"texture": SubResource("AtlasTexture_i886x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_b7mu8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_2g4lq")
+"texture": SubResource("AtlasTexture_m3syk")
 }],
 "loop": true,
 "name": &"RightMovement",
@@ -41,16 +70,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ceehs")
+"texture": SubResource("AtlasTexture_xbsrm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ktwyr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_ceehs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ktwyr")
+"texture": SubResource("AtlasTexture_yn7yf")
 }],
 "loop": true,
 "name": &"UpwardMovement",
@@ -67,12 +90,12 @@ collision_mask = 3
 script = ExtResource("1_dcd5s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -2)
-scale = Vector2(0.2, 0.2)
+position = Vector2(0.475, -2.6625)
+scale = Vector2(0.132143, 0.118458)
 sprite_frames = SubResource("SpriteFrames_s8v5g")
-animation = &"LeftMovement"
+animation = &"UpwardMovement"
 autoplay = "RightMovement"
-frame_progress = 0.433502
+frame_progress = 0.20156
 
 [node name="Point of View" type="Area2D" parent="."]
 
@@ -89,7 +112,7 @@ shape = SubResource("RectangleShape2D_vpcui")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.1, -2)
+position = Vector2(7.45058e-09, 2)
 scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_vpcui")
 
