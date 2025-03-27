@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=45 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="2_00kki"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dydvyavc8xl03" path="res://Scenes/bat.tscn" id="19_rmght"]
 [ext_resource type="PackedScene" uid="uid://bn8y0c5tntmcn" path="res://Scenes/gate.tscn" id="22_xpsxd"]
 [ext_resource type="PackedScene" uid="uid://bcmrj60axew3c" path="res://Scenes/crate.tscn" id="23_aayrq"]
+[ext_resource type="AudioStream" uid="uid://wigpyh7wm0d4" path="res://cutedungeon.wav" id="24_5n4pj"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8whcr"]
 
@@ -333,3 +334,7 @@ position = Vector2(-85, -56)
 
 [node name="Crate3" parent="." instance=ExtResource("23_aayrq")]
 position = Vector2(37, -82)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_5n4pj")
+autoplay = true

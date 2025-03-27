@@ -1,9 +1,10 @@
-[gd_scene load_steps=49 format=3 uid="uid://dkq3q6ui7o41a"]
+[gd_scene load_steps=55 format=3 uid="uid://dkq3q6ui7o41a"]
 
 [ext_resource type="Script" path="res://Scripts/player_movement.gd" id="1_36ycc"]
 [ext_resource type="Texture2D" uid="uid://ceimmv288ql7j" path="res://Images/TestSprites/Luna/luna_front_idle_nostar.png" id="2_14vgs"]
 [ext_resource type="Texture2D" uid="uid://6catbf2yscus" path="res://Images/TestSprites/Luna/luna_star_pullout.png" id="3_8o7du"]
 [ext_resource type="Texture2D" uid="uid://b05vlx4sljy6q" path="res://Images/TestSprites/Luna/luna_forward_walk.png" id="4_p20og"]
+[ext_resource type="Texture2D" uid="uid://dsf8tdojj1rye" path="res://Images/TestSprites/Luna/luna-front_jump.png" id="5_gkgv6"]
 [ext_resource type="Texture2D" uid="uid://b5rs0wk7s5gvo" path="res://Images/TestSprites/Luna/luna_left_idle.png" id="5_q4ten"]
 [ext_resource type="Texture2D" uid="uid://bl3qgb6hndl0o" path="res://Images/TestSprites/Luna/luna_left_walk.png" id="5_w5t8y"]
 [ext_resource type="Texture2D" uid="uid://c7oh6b7mxvpvq" path="res://Images/TestSprites/Luna/luna_right_idle.png" id="7_ws23t"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://5n5kojckkh7t" path="res://Images/TestSprites/Luna/luna_backward_idle.png" id="9_n1fgn"]
 [ext_resource type="Texture2D" uid="uid://bnpsjwp7fa14b" path="res://Images/TestSprites/Luna/luna_backward_walk.png" id="10_n42rn"]
 [ext_resource type="Texture2D" uid="uid://fq4qmkhx62qo" path="res://Images/Random/light.png" id="10_puerf"]
+[ext_resource type="Texture2D" uid="uid://cepw6gr82x0ns" path="res://Images/TestSprites/Luna/luna_back_jump.png" id="11_k3cug"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_go5po"]
 atlas = ExtResource("4_p20og")
@@ -80,6 +82,14 @@ region = Rect2(55, 0, 55, 107)
 atlas = ExtResource("2_14vgs")
 region = Rect2(0, 0, 55, 107)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n0a4"]
+atlas = ExtResource("5_gkgv6")
+region = Rect2(0, 0, 59, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8aww"]
+atlas = ExtResource("5_gkgv6")
+region = Rect2(59, 0, 59, 107)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4m03v"]
 atlas = ExtResource("4_p20og")
 region = Rect2(110, 0, 55, 107)
@@ -143,6 +153,14 @@ region = Rect2(59, 0, 59, 107)
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2tjy"]
 atlas = ExtResource("9_n1fgn")
 region = Rect2(0, 0, 59, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm7eu"]
+atlas = ExtResource("11_k3cug")
+region = Rect2(0, 0, 59, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1mu5"]
+atlas = ExtResource("11_k3cug")
+region = Rect2(59, 0, 59, 107)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_me7i8"]
 atlas = ExtResource("10_n42rn")
@@ -209,6 +227,17 @@ animations = [{
 "loop": true,
 "name": &"DownIdle",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n0a4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8aww")
+}],
+"loop": true,
+"name": &"DownJump",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -290,6 +319,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_bm7eu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1mu5")
+}],
+"loop": true,
+"name": &"UpJump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_me7i8")
 }, {
 "duration": 1.0,
@@ -314,8 +354,9 @@ movement_speed = 70.0
 position = Vector2(-4, 4)
 scale = Vector2(0.645455, 0.574766)
 sprite_frames = SubResource("SpriteFrames_f8p70")
-animation = &"DownIdle"
+animation = &"DownJump"
 autoplay = "DownIdle"
+frame_progress = 0.70784
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
@@ -328,7 +369,7 @@ energy = 0.4
 texture = ExtResource("10_puerf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5.625, 22.3333)
+position = Vector2(-4, 22)
 shape = SubResource("RectangleShape2D_kusnv")
 
 [node name="Jump" type="Timer" parent="."]
