@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://wigpyh7wm0d4"
-path="res://.godot/imported/cutedungeon.wav-83c11ef88533ff1e86651be5703dfb63.sample"
+path="res://.godot/imported/cutedungeon.wav-e93cf5ed2b9c3d761e7c6c654969af56.sample"
 
 [deps]
 
-source_file="res://cutedungeon.wav"
-dest_files=["res://.godot/imported/cutedungeon.wav-83c11ef88533ff1e86651be5703dfb63.sample"]
+source_file="res://audio/cutedungeon.wav"
+dest_files=["res://.godot/imported/cutedungeon.wav-e93cf5ed2b9c3d761e7c6c654969af56.sample"]
 
 [params]
 
@@ -18,7 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop_mode=0
+edit/loop_mode=2
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=0

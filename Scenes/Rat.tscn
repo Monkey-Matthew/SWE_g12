@@ -95,7 +95,7 @@ scale = Vector2(0.132143, 0.118458)
 sprite_frames = SubResource("SpriteFrames_s8v5g")
 animation = &"UpwardMovement"
 autoplay = "RightMovement"
-frame_progress = 0.20156
+frame_progress = 0.667604
 
 [node name="Point of View" type="Area2D" parent="."]
 
