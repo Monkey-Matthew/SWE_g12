@@ -156,6 +156,7 @@ func _on_reload_timeout() -> void: #Is called when the reload timer timeout (tem
 	get_tree().reload_current_scene() #Reloads the scene
 	Health.player_health = 3 #Resets the players health
 	CoinSystem.player_coins = 0 #Resets the coin amount
+	CoinSystem.key_collected = false #Resets the Key
 
 func shootProjectile(): #Function that shoots projectile where the player is aiming
 	if not can_attack or pause_script.paused: #If the player cant attack or the game is paused then the player cant shoot
