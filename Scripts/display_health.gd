@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var sprite_first_heart: Sprite2D = $FirstHeart
 @onready var sprite_second_heart: Sprite2D = $SecondHeart
 @onready var sprite_third_heart: Sprite2D = $ThirdHeart
-
+@onready var hurt_sound: AudioStreamPlayer2D = $HurtSound
 var pause_menu
 var shake_toggle
 
@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 		# player took damage!!
 		get_node("/root/GameScene/Player/Camera2D").apply_shake(5)
 		prev_health = Health.player_health
+		hurt_sound.play()
 	if Health.player_health == 3.0:
 		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
 		sprite_second_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
