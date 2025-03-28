@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=48 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="2_00kki"]
@@ -20,10 +20,12 @@
 [ext_resource type="Script" path="res://Scripts/display_coins.gd" id="13_te3rs"]
 [ext_resource type="Script" path="res://Scripts/display_key.gd" id="16_gti4l"]
 [ext_resource type="Texture2D" uid="uid://ccek3rrynbabe" path="res://Images/Random/Key.png" id="16_nyn03"]
+[ext_resource type="AudioStream" uid="uid://nks3iie1cft6" path="res://audio/coin-drop-1-104046.mp3" id="17_7h0k7"]
 [ext_resource type="PackedScene" uid="uid://do06pfcy3bssv" path="res://Scenes/key.tscn" id="19_3wm5f"]
 [ext_resource type="PackedScene" uid="uid://dydvyavc8xl03" path="res://Scenes/bat.tscn" id="19_rmght"]
 [ext_resource type="PackedScene" uid="uid://bn8y0c5tntmcn" path="res://Scenes/gate.tscn" id="22_xpsxd"]
 [ext_resource type="PackedScene" uid="uid://bcmrj60axew3c" path="res://Scenes/crate.tscn" id="23_aayrq"]
+[ext_resource type="AudioStream" uid="uid://euixlincn6pg" path="res://audio/key-get-39925.mp3" id="24_2s6y0"]
 [ext_resource type="AudioStream" uid="uid://wigpyh7wm0d4" path="res://audio/cutedungeon.wav" id="24_uqbkl"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8whcr"]
@@ -279,6 +281,10 @@ offset_bottom = 73.0
 theme_override_font_sizes/font_size = 50
 text = "100"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Canvases/CoinDisplay"]
+stream = ExtResource("17_7h0k7")
+volume_db = 0.99
+
 [node name="KeyDisplay" type="CanvasLayer" parent="Canvases"]
 script = ExtResource("16_gti4l")
 
@@ -324,6 +330,11 @@ scale = Vector2(4, 4)
 
 [node name="key" parent="." instance=ExtResource("19_3wm5f")]
 position = Vector2(25, 12)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="key"]
+stream = ExtResource("24_2s6y0")
+volume_db = 1.485
+area_mask = 3
 
 [node name="Gate" parent="." instance=ExtResource("22_xpsxd")]
 position = Vector2(-1, -473)
