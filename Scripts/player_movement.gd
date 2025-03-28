@@ -13,7 +13,7 @@ var direction_facing: String #Store a string depending on the last direction the
 @onready var Jump: Timer = $Jump #Timer for Jump
 @onready var Reload: Timer = $Reload #Time for Reloading the game
 @onready var attack_cooldown: Timer = $AttackCooldown #Timer for attack cooldown
-
+@onready var star_shooter_sound: AudioStreamPlayer2D = $starShooter
 #Jump variables
 var invulnerable: bool = false #Variable to determine if the player is invulnerable or not
 var can_Jump: bool = true #Stop spamming jumping
@@ -160,7 +160,7 @@ func _on_reload_timeout() -> void: #Is called when the reload timer timeout (tem
 func shootProjectile(): #Function that shoots projectile where the player is aiming
 	if not can_attack or pause_script.paused: #If the player cant attack or the game is paused then the player cant shoot
 		return
-		
+	star_shooter_sound.play()
 	can_attack = false  #Prevent spam shooting
 	attack_cooldown.start()  #Start the attack cooldown timer
 	

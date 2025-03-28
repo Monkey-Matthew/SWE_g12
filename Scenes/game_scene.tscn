@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=50 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="2_00kki"]
@@ -16,8 +16,10 @@
 [ext_resource type="Script" path="res://Scripts/camera_shake.gd" id="9_ajst0"]
 [ext_resource type="Texture2D" uid="uid://dj3eyqo4pax3g" path="res://Images/TestSprites/Heart/FullHeart.png" id="9_gdril"]
 [ext_resource type="Script" path="res://Scripts/display_health.gd" id="9_v16vb"]
+[ext_resource type="AudioStream" uid="uid://bty880i64my05" path="res://audio/shooting-sound-fx-159024.mp3" id="10_57htj"]
 [ext_resource type="Texture2D" uid="uid://dwn1wsccnn4fs" path="res://Images/Random/SingleCoin.png" id="13_cciqu"]
 [ext_resource type="Script" path="res://Scripts/display_coins.gd" id="13_te3rs"]
+[ext_resource type="AudioStream" uid="uid://c1yt5ooci4c47" path="res://audio/female-hurt-2-94301.mp3" id="15_cxyyn"]
 [ext_resource type="Script" path="res://Scripts/display_key.gd" id="16_gti4l"]
 [ext_resource type="Texture2D" uid="uid://ccek3rrynbabe" path="res://Images/Random/Key.png" id="16_nyn03"]
 [ext_resource type="AudioStream" uid="uid://nks3iie1cft6" path="res://audio/coin-drop-1-104046.mp3" id="17_7h0k7"]
@@ -200,6 +202,10 @@ position = Vector2(-5, -20)
 zoom = Vector2(4, 4)
 script = ExtResource("9_ajst0")
 
+[node name="starShooter" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("10_57htj")
+volume_db = 5.448
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
@@ -264,6 +270,10 @@ texture = ExtResource("9_gdril")
 position = Vector2(226, 60)
 scale = Vector2(4, 4)
 texture = ExtResource("9_gdril")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="Canvases/Health"]
+stream = ExtResource("15_cxyyn")
+volume_db = 2.476
 
 [node name="CoinDisplay" type="CanvasLayer" parent="Canvases"]
 script = ExtResource("13_te3rs")
