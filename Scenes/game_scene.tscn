@@ -207,7 +207,6 @@ stream = ExtResource("10_57htj")
 volume_db = 5.448
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Fireflies" type="Node" parent="."]
