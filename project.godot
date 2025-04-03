@@ -20,6 +20,7 @@ config/icon="res://Images/Random/icon.svg"
 Health="*res://Scripts/health.gd"
 CoinSystem="*res://Scripts/coin_system.gd"
 EnemyHealth="*res://Scripts/enemy_health.gd"
+PlayerLocation="*res://Scripts/player_location.gd"
 
 [display]
 

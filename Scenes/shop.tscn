@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkbjvbbtsp874"]
+[gd_scene load_steps=11 format=3 uid="uid://dkbjvbbtsp874"]
 
 [ext_resource type="Texture2D" uid="uid://d4m3i4skhymtw" path="res://Images/Projectiles/StarProjectile.png" id="1_760k8"]
 [ext_resource type="Script" path="res://Scripts/ShopScripts/shop.gd" id="1_b3vn2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/ShopScripts/third_box_area.gd" id="7_ccmb5"]
 [ext_resource type="Script" path="res://Scripts/ShopScripts/buy_box_area.gd" id="7_eugr8"]
 [ext_resource type="Texture2D" uid="uid://dwn1wsccnn4fs" path="res://Images/Random/SingleCoin.png" id="8_08g7k"]
+[ext_resource type="Script" path="res://Scripts/back_area.gd" id="10_tt12u"]
 
 [node name="Shop" type="Node2D"]
 
@@ -201,6 +202,28 @@ texture = ExtResource("3_r8no5")
 position = Vector2(226, 64)
 scale = Vector2(4, 4)
 texture = ExtResource("3_r8no5")
+
+[node name="BackBox" type="ColorRect" parent="CanvasLayer"]
+offset_left = 22.0
+offset_top = 579.0
+offset_right = 152.0
+offset_bottom = 634.0
+color = Color(0.400214, 0.285086, 0.67269, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/BackBox"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackArea" type="TextureRect" parent="CanvasLayer/BackBox"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 54.0
+script = ExtResource("10_tt12u")
 
 [connection signal="mouse_entered" from="CanvasLayer/FirstBoxArea" to="CanvasLayer/FirstBoxArea" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/FirstBoxArea" to="CanvasLayer/FirstBoxArea" method="_on_mouse_exited"]
