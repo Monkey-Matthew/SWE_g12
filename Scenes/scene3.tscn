@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://cdnyjhvcdtc01"]
+[gd_scene load_steps=45 format=4 uid="uid://c1v8bnjqghiv7"]
 
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="1_qqkbs"]
 [ext_resource type="Texture2D" uid="uid://d1y0lgt5lyv6g" path="res://Images/OutdoorTiles/BasicTree.png" id="2_m2av5"]
@@ -20,6 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://dmlug1m8641y0" path="res://Scenes/damage_area.tscn" id="18_t5cfj"]
 [ext_resource type="PackedScene" uid="uid://dydvyavc8xl03" path="res://Scenes/bat.tscn" id="19_ysqxt"]
 [ext_resource type="PackedScene" uid="uid://cq582o51dd62t" path="res://Scenes/Rat.tscn" id="20_8wdsv"]
+[ext_resource type="Script" path="res://Scripts/shop_area.gd" id="21_ica04"]
+[ext_resource type="PackedScene" uid="uid://dkbjvbbtsp874" path="res://Scenes/shop.tscn" id="21_yrbkr"]
+[ext_resource type="AudioStream" uid="uid://wigpyh7wm0d4" path="res://audio/cutedungeon.wav" id="23_okqmx"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8whcr"]
 
@@ -140,6 +143,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rkw27")
 sources/2 = SubResource("TileSetAtlasSource_w1oa5")
 sources/1 = SubResource("TileSetAtlasSource_h3468")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ywy5"]
+size = Vector2(161, 95)
 
 [node name="GameScene" type="Node2D"]
 y_sort_enabled = true
@@ -301,6 +307,9 @@ damage_amount = 0.25
 [node name="Bat" parent="Enemies/Bats" instance=ExtResource("19_ysqxt")]
 position = Vector2(-182, 133)
 
+[node name="Bat4" parent="Enemies/Bats" instance=ExtResource("19_ysqxt")]
+position = Vector2(-280, -426)
+
 [node name="Bat2" parent="Enemies/Bats" instance=ExtResource("19_ysqxt")]
 position = Vector2(326, 51)
 
@@ -310,3 +319,20 @@ position = Vector2(260, -115)
 [node name="Rat" parent="Enemies" instance=ExtResource("20_8wdsv")]
 position = Vector2(-297, -20)
 scale = Vector2(4, 4)
+
+[node name="Shop" parent="." instance=ExtResource("21_yrbkr")]
+position = Vector2(-1, 0)
+
+[node name="ShopArea" type="Area2D" parent="."]
+script = ExtResource("21_ica04")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopArea"]
+position = Vector2(-471.5, -416.5)
+shape = SubResource("RectangleShape2D_5ywy5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_okqmx")
+pitch_scale = 1.1
+autoplay = true
+
+[connection signal="body_entered" from="ShopArea" to="ShopArea" method="_on_body_entered"]
