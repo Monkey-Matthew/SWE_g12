@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkbjvbbtsp874"]
+[gd_scene load_steps=12 format=3 uid="uid://dkbjvbbtsp874"]
 
 [ext_resource type="Texture2D" uid="uid://d4m3i4skhymtw" path="res://Images/Projectiles/StarProjectile.png" id="1_760k8"]
 [ext_resource type="Script" path="res://Scripts/ShopScripts/shop.gd" id="1_b3vn2"]
+[ext_resource type="Script" path="res://Scripts/ShopScripts/toggle_shop.gd" id="1_g26t6"]
 [ext_resource type="Texture2D" uid="uid://ccek3rrynbabe" path="res://Images/Random/Key.png" id="2_mt3ca"]
 [ext_resource type="Texture2D" uid="uid://dj3eyqo4pax3g" path="res://Images/TestSprites/Heart/FullHeart.png" id="3_r8no5"]
 [ext_resource type="Script" path="res://Scripts/ShopScripts/first_box_area.gd" id="5_al6dg"]
@@ -12,8 +13,10 @@
 [ext_resource type="Script" path="res://Scripts/back_area.gd" id="10_tt12u"]
 
 [node name="Shop" type="Node2D"]
+script = ExtResource("1_g26t6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("1_b3vn2")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]

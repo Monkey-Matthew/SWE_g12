@@ -26,6 +26,7 @@ var can_attack: bool = true #Variable that determines in the player can attack o
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D  #Reference to the AnimatedSprite2D node so that we can modify it
 @onready var pause_script = get_node("/root/GameScene/Canvases/PauseCanvas/CenterContainer/Control") #Reference to pause menu script
 var projectile_path = preload("res://Scenes//star_projectile.tscn") #Preloads the star projectile scene
+@onready var shop_script = get_node("/root/GameScene/Shop")
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -159,6 +160,9 @@ func _on_reload_timeout() -> void: #Is called when the reload timer timeout (tem
 	CoinSystem.key_collected = false #Resets the Key
 
 func shootProjectile(): #Function that shoots projectile where the player is aiming
+	#if shop_script.canvas.visible == true or shop_script.back_button.backButtonPressed == true: #Stops the player from attacking while in the shop
+		#print("Can't shoot in shop")
+		#return
 	if not can_attack or pause_script.paused: #If the player cant attack or the game is paused then the player cant shoot
 		return
 	star_shooter_sound.play()
