@@ -16,7 +16,6 @@
 script = ExtResource("1_g26t6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("1_b3vn2")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
