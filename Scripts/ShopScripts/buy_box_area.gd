@@ -9,12 +9,15 @@ func _ready() -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		if(first_box_select.visible == true):
+		if(first_box_select.visible == true && CoinSystem.player_coins >= 1):
 			print("You bought the first item")
-		elif(second_box_select.visible == true):
+			CoinSystem.player_coins -= 1
+		elif(second_box_select.visible == true && CoinSystem.player_coins >= 2):
 			print("You bought the second item")
-		elif(third_box_select.visible == true):
+			CoinSystem.player_coins -= 2
+		elif(third_box_select.visible == true && CoinSystem.player_coins >= 3):
 			print("You bought the third item")
+			CoinSystem.player_coins -= 3
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

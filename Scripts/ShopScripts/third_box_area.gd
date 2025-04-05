@@ -20,7 +20,7 @@ func _gui_input(event: InputEvent) -> void:
 		first_box_select.visible = false
 		second_box_select.visible = false
 		third_box_select.visible = true
-		buy_box_label.text = "Buy - 20 Coins"
+		buy_box_label.text = "Buy - 3 Coins"
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
