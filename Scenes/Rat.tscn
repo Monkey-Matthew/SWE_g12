@@ -81,7 +81,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpcui"]
-size = Vector2(3.81818, 5.45455)
+size = Vector2(6.09091, 7.90909)
 
 [node name="Rat" type="CharacterBody2D" groups=["enemies"]]
 z_index = 1
@@ -90,8 +90,8 @@ collision_mask = 3
 script = ExtResource("1_dcd5s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.475, -2.6625)
-scale = Vector2(0.132143, 0.118458)
+position = Vector2(2.7625, -0.168752)
+scale = Vector2(0.168112, 0.152687)
 sprite_frames = SubResource("SpriteFrames_s8v5g")
 animation = &"UpwardMovement"
 autoplay = "RightMovement"
@@ -106,13 +106,13 @@ scale = Vector2(1.00962, 1)
 polygon = PackedVector2Array(-1.98098, -7.99999, -1.98093, 4.00001, -15, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(0.545455, -1.36364)
 shape = SubResource("RectangleShape2D_vpcui")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(7.45058e-09, 2)
+position = Vector2(1.65, 0.649999)
 scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_vpcui")
 

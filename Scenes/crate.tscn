@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bi85yqg70cls7" path="res://Images/Random/Crate.png" id="1_yv5hd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m462i"]
-size = Vector2(15, 8)
+size = Vector2(39, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87kru"]
-size = Vector2(15, 16)
+size = Vector2(34.5, 21)
 
 [node name="Crate" type="StaticBody2D"]
 z_index = 1
@@ -15,16 +15,18 @@ y_sort_enabled = true
 script = ExtResource("1_go1pk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12, 6)
+scale = Vector2(2.5, 1.75)
 texture = ExtResource("1_yv5hd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 4)
+position = Vector2(11.5, 7)
 shape = SubResource("RectangleShape2D_m462i")
 
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(-0.5, 0)
+position = Vector2(8.75, 5.5)
 shape = SubResource("RectangleShape2D_87kru")
 debug_color = Color(0.975292, 0.0888285, 0.331982, 0.42)
 
