@@ -10517,7 +10517,7 @@ position = Vector2(-775, -162)
 scale = Vector2(1, 1)
 
 [node name="Firefly12" parent="Fireflies" instance=ExtResource("4_i4osp")]
-position = Vector2(192, 466)
+position = Vector2(176, 470)
 scale = Vector2(1, 1)
 
 [node name="Firefly13" parent="Fireflies" instance=ExtResource("4_i4osp")]
