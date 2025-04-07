@@ -82,10 +82,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkajo"]
-size = Vector2(99, 70)
+size = Vector2(152, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgc4h"]
-size = Vector2(88, 64)
+size = Vector2(154, 116)
 
 [node name="Bat" type="CharacterBody2D" groups=["bats", "enemies"]]
 z_index = 1
@@ -94,17 +94,19 @@ scale = Vector2(0.25, 0.25)
 script = ExtResource("1_n10ms")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(27.5, 11.25)
+scale = Vector2(1.56122, 1.21028)
 sprite_frames = SubResource("SpriteFrames_vj3bo")
 animation = &"Down"
 
 [node name="Body" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
-position = Vector2(-0.5, -1)
+position = Vector2(28, 20)
 shape = SubResource("RectangleShape2D_hkajo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(27, 18)
 shape = SubResource("RectangleShape2D_wgc4h")
 
 [node name="Point" type="Area2D" parent="."]
@@ -121,9 +123,9 @@ autostart = true
 script = ExtResource("5_p6e27")
 max_health = 100
 
-[connection signal="body_entered" from="Body" to="." method="_on_point_body_entered"]
 [connection signal="body_entered" from="Body" to="." method="_on_body_body_entered"]
+[connection signal="body_entered" from="Body" to="." method="_on_point_body_entered"]
 [connection signal="body_exited" from="Body" to="." method="_on_point_body_exited"]
-[connection signal="body_entered" from="Point" to="." method="_on_point_body_entered"]
 [connection signal="body_entered" from="Point" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Point" to="." method="_on_point_body_entered"]
 [connection signal="timeout" from="ProjectileCooldown" to="." method="_on_projectile_cooldown_timeout"]

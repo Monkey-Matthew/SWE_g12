@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #Variables--------------------------------------------------------------------------------------------------------------------------------------------
 #Player movement variables
-@export var movement_speed: float = 100  #Movement speed of player (Can be change in the inspector)
+@export var movement_speed: float = 300  #Movement speed of player (Can be change in the inspector)
 var character_direction: Vector2  #Used for our movement directional input
 var rand_direction = randf() #Chooses a random number between 0 and 1 in decimal
 var direction_facing: String #Store a string depending on the last direction the character was facing (Left, Right, Up, Down)
