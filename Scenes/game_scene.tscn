@@ -10453,13 +10453,15 @@ tile_set = SubResource("TileSet_lrvc1")
 
 [node name="Player" parent="." instance=ExtResource("1_ba1o1")]
 z_index = 1
-position = Vector2(-5, -20)
+position = Vector2(-80, 86)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-16, -22)
 zoom = Vector2(2, 2)
 script = ExtResource("9_ajst0")
 
 [node name="starShooter" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2(-128, 258)
 stream = ExtResource("10_57htj")
 volume_db = 5.448
 
@@ -10488,6 +10490,146 @@ scale = Vector2(1, 1)
 
 [node name="Firefly5" parent="Fireflies" instance=ExtResource("4_i4osp")]
 position = Vector2(76, 49)
+scale = Vector2(1, 1)
+
+[node name="Firefly6" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(76, 49)
+scale = Vector2(1, 1)
+
+[node name="Firefly7" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(242, 144)
+scale = Vector2(1, 1)
+
+[node name="Firefly8" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-416, -61)
+scale = Vector2(1, 1)
+
+[node name="Firefly9" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(433, 77)
+scale = Vector2(1, 1)
+
+[node name="Firefly10" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(379, -89)
+scale = Vector2(1, 1)
+
+[node name="Firefly11" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-775, -162)
+scale = Vector2(1, 1)
+
+[node name="Firefly12" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(192, 466)
+scale = Vector2(1, 1)
+
+[node name="Firefly13" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-790, 277)
+scale = Vector2(1, 1)
+
+[node name="Firefly14" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(63, -372)
+scale = Vector2(1, 1)
+
+[node name="Firefly15" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-470, -267)
+scale = Vector2(1, 1)
+
+[node name="Firefly16" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(530, -310)
+scale = Vector2(1, 1)
+
+[node name="Firefly17" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(351, -226)
+scale = Vector2(1, 1)
+
+[node name="Firefly18" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(158, -284)
+scale = Vector2(1, 1)
+
+[node name="Firefly19" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-242, 219)
+scale = Vector2(1, 1)
+
+[node name="Firefly20" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-515, 79)
+scale = Vector2(1, 1)
+
+[node name="Firefly21" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-771, -564)
+scale = Vector2(1, 1)
+
+[node name="Firefly22" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-436, -544)
+scale = Vector2(1, 1)
+
+[node name="Firefly23" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-221, -540)
+scale = Vector2(1, 1)
+
+[node name="Firefly24" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(205, -576)
+scale = Vector2(1, 1)
+
+[node name="Firefly25" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(278, -460)
+scale = Vector2(1, 1)
+
+[node name="Firefly26" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(186, 311)
+scale = Vector2(1, 1)
+
+[node name="Firefly27" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-19, 438)
+scale = Vector2(1, 1)
+
+[node name="Firefly28" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-623, -368)
+scale = Vector2(1, 1)
+
+[node name="Firefly29" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-683, 17)
+scale = Vector2(1, 1)
+
+[node name="Firefly30" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-255, 365)
+scale = Vector2(1, 1)
+
+[node name="Firefly31" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(839, -99)
+scale = Vector2(1, 1)
+
+[node name="Firefly32" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(532, -132)
+scale = Vector2(1, 1)
+
+[node name="Firefly33" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(590, -460)
+scale = Vector2(1, 1)
+
+[node name="Firefly34" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(536, 133)
+scale = Vector2(1, 1)
+
+[node name="Firefly35" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(459, 328)
+scale = Vector2(1, 1)
+
+[node name="Firefly36" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(390, 472)
+scale = Vector2(1, 1)
+
+[node name="Firefly37" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(815, 159)
+scale = Vector2(1, 1)
+
+[node name="Firefly38" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(841, 262)
+scale = Vector2(1, 1)
+
+[node name="Firefly39" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(635, 494)
+scale = Vector2(1, 1)
+
+[node name="Firefly40" parent="Fireflies" instance=ExtResource("4_i4osp")]
+position = Vector2(-434, 407)
 scale = Vector2(1, 1)
 
 [node name="Canvases" type="Node" parent="."]
@@ -10557,7 +10699,6 @@ volume_db = 0.99
 script = ExtResource("16_gti4l")
 
 [node name="Sprite2D" type="Sprite2D" parent="Canvases/KeyDisplay"]
-visible = false
 position = Vector2(931, 43)
 scale = Vector2(5, 5)
 texture = ExtResource("16_nyn03")
