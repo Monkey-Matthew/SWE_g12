@@ -209,6 +209,6 @@ func apply_knockback(direction: Vector2, force: float): #Make sure to knockback
 		return
 	is_knocked_back = true
 	var actual_force = force / knockback_resistance #gets the real force
-	velocity = direction * actual_force #where to knockback to
+	velocity = direction * actual_force #makes the velocity for the knockback
 	knockback_timer.start()
 	print ("Player knockback ", actual_force)
