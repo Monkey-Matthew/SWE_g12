@@ -113,7 +113,7 @@ shape = SubResource("RectangleShape2D_wgc4h")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Point"]
 position = Vector2(2, -3)
-polygon = PackedVector2Array(-56, -53, -56, 56, -231, 5)
+polygon = PackedVector2Array(-54, -129, -54, 171, -382, 19)
 
 [node name="ProjectileCooldown" type="Timer" parent="."]
 wait_time = 2.0

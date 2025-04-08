@@ -90,29 +90,28 @@ collision_mask = 3
 script = ExtResource("1_dcd5s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.7625, -0.168752)
+position = Vector2(1, -4)
 scale = Vector2(0.168112, 0.152687)
 sprite_frames = SubResource("SpriteFrames_s8v5g")
-animation = &"UpwardMovement"
+animation = &"LeftMovement"
 autoplay = "RightMovement"
-frame_progress = 0.667604
 
 [node name="Point of View" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Point of View"]
-position = Vector2(-1, 4)
+position = Vector2(-2, 3)
 rotation = 6.28319
-scale = Vector2(1.00962, 1)
-polygon = PackedVector2Array(-1.98098, -7.99999, -1.98093, 4.00001, -15, -2)
+scale = Vector2(1.01485, 1.05156)
+polygon = PackedVector2Array(-1.9708, -14.2645, -1.97071, 5.70582, -26.6049, -4.75473)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 2)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_vpcui")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, 2)
+position = Vector2(0, -2)
 scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_vpcui")
 
