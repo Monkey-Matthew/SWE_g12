@@ -100,19 +100,19 @@ frame_progress = 0.667604
 [node name="Point of View" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Point of View"]
-position = Vector2(-2, 0)
+position = Vector2(-1, 4)
 rotation = 6.28319
 scale = Vector2(1.00962, 1)
 polygon = PackedVector2Array(-1.98098, -7.99999, -1.98093, 4.00001, -15, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.545455, -1.36364)
+position = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_vpcui")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1.65, 0.649999)
+position = Vector2(2, 2)
 scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_vpcui")
 

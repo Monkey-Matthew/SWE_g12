@@ -13,6 +13,7 @@ var is_following_player: bool = false #Checks if the bat is following player
 @onready var target = $"../Player" #Target of who the rat is targetting
 @onready var main = get_tree().get_root().get_node("GameScene") #Reference to GameScene
 @onready var projectile = load("res://Scenes/bat_projectile.tscn") #Reference to bat projectile scene
+@onready var damage_area = $Body
 
 #Projectile
 var projectile_direction: Vector2 #Projectile direction
@@ -20,10 +21,15 @@ var startingPosition: Vector2 #Starting direction
 
 #Damage
 @export var damage_amount = .5 #Damage for collision
+@export var knockback_force: float = 300 #force of knockback
 #----------------------------------------------------------------------------------------------------------------------------------
 func _ready() -> void:
 	startingPosition  = position #Setting the starting position
 	time += SPEED+ (randf() * 100) #Random start
+	if damage_area:
+		damage_area.body_entered.connect(_on_body_body_entered)
+	else: 
+		print("Didnt work")
 
 func _process(delta: float) -> void:
 	time += delta * SPEED #Moves the bat along the path
@@ -106,8 +112,11 @@ func _on_point_body_exited(body: Node2D) -> void: #Checks if something exited th
 		print("Player exited POV");
 
 func _on_body_body_entered(body: Node2D) -> void: #If player collides with bat
-	if body.name == "Player":
+	if body is CharacterBody2D and body.has_method("apply_knockback") and body.name == "Player":
+		var knockback_direction = (body.global_position - global_position).normalized()
+		print("Enemy collided with player")
 		Health.take_damage(damage_amount)
+		body.apply_knockback(knockback_direction, knockback_force)
 
 func shoot(): #Shoots the projectile depending on where the mouse is aiming
 	if projectile_direction == Vector2.ZERO:
@@ -122,3 +131,4 @@ func shoot(): #Shoots the projectile depending on where the mouse is aiming
 
 func _on_projectile_cooldown_timeout(): #Shoot delay
 	shoot()
+	

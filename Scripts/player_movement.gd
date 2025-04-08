@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 #Variables--------------------------------------------------------------------------------------------------------------------------------------------
 #Player movement variables
-@export var movement_speed: float = 400  #Movement speed of player (Can be change in the inspector)
+@export var movement_speed: float = 5000 #Movement speed of player (Can be change in the inspector)
 var character_direction: Vector2  #Used for our movement directional input
 var rand_direction = randf() #Chooses a random number between 0 and 1 in decimal
 var direction_facing: String #Store a string depending on the last direction the character was facing (Left, Right, Up, Down)
-
+var is_knocked_back : bool = false #helps the overwrite of player inputs
 #Timers
 @onready var timer: Timer = $Timer  #Reference to the Timer node so that we can modify it
 @onready var invulnerable_timer: Timer = $IFrameTimer #Timer for jump. Set to 1 second. When the player jumps they're invulnerable to some traps.
@@ -14,6 +14,9 @@ var direction_facing: String #Store a string depending on the last direction the
 @onready var Reload: Timer = $Reload #Time for Reloading the game
 @onready var attack_cooldown: Timer = $AttackCooldown #Timer for attack cooldown
 @onready var star_shooter_sound: AudioStreamPlayer2D = $starShooter
+@onready var knockback_timer: Timer = $Knockback
+@export var knockback_resistance: float = 1.0 #resistance for knockback
+@export var friction: float = 1000
 #Jump variables
 var invulnerable: bool = false #Variable to determine if the player is invulnerable or not
 var can_Jump: bool = true #Stop spamming jumping
@@ -100,7 +103,7 @@ func _physics_process(delta: float) -> void:
 					direction_facing = "Left"
 		else:
 			#Stops the movement gradually
-			velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
+			velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 
 	#When there is no movement, switch to idle animation depending on the direction the player was last facing
 	if velocity == Vector2.ZERO:
@@ -200,3 +203,12 @@ func shootProjectile(): #Function that shoots projectile where the player is aim
 
 func _on_attack_cooldown_timeout(): #Called when the attack cooldown timer ends
 	can_attack = true #When the timer timeout the play can attack again
+	
+func apply_knockback(direction: Vector2, force: float): #Make sure to knockback
+	if invulnerable:
+		return
+	is_knocked_back = true
+	var actual_force = force / knockback_resistance #gets the real force
+	velocity = direction * actual_force #where to knockback to
+	knockback_timer.start()
+	print ("Player knockback ", actual_force)
