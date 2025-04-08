@@ -14,14 +14,19 @@ var is_following_player: bool = false #Variable that determines if the rat is fo
 @onready var rat_body = $CollisionShape2D #Reference to the rat's collision body
 @onready var target = $"../Player" #Reference to the target (player)
 @onready var animated_sprite = $AnimatedSprite2D #Reference to rat animated sprite
-
+@onready var damage_area = $Area2D
 #Damage
 @export var damage_amount = .5 #Damage that the rat causes to the player
+@export var knockback_force: float = 300
 #---------------------------------------------------------------------------------------------------------------------------------
 
 func _ready() -> void:
 	startingPosition = position  #Gives a random starting position
 	time += SPEED+ (randf() * 100)
+	if damage_area:
+		damage_area.body_entered.connect(_on_area_2d_body_entered)
+	else: 
+		print("Didnt work")
 
 func _process(delta: float) -> void:
 	time += delta * SPEED 
@@ -99,5 +104,10 @@ func _on_point_of_view_body_exited(body: Node2D) -> void: #If the player exits t
 		print("Player exited POV");
 
 func _on_area_2d_body_entered(body: Node2D) -> void: #If the player collides with the rat
-	if body.name == "Player":
-		Health.take_damage(damage_amount) #Calls function that makes the player take damage from the rat
+	if body is CharacterBody2D and body.has_method("apply_knockback") and body.name == "Player":
+		var knockback_direction = (body.global_position - global_position).normalized()
+		print("Enemy collided with player")
+		Health.take_damage(damage_amount)
+		body.apply_knockback(knockback_direction, knockback_force)
+#	if body.name == "Player":
+#		Health.take_damage(damage_amount) #Calls function that makes the player take damage from the rat
