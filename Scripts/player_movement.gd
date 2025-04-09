@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #Variables--------------------------------------------------------------------------------------------------------------------------------------------
 #Player movement variables
-@export var movement_speed: float = 5000 #Movement speed of player (Can be change in the inspector)
+@export var movement_speed: float = 50000000 #Movement speed of player (Can be change in the inspector)
 var character_direction: Vector2  #Used for our movement directional input
 var rand_direction = randf() #Chooses a random number between 0 and 1 in decimal
 var direction_facing: String #Store a string depending on the last direction the character was facing (Left, Right, Up, Down)
@@ -31,8 +31,10 @@ var can_attack: bool = true #Variable that determines in the player can attack o
 var projectile_path = preload("res://Scenes//star_projectile.tscn") #Preloads the star projectile scene
 @onready var shop_script = get_node("/root/GameScene/Shop")
 
+var player_position = global_position
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
-
+func _process(delta: float) -> void:
+	print("Player global position is: ", global_position)
 
 func _physics_process(delta: float) -> void:
 	if not pause_script.paused: #Checks to see if the game is paused (if it is no movement can occur or changing direction

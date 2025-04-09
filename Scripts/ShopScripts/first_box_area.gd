@@ -7,6 +7,7 @@ extends TextureRect
 @onready var first_box_select = $"../FirstBoxSelect"
 @onready var second_box_select = $"../SecondBoxSelect"
 @onready var third_box_select = $"../ThirdBoxSelect"
+@onready var shop_script = $"../.."
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	first_box_tint.visible = false
@@ -20,7 +21,7 @@ func _gui_input(event: InputEvent) -> void:
 		first_box_select.visible = true
 		second_box_select.visible = false
 		third_box_select.visible = false
-		buy_box_label.text = "Buy - 1 Coins"
+		buy_box_label.text = "Buy - " + str(shop_script.firstItem["Cost"]) + " coins"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
