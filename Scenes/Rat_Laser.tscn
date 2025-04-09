@@ -1,41 +1,41 @@
-[gd_scene load_steps=16 format=3 uid="uid://cq582o51dd62t"]
+[gd_scene load_steps=17 format=3 uid="uid://rnux5535jbrm"]
 
-[ext_resource type="Script" path="res://Scripts/rat.gd" id="1_dcd5s"]
-[ext_resource type="Texture2D" uid="uid://bd78rklsdc3wo" path="res://Images/TestSprites/newRat/Rat_side_walk.png" id="2_j1gun"]
-[ext_resource type="Texture2D" uid="uid://cq1310b30p3i3" path="res://Images/TestSprites/newRat/Rat_side_walk_flipped.png" id="3_maa0y"]
-[ext_resource type="Texture2D" uid="uid://cv5gv2whuaxch" path="res://Images/TestSprites/newRat/Rat_back_walk.png" id="4_c25i1"]
-[ext_resource type="Script" path="res://Scripts/enemy_health.gd" id="8_evax2"]
+[ext_resource type="Script" path="res://Scripts/rat_lazer.gd" id="1_fxaxt"]
+[ext_resource type="Texture2D" uid="uid://bd78rklsdc3wo" path="res://Images/TestSprites/newRat/Rat_side_walk.png" id="2_ui6sh"]
+[ext_resource type="Texture2D" uid="uid://cq1310b30p3i3" path="res://Images/TestSprites/newRat/Rat_side_walk_flipped.png" id="3_1lgdn"]
+[ext_resource type="Texture2D" uid="uid://cv5gv2whuaxch" path="res://Images/TestSprites/newRat/Rat_back_walk.png" id="4_qe6vu"]
+[ext_resource type="Script" path="res://Scripts/enemy_health.gd" id="5_b7snw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_124ko"]
-atlas = ExtResource("2_j1gun")
+atlas = ExtResource("2_ui6sh")
 region = Rect2(0, 0, 98, 107)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ukhae"]
-atlas = ExtResource("2_j1gun")
+atlas = ExtResource("2_ui6sh")
 region = Rect2(98, 0, 98, 107)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kp63k"]
-atlas = ExtResource("2_j1gun")
+atlas = ExtResource("2_ui6sh")
 region = Rect2(0, 0, 98, 107)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ai6fu"]
-atlas = ExtResource("2_j1gun")
+atlas = ExtResource("2_ui6sh")
 region = Rect2(98, 0, 98, 107)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i886x"]
-atlas = ExtResource("3_maa0y")
+atlas = ExtResource("3_1lgdn")
 region = Rect2(196, 0, 98, 107)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3syk"]
-atlas = ExtResource("3_maa0y")
+atlas = ExtResource("3_1lgdn")
 region = Rect2(294, 0, 98, 107)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xbsrm"]
-atlas = ExtResource("4_c25i1")
+atlas = ExtResource("4_qe6vu")
 region = Rect2(0, 0, 98, 107)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yn7yf"]
-atlas = ExtResource("4_c25i1")
+atlas = ExtResource("4_qe6vu")
 region = Rect2(98, 0, 98, 107)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s8v5g"]
@@ -83,12 +83,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpcui"]
 size = Vector2(6.09091, 7.90909)
 
-[node name="Rat" type="CharacterBody2D" groups=["enemies"]]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qlyvw"]
+a = Vector2(0.251825, -3)
+b = Vector2(-28.9599, -3)
+
+[node name="Rat_Lazer" type="CharacterBody2D" groups=["enemies"]]
 z_index = 1
 y_sort_enabled = true
 scale = Vector2(4, 4)
 collision_mask = 3
-script = ExtResource("1_dcd5s")
+script = ExtResource("1_fxaxt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -4)
@@ -117,9 +121,33 @@ scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_vpcui")
 
 [node name="Health" type="Node" parent="."]
-script = ExtResource("8_evax2")
+script = ExtResource("5_b7snw")
 max_health = 100
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Duration" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="Laser" type="RayCast2D" parent="."]
+position = Vector2(0, -3)
+target_position = Vector2(-29.25, 0)
+
+[node name="Laser_line" type="Line2D" parent="."]
+position = Vector2(-0.226448, 0)
+scale = Vector2(0.992754, 1)
+points = PackedVector2Array(0.479926, -1.5, -28.9836, -1.5)
+width = 3.0
+
+[node name="damaged_area" type="Area2D" parent="Laser_line"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser_line/damaged_area"]
+position = Vector2(-0.0237239, 1.5)
+shape = SubResource("SegmentShape2D_qlyvw")
 
 [connection signal="body_entered" from="Point of View" to="." method="_on_point_of_view_body_entered"]
 [connection signal="body_exited" from="Point of View" to="." method="_on_point_of_view_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

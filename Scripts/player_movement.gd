@@ -30,7 +30,7 @@ var can_attack: bool = true #Variable that determines in the player can attack o
 @onready var pause_script = get_node("/root/GameScene/Canvases/PauseCanvas/CenterContainer/Control") #Reference to pause menu script
 var projectile_path = preload("res://Scenes//star_projectile.tscn") #Preloads the star projectile scene
 @onready var shop_script = get_node("/root/GameScene/Shop")
-
+var player_position = global_position
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -150,6 +150,8 @@ func apply_knockback(direction: Vector2, force: float): #Make sure to knockback
 	knockback_timer.start()
 	print ("Player knockback ", actual_force)
 
+func _on_knockback_timeout() -> void:
+	is_knocked_back = false
 
 func idle_animation():
 	if direction_facing == "Down": #Down idle animation
@@ -218,7 +220,3 @@ func movement_animation(p_char_dir: Vector2)-> void:
 			if animated_sprite.animation != "LeftRun":
 				animated_sprite.play("LeftRun")
 				direction_facing = "Left"
-
-
-func _on_knockback_timeout() -> void:
-	is_knocked_back = false

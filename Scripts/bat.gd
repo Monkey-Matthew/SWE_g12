@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 #Variables------------------------------------------------------------------------------------------------------------------------
 #Bat movement
-var SPEED = 15 #Movement Speed (Change to fit character movement)
-@export var sizeOfPath: float = 40.0 #Size of the path
+var SPEED = 35 #Movement Speed (Change to fit character movement)
+@export var sizeOfPath: float = 80.0 #Size of the path
 var time: float = 0.0 #Used for random starting position on path
 var is_following_player: bool = false #Checks if the bat is following player
 
@@ -105,7 +105,7 @@ func _on_point_body_entered(body: Node2D) -> void: #Checks if something entered 
 		print("Player entered POV");
 		target = body
 		is_following_player = true
-		SPEED = 40
+		SPEED = 60
 
 func _on_point_body_exited(body: Node2D) -> void: #Checks if something exited the point
 	if body.name == "Player":

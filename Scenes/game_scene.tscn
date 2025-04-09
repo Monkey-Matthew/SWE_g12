@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=63 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="2_00kki"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://bcmrj60axew3c" path="res://Scenes/crate.tscn" id="23_aayrq"]
 [ext_resource type="AudioStream" uid="uid://euixlincn6pg" path="res://audio/key-get-39925.mp3" id="24_2s6y0"]
 [ext_resource type="AudioStream" uid="uid://wigpyh7wm0d4" path="res://audio/cutedungeon.wav" id="24_uqbkl"]
+[ext_resource type="PackedScene" uid="uid://rnux5535jbrm" path="res://Scenes/Rat_Laser.tscn" id="37_3y0nf"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8whcr"]
 
@@ -10916,7 +10917,6 @@ position = Vector2(-152, -105)
 
 [node name="Rat" parent="Enemies" instance=ExtResource("7_agj4n")]
 position = Vector2(-319, 33)
-scale = Vector2(4, 4)
 
 [node name="key" parent="." instance=ExtResource("19_3wm5f")]
 position = Vector2(2, 123)
@@ -10940,5 +10940,8 @@ position = Vector2(213, -143)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_uqbkl")
-pitch_scale = 1.1
+pitch_scale = 0.01
 autoplay = true
+
+[node name="Rat_Laser" parent="." instance=ExtResource("37_3y0nf")]
+position = Vector2(-230, 191)
