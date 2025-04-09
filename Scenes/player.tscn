@@ -385,6 +385,8 @@ one_shot = true
 [node name="AttackCooldown" type="Timer" parent="."]
 
 [node name="Knockback" type="Timer" parent="."]
+wait_time = 0.107
 one_shot = true
 
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="Knockback" to="." method="_on_knockback_timeout"]
