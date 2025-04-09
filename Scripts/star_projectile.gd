@@ -4,10 +4,17 @@ extends CharacterBody2D
 @export var damage: int = 50 #Damage of the projectile
 var direction: Vector2 = Vector2.ZERO  #Movement direction of projectile
 
+@onready var star_sprite = $Sprite2D
+@onready var star_light = $PointLight2D
+
 func _ready():
 	velocity = direction * speed  #Sets initial velocity
-
+	star_sprite.texture = ShopItems.star_sprite
+	star_light.color = ShopItems.star_color
+	
 func _physics_process(delta):
+	star_sprite.texture = ShopItems.star_sprite
+	star_light.color = ShopItems.star_color
 	velocity = direction * speed  #The projectile keeps moving in the set direction
 	move_and_slide()
 

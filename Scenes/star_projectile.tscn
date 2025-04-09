@@ -26,8 +26,7 @@ shape = SubResource("CircleShape2D_bjh7p")
 disabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(1, 1, 0, 1)
-energy = 0.5
+color = Color(0.287303, 0.001039, 0.563781, 1)
 texture = ExtResource("3_d0c1m")
 texture_scale = 0.5
 
