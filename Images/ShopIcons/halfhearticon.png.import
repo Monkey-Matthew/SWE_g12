@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btqsscqpueu3x"
-path="res://.godot/imported/purplestar.png-05d386b84dae727258c2f2bae5325ba7.ctex"
+uid="uid://b0c7yhk8qrw87"
+path="res://.godot/imported/halfhearticon.png-723c8e671883b27c6e1896b6484dba20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Projectiles/purplestar.png"
-dest_files=["res://.godot/imported/purplestar.png-05d386b84dae727258c2f2bae5325ba7.ctex"]
+source_file="res://Images/ShopIcons/halfhearticon.png"
+dest_files=["res://.godot/imported/halfhearticon.png-723c8e671883b27c6e1896b6484dba20.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chmfg7w2uetvq"
-path="res://.godot/imported/bluestar.png-97d46d5a5d680abd77e08b54ca67259a.ctex"
+uid="uid://btqsscqpueu3x"
+path="res://.godot/imported/purplestar.png-5b32742ae94fce011243f1f78fcf3979.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Projectiles/bluestar.png"
-dest_files=["res://.godot/imported/bluestar.png-97d46d5a5d680abd77e08b54ca67259a.ctex"]
+source_file="res://Images/ShopIcons/purplestar.png"
+dest_files=["res://.godot/imported/purplestar.png-5b32742ae94fce011243f1f78fcf3979.ctex"]
 
 [params]
 

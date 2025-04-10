@@ -30,11 +30,7 @@ var can_attack: bool = true #Variable that determines in the player can attack o
 @onready var pause_script = get_node("/root/GameScene/Canvases/PauseCanvas/CenterContainer/Control") #Reference to pause menu script
 var projectile_path = preload("res://Scenes//star_projectile.tscn") #Preloads the star projectile scene
 @onready var shop_script = get_node("/root/GameScene/Shop")
-
-var player_position = global_position
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
-func _process(delta: float) -> void:
-	print("Player global position is: ", global_position)
 
 func _physics_process(delta: float) -> void:
 	if not pause_script.paused: #Checks to see if the game is paused (if it is no movement can occur or changing direction

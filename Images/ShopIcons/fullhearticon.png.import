@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ebii5k2ivhmc"
-path="res://.godot/imported/pinkstar.png-546a15ef12eb331a183ad68112eecb5d.ctex"
+uid="uid://du0gbrui2yo15"
+path="res://.godot/imported/fullhearticon.png-ee7de4c3343e8e6257dac0cc6bd20c54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Projectiles/pinkstar.png"
-dest_files=["res://.godot/imported/pinkstar.png-546a15ef12eb331a183ad68112eecb5d.ctex"]
+source_file="res://Images/ShopIcons/fullhearticon.png"
+dest_files=["res://.godot/imported/fullhearticon.png-ee7de4c3343e8e6257dac0cc6bd20c54.ctex"]
 
 [params]
 

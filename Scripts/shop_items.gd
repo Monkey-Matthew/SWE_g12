@@ -2,9 +2,12 @@ extends Node
 
 var items = {
 	#Star colors
-	"BlueStar": {"Name": "BlueStar", "Cost": 2, "ImagePath": "res://Images/Projectiles/bluestar.png", "Aquired": false},
-	"PinkStar": {"Name": "PinkStar", "Cost": 1, "ImagePath": "res://Images/Projectiles/pinkstar.png", "Aquired": false},
-	"PurpleStar": {"Name": "PurpleStar", "Cost": 3, "ImagePath": "res://Images/Projectiles/purplestar.png", "Aquired": false},
+	"BlueStar": {"Name": "BlueStar", "Cost": 2, "ImagePath": "res://Images/ShopIcons/bluestar.png", "Aquired": false},
+	"PinkStar": {"Name": "PinkStar", "Cost": 1, "ImagePath": "res://Images/ShopIcons/pinkstar.png", "Aquired": false},
+	"PurpleStar": {"Name": "PurpleStar", "Cost": 3, "ImagePath": "res://Images/ShopIcons/purplestar.png", "Aquired": false},
+	#Hearts
+	"HalfHeart": {"Name": "HalfHeart", "Cost": 2, "ImagePath": "res://Images/ShopIcons/HalfHeartIcon.png", "Aquired": false},
+	"FullHeart": {"Name": "FullHeart", "Cost": 4, "ImagePath": "res://Images/ShopIcons/FullHeartIcon.png", "Aquired": false},
 }
 
 var keys = items.keys()
@@ -18,12 +21,16 @@ func itemPurchased(itemName):
 	if(itemName == "BlueStar"):
 		star_sprite = load(items["BlueStar"]["ImagePath"])
 		star_color = Color("#0642ff")
-	if(itemName == "PinkStar"):
+	elif(itemName == "PinkStar"):
 		star_sprite = load(items["PinkStar"]["ImagePath"])
 		star_color = Color("#ff04bd")
-	if(itemName == "PurpleStar"): 
+	elif(itemName == "PurpleStar"): 
 		star_sprite = load(items["PurpleStar"]["ImagePath"])
 		star_color = Color("#490090") #Change color (its hard to see the purple)
+	elif(itemName == "HalfHeart"):
+		Health.player_health += .5
+	elif(itemName == "FullHeart"): 
+		Health.player_health += 1
 		
 	
 	print(itemName + " was purchased")

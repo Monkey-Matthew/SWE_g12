@@ -10802,6 +10802,16 @@ position = Vector2(226, 60)
 scale = Vector2(4, 4)
 texture = ExtResource("9_gdril")
 
+[node name="FourthHeart" type="Sprite2D" parent="Canvases/Health"]
+position = Vector2(307, 60)
+scale = Vector2(4, 4)
+texture = ExtResource("9_gdril")
+
+[node name="FifthHeart" type="Sprite2D" parent="Canvases/Health"]
+position = Vector2(388, 60)
+scale = Vector2(4, 4)
+texture = ExtResource("9_gdril")
+
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="Canvases/Health"]
 stream = ExtResource("15_cxyyn")
 volume_db = 2.476
