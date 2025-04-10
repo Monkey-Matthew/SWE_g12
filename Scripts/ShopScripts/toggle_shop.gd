@@ -18,7 +18,7 @@ func _ready() -> void:
 	canvas.visible = false
 	var itemsChosen = 0
 	while(threeItemsChosen == false):
-		var randItemNum = randi_range(0,4)
+		var randItemNum = randi_range(4,6)
 		if(ShopItems.items[keys[randItemNum]]["Aquired"] == false):
 			if(itemsChosen == 0):
 				firstItem = ShopItems.items[keys[randItemNum]]
