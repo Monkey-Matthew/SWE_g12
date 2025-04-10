@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://ds1i4lpjg2m1j"]
+[gd_scene load_steps=63 format=4 uid="uid://ds1i4lpjg2m1j"]
 
 [ext_resource type="PackedScene" uid="uid://dkq3q6ui7o41a" path="res://Scenes/player.tscn" id="1_ba1o1"]
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="2_00kki"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://dydvyavc8xl03" path="res://Scenes/bat.tscn" id="19_rmght"]
 [ext_resource type="PackedScene" uid="uid://bn8y0c5tntmcn" path="res://Scenes/gate.tscn" id="22_xpsxd"]
 [ext_resource type="PackedScene" uid="uid://bcmrj60axew3c" path="res://Scenes/crate.tscn" id="23_aayrq"]
+[ext_resource type="Texture2D" uid="uid://l11lodslea1y" path="res://Images/TestSprites/Shield/shield.png" id="23_gjtrq"]
 [ext_resource type="AudioStream" uid="uid://euixlincn6pg" path="res://audio/key-get-39925.mp3" id="24_2s6y0"]
 [ext_resource type="AudioStream" uid="uid://wigpyh7wm0d4" path="res://audio/cutedungeon.wav" id="24_uqbkl"]
 
@@ -10811,6 +10812,21 @@ texture = ExtResource("9_gdril")
 position = Vector2(388, 60)
 scale = Vector2(4, 4)
 texture = ExtResource("9_gdril")
+
+[node name="FirstShield" type="Sprite2D" parent="Canvases/Health"]
+position = Vector2(45, 107)
+scale = Vector2(4, 4)
+texture = ExtResource("23_gjtrq")
+
+[node name="SecondShield" type="Sprite2D" parent="Canvases/Health"]
+position = Vector2(86, 107)
+scale = Vector2(4, 4)
+texture = ExtResource("23_gjtrq")
+
+[node name="ThirdShield" type="Sprite2D" parent="Canvases/Health"]
+position = Vector2(127, 107)
+scale = Vector2(4, 4)
+texture = ExtResource("23_gjtrq")
 
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="Canvases/Health"]
 stream = ExtResource("15_cxyyn")

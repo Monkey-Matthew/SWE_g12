@@ -8,6 +8,9 @@ var items = {
 	#Hearts
 	"HalfHeart": {"Name": "HalfHeart", "Cost": 2, "ImagePath": "res://Images/ShopIcons/HalfHeartIcon.png", "Aquired": false},
 	"FullHeart": {"Name": "FullHeart", "Cost": 4, "ImagePath": "res://Images/ShopIcons/FullHeartIcon.png", "Aquired": false},
+	#Shields
+	"OneShield": {"Name": "OneShield", "Cost": 3, "ImagePath": "res://Images/ShopIcons/shieldicon.png", "Aquired": false},
+	"ThreeShield": {"Name": "ThreeShield", "Cost": 8, "ImagePath": "res://Images/ShopIcons/threeshield.png", "Aquired": false},
 }
 
 var keys = items.keys()
@@ -31,6 +34,9 @@ func itemPurchased(itemName):
 		Health.player_health += .5
 	elif(itemName == "FullHeart"): 
 		Health.player_health += 1
-		
+	elif(itemName == "OneShield"):
+		Health.player_shield += 1
+	elif(itemName == "ThreeShield"):
+		Health.player_shield += 3
 	
 	print(itemName + " was purchased")

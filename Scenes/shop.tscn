@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkbjvbbtsp874"]
+[gd_scene load_steps=16 format=3 uid="uid://dkbjvbbtsp874"]
 
 [ext_resource type="Texture2D" uid="uid://d4m3i4skhymtw" path="res://Images/Projectiles/StarProjectile.png" id="1_760k8"]
 [ext_resource type="Script" path="res://Scripts/ShopScripts/shop.gd" id="1_b3vn2"]
@@ -9,7 +9,12 @@
 [ext_resource type="Script" path="res://Scripts/ShopScripts/third_box_area.gd" id="7_ccmb5"]
 [ext_resource type="Script" path="res://Scripts/ShopScripts/buy_box_area.gd" id="7_eugr8"]
 [ext_resource type="Texture2D" uid="uid://dwn1wsccnn4fs" path="res://Images/Random/SingleCoin.png" id="8_08g7k"]
+[ext_resource type="Script" path="res://Scripts/display_health.gd" id="9_b1n12"]
 [ext_resource type="Script" path="res://Scripts/back_area.gd" id="10_tt12u"]
+[ext_resource type="Texture2D" uid="uid://l11lodslea1y" path="res://Images/TestSprites/Shield/shield.png" id="11_8wp0q"]
+[ext_resource type="AudioStream" uid="uid://c1yt5ooci4c47" path="res://audio/female-hurt-2-94301.mp3" id="12_wbqn2"]
+[ext_resource type="Script" path="res://Scripts/display_coins.gd" id="13_l7kup"]
+[ext_resource type="AudioStream" uid="uid://nks3iie1cft6" path="res://audio/coin-drop-1-104046.mp3" id="15_jyo7v"]
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_g26t6")
@@ -176,44 +181,6 @@ offset_bottom = 40.0
 scale = Vector2(5.567, 1.203)
 script = ExtResource("7_eugr8")
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1020, 45)
-scale = Vector2(4, 4)
-texture = ExtResource("8_08g7k")
-
-[node name="CoinLabel" type="Label" parent="CanvasLayer"]
-offset_left = 1059.0
-offset_top = 4.0
-offset_right = 1145.0
-offset_bottom = 73.0
-theme_override_font_sizes/font_size = 50
-text = "0"
-
-[node name="FirstHeart" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(64, 64)
-scale = Vector2(4, 4)
-texture = ExtResource("3_r8no5")
-
-[node name="SecondHeart" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(145, 64)
-scale = Vector2(4, 4)
-texture = ExtResource("3_r8no5")
-
-[node name="ThirdHeart" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(226, 64)
-scale = Vector2(4, 4)
-texture = ExtResource("3_r8no5")
-
-[node name="FourthHeart" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(307, 64)
-scale = Vector2(4, 4)
-texture = ExtResource("3_r8no5")
-
-[node name="FifthHeart" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(388, 64)
-scale = Vector2(4, 4)
-texture = ExtResource("3_r8no5")
-
 [node name="BackBox" type="ColorRect" parent="CanvasLayer"]
 offset_left = 22.0
 offset_top = 579.0
@@ -235,6 +202,73 @@ layout_mode = 0
 offset_right = 130.0
 offset_bottom = 54.0
 script = ExtResource("10_tt12u")
+
+[node name="Health" type="CanvasLayer" parent="."]
+script = ExtResource("9_b1n12")
+
+[node name="FirstHeart" type="Sprite2D" parent="Health"]
+position = Vector2(64, 60)
+scale = Vector2(4, 4)
+texture = ExtResource("3_r8no5")
+
+[node name="SecondHeart" type="Sprite2D" parent="Health"]
+position = Vector2(145, 60)
+scale = Vector2(4, 4)
+texture = ExtResource("3_r8no5")
+
+[node name="ThirdHeart" type="Sprite2D" parent="Health"]
+position = Vector2(226, 60)
+scale = Vector2(4, 4)
+texture = ExtResource("3_r8no5")
+
+[node name="FourthHeart" type="Sprite2D" parent="Health"]
+position = Vector2(307, 60)
+scale = Vector2(4, 4)
+texture = ExtResource("3_r8no5")
+
+[node name="FifthHeart" type="Sprite2D" parent="Health"]
+position = Vector2(388, 60)
+scale = Vector2(4, 4)
+texture = ExtResource("3_r8no5")
+
+[node name="FirstShield" type="Sprite2D" parent="Health"]
+position = Vector2(45, 107)
+scale = Vector2(4, 4)
+texture = ExtResource("11_8wp0q")
+
+[node name="SecondShield" type="Sprite2D" parent="Health"]
+position = Vector2(86, 107)
+scale = Vector2(4, 4)
+texture = ExtResource("11_8wp0q")
+
+[node name="ThirdShield" type="Sprite2D" parent="Health"]
+position = Vector2(127, 107)
+scale = Vector2(4, 4)
+texture = ExtResource("11_8wp0q")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="Health"]
+stream = ExtResource("12_wbqn2")
+volume_db = 2.476
+
+[node name="CoinDisplay" type="CanvasLayer" parent="."]
+script = ExtResource("13_l7kup")
+
+[node name="Sprite2D" type="Sprite2D" parent="CoinDisplay"]
+position = Vector2(1020, 45)
+scale = Vector2(4, 4)
+texture = ExtResource("8_08g7k")
+
+[node name="CoinLabel" type="Label" parent="CoinDisplay"]
+offset_left = 1059.0
+offset_top = 4.0
+offset_right = 1145.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 50
+text = "100"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CoinDisplay"]
+stream = ExtResource("15_jyo7v")
+volume_db = 0.99
 
 [connection signal="mouse_entered" from="CanvasLayer/FirstBoxArea" to="CanvasLayer/FirstBoxArea" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/FirstBoxArea" to="CanvasLayer/FirstBoxArea" method="_on_mouse_exited"]

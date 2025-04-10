@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://c2m6tnsvpy7jr"]
+[gd_scene load_steps=54 format=4 uid="uid://c2m6tnsvpy7jr"]
 
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="1_tkihl"]
 [ext_resource type="Texture2D" uid="uid://d1y0lgt5lyv6g" path="res://Images/OutdoorTiles/BasicTree.png" id="2_eyybx"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://Scripts/display_key.gd" id="20_oqwal"]
 [ext_resource type="Texture2D" uid="uid://ccek3rrynbabe" path="res://Images/Random/Key.png" id="21_n1cjl"]
 [ext_resource type="PackedScene" uid="uid://dmlug1m8641y0" path="res://Scenes/damage_area.tscn" id="22_ilmbb"]
+[ext_resource type="Texture2D" uid="uid://l11lodslea1y" path="res://Images/TestSprites/Shield/shield.png" id="22_y3x5q"]
 [ext_resource type="PackedScene" uid="uid://dydvyavc8xl03" path="res://Scenes/bat.tscn" id="23_c6ijm"]
 [ext_resource type="PackedScene" uid="uid://cq582o51dd62t" path="res://Scenes/Rat.tscn" id="24_q0p3q"]
 [ext_resource type="PackedScene" uid="uid://do06pfcy3bssv" path="res://Scenes/key.tscn" id="25_xp0ay"]
@@ -201,7 +202,7 @@ tile_set = SubResource("TileSet_lrvc1")
 
 [node name="Player" parent="." instance=ExtResource("8_4v5f6")]
 z_index = 1
-position = Vector2(0, -26)
+position = Vector2(26, -44)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -212,6 +213,7 @@ stream = ExtResource("10_7xqqw")
 volume_db = 5.448
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Fireflies" type="Node" parent="."]
@@ -237,6 +239,25 @@ position = Vector2(76, 49)
 scale = Vector2(1, 1)
 
 [node name="Canvases" type="Node" parent="."]
+
+[node name="PauseCanvas" type="CanvasLayer" parent="Canvases"]
+
+[node name="CenterContainer" type="CenterContainer" parent="Canvases/PauseCanvas"]
+offset_left = -29.0
+offset_top = -13.0
+offset_right = 11.0
+offset_bottom = 27.0
+
+[node name="Control" type="Control" parent="Canvases/PauseCanvas/CenterContainer"]
+layout_mode = 2
+script = ExtResource("12_6xxvc")
+
+[node name="PauseMenu" parent="Canvases/PauseCanvas/CenterContainer/Control" instance=ExtResource("13_qdkgr")]
+layout_mode = 1
+offset_left = 595.0
+offset_top = 321.0
+offset_right = 595.0
+offset_bottom = 321.0
 
 [node name="Health" type="CanvasLayer" parent="Canvases"]
 script = ExtResource("14_22j88")
@@ -266,28 +287,24 @@ position = Vector2(388, 60)
 scale = Vector2(4, 4)
 texture = ExtResource("15_15b32")
 
+[node name="FirstShield" type="Sprite2D" parent="Canvases/Health"]
+position = Vector2(45, 107)
+scale = Vector2(4, 4)
+texture = ExtResource("22_y3x5q")
+
+[node name="SecondShield" type="Sprite2D" parent="Canvases/Health"]
+position = Vector2(86, 107)
+scale = Vector2(4, 4)
+texture = ExtResource("22_y3x5q")
+
+[node name="ThirdShield" type="Sprite2D" parent="Canvases/Health"]
+position = Vector2(127, 107)
+scale = Vector2(4, 4)
+texture = ExtResource("22_y3x5q")
+
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="Canvases/Health"]
 stream = ExtResource("16_57h0a")
 volume_db = 2.476
-
-[node name="PauseCanvas" type="CanvasLayer" parent="Canvases"]
-
-[node name="CenterContainer" type="CenterContainer" parent="Canvases/PauseCanvas"]
-offset_left = -29.0
-offset_top = -13.0
-offset_right = 11.0
-offset_bottom = 27.0
-
-[node name="Control" type="Control" parent="Canvases/PauseCanvas/CenterContainer"]
-layout_mode = 2
-script = ExtResource("12_6xxvc")
-
-[node name="PauseMenu" parent="Canvases/PauseCanvas/CenterContainer/Control" instance=ExtResource("13_qdkgr")]
-layout_mode = 1
-offset_left = 595.0
-offset_top = 321.0
-offset_right = 595.0
-offset_bottom = 321.0
 
 [node name="CoinDisplay" type="CanvasLayer" parent="Canvases"]
 script = ExtResource("17_5srf3")
@@ -331,7 +348,7 @@ scale = Vector2(1.44, 1.48)
 damage_amount = 0.25
 
 [node name="DamageArea7" parent="ThornsDamageAreas" instance=ExtResource("22_ilmbb")]
-position = Vector2(64, 123)
+position = Vector2(90, 105)
 scale = Vector2(1.44, 1.48)
 damage_amount = 0.25
 
@@ -381,7 +398,6 @@ pitch_scale = 1.1
 autoplay = true
 
 [node name="Shop" parent="." instance=ExtResource("30_u8vel")]
-visible = false
 position = Vector2(-1, 0)
 
 [node name="ShopArea" type="Area2D" parent="."]
