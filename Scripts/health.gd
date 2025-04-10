@@ -1,15 +1,17 @@
 extends Node
 
-var player_health: float = 3 #Health of player
+var player_health: float = clamp(3, -3, 5) #Health of player
+var prev_health: float
 var canTakeDamage: bool = true  #Prevents repeated damage without cooldown
 @export var damage_cooldown: float = 1.0  #Cooldown time in seconds
 
 func _ready() -> void: 
-	pass
+	player_health = 5
 	
 func take_damage(amount: float): #Is called when the player takes damage
 	if canTakeDamage: #If the player can currently take damage
 		# handle camera shake
+		prev_health = player_health
 		player_health -= amount #Lowers health from damage passed through
 		print("Player took damage! Health:", player_health)
 		canTakeDamage = false  #Disables current damage

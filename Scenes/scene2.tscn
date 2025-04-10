@@ -238,25 +238,6 @@ scale = Vector2(1, 1)
 
 [node name="Canvases" type="Node" parent="."]
 
-[node name="PauseCanvas" type="CanvasLayer" parent="Canvases"]
-
-[node name="CenterContainer" type="CenterContainer" parent="Canvases/PauseCanvas"]
-offset_left = -29.0
-offset_top = -13.0
-offset_right = 11.0
-offset_bottom = 27.0
-
-[node name="Control" type="Control" parent="Canvases/PauseCanvas/CenterContainer"]
-layout_mode = 2
-script = ExtResource("12_6xxvc")
-
-[node name="PauseMenu" parent="Canvases/PauseCanvas/CenterContainer/Control" instance=ExtResource("13_qdkgr")]
-layout_mode = 1
-offset_left = 595.0
-offset_top = 321.0
-offset_right = 595.0
-offset_bottom = 321.0
-
 [node name="Health" type="CanvasLayer" parent="Canvases"]
 script = ExtResource("14_22j88")
 
@@ -275,9 +256,38 @@ position = Vector2(226, 60)
 scale = Vector2(4, 4)
 texture = ExtResource("15_15b32")
 
+[node name="FourthHeart" type="Sprite2D" parent="Canvases/Health"]
+position = Vector2(307, 60)
+scale = Vector2(4, 4)
+texture = ExtResource("15_15b32")
+
+[node name="FifthHeart" type="Sprite2D" parent="Canvases/Health"]
+position = Vector2(388, 60)
+scale = Vector2(4, 4)
+texture = ExtResource("15_15b32")
+
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="Canvases/Health"]
 stream = ExtResource("16_57h0a")
 volume_db = 2.476
+
+[node name="PauseCanvas" type="CanvasLayer" parent="Canvases"]
+
+[node name="CenterContainer" type="CenterContainer" parent="Canvases/PauseCanvas"]
+offset_left = -29.0
+offset_top = -13.0
+offset_right = 11.0
+offset_bottom = 27.0
+
+[node name="Control" type="Control" parent="Canvases/PauseCanvas/CenterContainer"]
+layout_mode = 2
+script = ExtResource("12_6xxvc")
+
+[node name="PauseMenu" parent="Canvases/PauseCanvas/CenterContainer/Control" instance=ExtResource("13_qdkgr")]
+layout_mode = 1
+offset_left = 595.0
+offset_top = 321.0
+offset_right = 595.0
+offset_bottom = 321.0
 
 [node name="CoinDisplay" type="CanvasLayer" parent="Canvases"]
 script = ExtResource("17_5srf3")

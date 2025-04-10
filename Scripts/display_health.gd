@@ -4,11 +4,11 @@ extends CanvasLayer
 @onready var sprite_first_heart: Sprite2D = $FirstHeart
 @onready var sprite_second_heart: Sprite2D = $SecondHeart
 @onready var sprite_third_heart: Sprite2D = $ThirdHeart
+@onready var sprite_fourth_heart: Sprite2D = $FourthHeart
+@onready var sprite_fifth_heart: Sprite2D = $FifthHeart
 @onready var hurt_sound: AudioStreamPlayer2D = $HurtSound
 var pause_menu
 var shake_toggle
-
-var prev_health = Health.player_health
 
 func _ready() -> void:
 	pause_menu = get_node("/root/GameScene/Canvases/PauseCanvas/CenterContainer/Control/PauseMenu")
@@ -18,15 +18,66 @@ func _ready() -> void:
 #Changes Health sprite for whatever the health is currently at
 func _process(delta: float) -> void:
 	# check if the player loses health
-	if Health.player_health != prev_health and shake_toggle.text == "Screen Shake: On":
+	if Health.player_health < Health.prev_health and shake_toggle.text == "Screen Shake: On":
 		# player took damage!!
 		get_node("/root/GameScene/Player/Camera2D").apply_shake(5)
-		prev_health = Health.player_health
 		hurt_sound.play()
+		Health.prev_health = Health.player_health
+	if Health.player_health >= 5.0:
+		Health.player_health = 5
+		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_second_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_third_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fourth_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fifth_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+	if Health.player_health == 4.75:
+		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_second_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_third_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fourth_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fifth_heart.texture = load("res://Images/TestSprites/Heart/ThreeFourthHeart.png")
+	if Health.player_health == 4.5:
+		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_second_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_third_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fourth_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fifth_heart.texture = load("res://Images/TestSprites/Heart/HalfHeart.png")
+	if Health.player_health == 4.25:
+		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_second_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_third_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fourth_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fifth_heart.texture = load("res://Images/TestSprites/Heart/QuaterHeart.png")
+	if Health.player_health == 4.0:
+		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_second_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_third_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fourth_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fifth_heart.texture = load("null")
+	if Health.player_health == 3.75:
+		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_second_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_third_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fourth_heart.texture = load("res://Images/TestSprites/Heart/ThreeFourthHeart.png")
+		sprite_fifth_heart.texture = load("null")
+	if Health.player_health == 3.5:
+		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_second_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_third_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fourth_heart.texture = load("res://Images/TestSprites/Heart/HalfHeart.png")
+		sprite_fifth_heart.texture = load("null")
+	if Health.player_health == 3.25:
+		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_second_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_third_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fourth_heart.texture = load("res://Images/TestSprites/Heart/QuaterHeart.png")
+		sprite_fifth_heart.texture = load("null")
 	if Health.player_health == 3.0:
 		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
 		sprite_second_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
 		sprite_third_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
+		sprite_fourth_heart.texture = load("null")
+		sprite_fifth_heart.texture = load("null")
 	elif Health.player_health == 2.75:
 		sprite_first_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
 		sprite_second_heart.texture = load("res://Images/TestSprites/Heart/FullHeart.png")
