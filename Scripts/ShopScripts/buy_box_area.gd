@@ -17,6 +17,7 @@ extends TextureRect
 @onready var thirdBoxSelectBorder = $"../../ThirdBoxSelect"
 
 @onready var buyLabel = $"../Label"
+@onready var descriptionLabel = $"../../DescriptionBox/Label"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP  # Ensures it receives input
@@ -30,6 +31,8 @@ func _gui_input(event: InputEvent) -> void:
 			firstItemSprite.visible = false
 			firstBoxSelectBorder.visible = false
 			buyLabel.text = ""
+			descriptionLabel.text = ""
+			firstBoxArea.box_clicked = false
 		elif(second_box_select.visible == true && CoinSystem.player_coins >= shop_script.secondItem["Cost"]):
 			CoinSystem.player_coins -= shop_script.secondItem["Cost"]
 			ShopItems.itemPurchased(shop_script.secondItem["Name"])
@@ -37,6 +40,8 @@ func _gui_input(event: InputEvent) -> void:
 			secondItemSprite.visible = false
 			secondBoxSelectBorder.visible = false
 			buyLabel.text = ""
+			descriptionLabel.text = ""
+			secondBoxArea.box_clicked = false
 		elif(third_box_select.visible == true && CoinSystem.player_coins >= shop_script.thirdItem["Cost"]):
 			CoinSystem.player_coins -= shop_script.thirdItem["Cost"]
 			ShopItems.itemPurchased(shop_script.thirdItem["Name"])
@@ -44,6 +49,8 @@ func _gui_input(event: InputEvent) -> void:
 			thirdItemSprite.visible = false
 			thirdBoxSelectBorder.visible = false
 			buyLabel.text = ""
+			descriptionLabel.text = ""
+			thirdBoxArea.box_clicked = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
