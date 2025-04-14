@@ -1,7 +1,7 @@
 extends Node
 
 var player_health: float = clamp(3, -3, 5) #Health of player
-var player_shield: int = clamp(0, -3, 3)
+var player_shield: int = clamp(1, -3, 3)
 var prev_health: float
 var prev_shield: int
 var canTakeDamage: bool = true  #Prevents repeated damage without cooldown
