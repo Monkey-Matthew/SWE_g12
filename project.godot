@@ -22,6 +22,7 @@ CoinSystem="*res://Scripts/coin_system.gd"
 EnemyHealth="*res://Scripts/enemy_health.gd"
 PlayerLocation="*res://Scripts/player_location.gd"
 ShopItems="*res://Scripts/shop_items.gd"
+key_drop="*res://Scripts/key_drop.gd"
 
 [display]
 
