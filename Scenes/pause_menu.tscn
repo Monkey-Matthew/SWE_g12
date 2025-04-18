@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dkkojelq84qqo"]
+[gd_scene load_steps=2 format=3 uid="uid://dkkojelq84qqo"]
+
+[ext_resource type="Theme" uid="uid://b1gj1j63s7aey" path="res://Themes/menu_theme.tres" id="1_vfpdw"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -26,11 +28,14 @@ grow_vertical = 2
 
 [node name="Resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_vfpdw")
 text = "Resume"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_vfpdw")
 text = "Exit"
 
 [node name="ShakeToggle" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_vfpdw")
