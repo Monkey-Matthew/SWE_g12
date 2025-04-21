@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://dkkojelq84qqo"]
+[gd_scene load_steps=3 format=3 uid="uid://dkkojelq84qqo"]
+
+[ext_resource type="Theme" uid="uid://b1gj1j63s7aey" path="res://Themes/menu_theme.tres" id="1_vfpdw"]
+[ext_resource type="Script" path="res://Scenes/pause_menu_volscript.gd" id="1_yvw65"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,6 +12,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yvw65")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -26,11 +30,28 @@ grow_vertical = 2
 
 [node name="Resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_vfpdw")
 text = "Resume"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_vfpdw")
 text = "Exit"
 
 [node name="ShakeToggle" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_vfpdw")
+
+[node name="VolumeLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_vfpdw")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+min_value = -40.0
+max_value = 0.0
+
+[connection signal="value_changed" from="VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
