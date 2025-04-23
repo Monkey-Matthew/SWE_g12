@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://c2m6tnsvpy7jr"]
+[gd_scene load_steps=55 format=4 uid="uid://c2m6tnsvpy7jr"]
 
 [ext_resource type="Texture2D" uid="uid://cpm5q1lat3u5b" path="res://Images/OutdoorTiles/Grass.png" id="1_tkihl"]
 [ext_resource type="Texture2D" uid="uid://d1y0lgt5lyv6g" path="res://Images/OutdoorTiles/BasicTree.png" id="2_eyybx"]
@@ -31,7 +31,8 @@
 [ext_resource type="PackedScene" uid="uid://bcmrj60axew3c" path="res://Scenes/crate.tscn" id="28_nfgq0"]
 [ext_resource type="AudioStream" uid="uid://wigpyh7wm0d4" path="res://audio/cutedungeon.wav" id="29_nn00y"]
 [ext_resource type="PackedScene" uid="uid://dkbjvbbtsp874" path="res://Scenes/shop.tscn" id="30_u8vel"]
-[ext_resource type="Script" path="res://Scripts/shop_area.gd" id="31_yrq0n"]
+[ext_resource type="PackedScene" uid="uid://dlcmucj1ie7r7" path="res://Scenes/mini_shop.tscn" id="33_lcmnw"]
+[ext_resource type="Script" path="res://Scenes/shop_area.gd" id="34_fs6q5"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8whcr"]
 
@@ -153,8 +154,8 @@ sources/0 = SubResource("TileSetAtlasSource_rkw27")
 sources/2 = SubResource("TileSetAtlasSource_w1oa5")
 sources/1 = SubResource("TileSetAtlasSource_h3468")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_opb63"]
-size = Vector2(161, 95)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmst7"]
+size = Vector2(35.6576, 15.5749)
 
 [node name="GameScene" type="Node2D"]
 y_sort_enabled = true
@@ -400,11 +401,18 @@ autoplay = true
 [node name="Shop" parent="." instance=ExtResource("30_u8vel")]
 position = Vector2(-1, 0)
 
+[node name="MiniShop" parent="." instance=ExtResource("33_lcmnw")]
+position = Vector2(-306, -459)
+
 [node name="ShopArea" type="Area2D" parent="."]
-script = ExtResource("31_yrq0n")
+position = Vector2(-523, -398)
+scale = Vector2(0.588935, 0.64206)
+script = ExtResource("34_fs6q5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShopArea"]
-position = Vector2(-471.5, -416.5)
-shape = SubResource("RectangleShape2D_opb63")
+z_index = 1
+position = Vector2(2.547, -3.11505)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_kmst7")
 
 [connection signal="body_entered" from="ShopArea" to="ShopArea" method="_on_body_entered"]
