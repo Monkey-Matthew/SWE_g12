@@ -45,6 +45,8 @@ var keys = items.keys()
 var star_sprite = load("res://Images/Projectiles/StarProjectile.png")
 var star_color = Color("#FFF700")
 
+var shop_opened = false
+
 func _ready() -> void:
 	pass
 

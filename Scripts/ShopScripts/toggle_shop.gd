@@ -3,9 +3,9 @@ extends Node2D
 @onready var canvas = $CanvasLayer
 @onready var back_button = $CanvasLayer/BackBox/BackArea
 @onready var player = $"../Player"
-@onready var first_item_picture = $CanvasLayer/FirstItemBox/FirstItem
-@onready var second_item_picture = $CanvasLayer/SecondItemBox/SecondItem
-@onready var third_item_picture = $CanvasLayer/ThirdItemBox/ThirdItem
+@onready var first_item_picture = $CanvasLayer/FirstItem
+@onready var second_item_picture = $CanvasLayer/SecondItem
+@onready var third_item_picture = $CanvasLayer/ThirdItem
 
 var firstItem
 var secondItem
@@ -44,4 +44,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if(canvas.visible == true):
+		ShopItems.shop_opened = true
+	if(canvas.visible == false):
+		ShopItems.shop_opened = false
+	
