@@ -6,11 +6,11 @@ extends TextureRect
 @onready var shop_script = $"../../.."
 
 @onready var firstBoxArea = $"../../FirstBoxArea"
-@onready var firstItemSprite = $"../../FirstItemBox/FirstItem"
+@onready var firstItemSprite = $"../../FirstItem"
 @onready var secondBoxArea = $"../../SecondBoxArea"
-@onready var secondItemSprite = $"../../SecondItemBox/SecondItem"
+@onready var secondItemSprite = $"../../SecondItem"
 @onready var thirdBoxArea = $"../../ThirdBoxArea"
-@onready var thirdItemSprite = $"../../ThirdItemBox/ThirdItem"
+@onready var thirdItemSprite = $"../../ThirdItem"
 
 @onready var firstBoxSelectBorder = $"../../FirstBoxSelect"
 @onready var secondBoxSelectBorder = $"../../SecondBoxSelect"
@@ -18,14 +18,17 @@ extends TextureRect
 
 @onready var buyLabel = $"../Label"
 @onready var descriptionLabel = $"../../DescriptionBox/Label"
+
+@onready var buy_audio = $"../../ItemBoughtAudio"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP  # Ensures it receives input
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		if(first_box_select.visible == true && CoinSystem.player_coins >= shop_script.firstItem["Cost"]):
+		if(firstBoxArea.box_clicked == true && CoinSystem.player_coins >= shop_script.firstItem["Cost"]):
 			CoinSystem.player_coins -= shop_script.firstItem["Cost"]
+			buy_audio.play()
 			ShopItems.itemPurchased(shop_script.firstItem["Name"])
 			firstBoxArea.visible = false
 			firstItemSprite.visible = false
@@ -33,8 +36,9 @@ func _gui_input(event: InputEvent) -> void:
 			buyLabel.text = ""
 			descriptionLabel.text = ""
 			firstBoxArea.box_clicked = false
-		elif(second_box_select.visible == true && CoinSystem.player_coins >= shop_script.secondItem["Cost"]):
+		elif(secondBoxArea.box_clicked == true && CoinSystem.player_coins >= shop_script.secondItem["Cost"]):
 			CoinSystem.player_coins -= shop_script.secondItem["Cost"]
+			buy_audio.play()
 			ShopItems.itemPurchased(shop_script.secondItem["Name"])
 			secondBoxArea.visible = false
 			secondItemSprite.visible = false
@@ -42,8 +46,9 @@ func _gui_input(event: InputEvent) -> void:
 			buyLabel.text = ""
 			descriptionLabel.text = ""
 			secondBoxArea.box_clicked = false
-		elif(third_box_select.visible == true && CoinSystem.player_coins >= shop_script.thirdItem["Cost"]):
+		elif(thirdBoxArea.box_clicked == true && CoinSystem.player_coins >= shop_script.thirdItem["Cost"]):
 			CoinSystem.player_coins -= shop_script.thirdItem["Cost"]
+			buy_audio.play()
 			ShopItems.itemPurchased(shop_script.thirdItem["Name"])
 			thirdBoxArea.visible = false
 			thirdItemSprite.visible = false

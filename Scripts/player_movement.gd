@@ -31,6 +31,9 @@ var can_attack: bool = true #Variable that determines in the player can attack o
 var projectile_path = preload("res://Scenes//star_projectile.tscn") #Preloads the star projectile scene
 @onready var shop_script = get_node("/root/GameScene/Shop")
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
+func _process(delta: float) -> void:
+	if(ShopItems.shop_opened == true):
+		can_attack = false
 
 func _physics_process(delta: float) -> void:
 	if not pause_script.paused: #Checks to see if the game is paused (if it is no movement can occur or changing direction
